@@ -164,8 +164,10 @@ func main() {
 }
 
 func listen() {
-	// 库存接口
-	availability := "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability.json"
+	// 12Pro库存接口
+	availabilityPro := "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability.json"
+	// 12库存接口
+	availability12 := "https://reserve-prime.apple.com/CN/zh_CN/reserve/F/availability.json"
 
 	for  {
 		time.Sleep(time.Second*1)
@@ -174,7 +176,13 @@ func listen() {
 			continue
 		}
 
-		_, bd, errs := gorequest.New().Get(availability).End()
+		_, bd, errs := gorequest.New().Get(availabilityPro).End()
+		if len(errs) != 0 {
+			log.Println(errs)
+			continue
+		}
+
+		_, bd12, errs := gorequest.New().Get(availability12).End()
 		if len(errs) != 0 {
 			log.Println(errs)
 			continue
@@ -182,9 +190,16 @@ func listen() {
 		str := ""
 		t := time.Now().Format("2006-01-02 15:04:05")
 		for model, title := range listenStores {
-			value := gjson.Get(bd, "stores."+model+".availability")
+
+			var value gjson.Result
+			if strings.Contains(title, "pro")   {
+				value = gjson.Get(bd, "stores."+model+".availability")
+			} else {
+				value = gjson.Get(bd12, "stores."+model+".availability")
+			}
+
 			if value.Map()["contract"].Bool() && value.Map()["unlocked"].Bool() {
-				openBrowser()
+				openBrowser(model, title)
 
 				tip.SetText("已匹配到: " + title+ ", 暂停监听")
 				status.SetText("暂停")
@@ -193,6 +208,7 @@ func listen() {
 				str += t+" "+title+"无货\n"
 			}
 		}
+
 		body.SetText(str)
 	}
 }
@@ -202,8 +218,15 @@ func openBrowser(args ...string) {
 	var url string
 	if len(args) > 0 {
 		params := strings.Split(args[0], ".")
-		url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+params[0]+
-			"&store="+params[0]+"&partNumber="+params[1]+"&plan=unlocked"
+
+		if strings.Contains(args[1], "pro") {
+			url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?quantity=1&anchor-store="+params[0]+
+				"&store="+params[0]+"&partNumber="+params[1]+"&plan=unlocked"
+		} else {
+			url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+params[0]+
+				"&store="+params[0]+"&partNumber="+params[1]+"&plan=unlocked"
+		}
+
 	} else {
 		url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability?iUP=N"
 	}
@@ -250,6 +273,7 @@ func stores() []string {
 
 	availability := "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/stores.json"
 	_, bd, errs := gorequest.New().Get(availability).End()
+
 	if len(errs) != 0 {
 		log.Fatalln(errs)
 	}
