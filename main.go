@@ -11,7 +11,6 @@ import (
 	"log"
 	"os"
 	"os/exec"
-	"path/filepath"
 	"runtime"
 	"strings"
 	"time"
@@ -148,7 +147,7 @@ func main() {
 				status.SetText("暂停")
 			}),
 			widget.NewButton("测试", func() {
-				go openBrowser()
+				go openBrowser("https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability?iUP=N")
 			}),
 			widget.NewButton("退出", func() {
 				a.Quit()
@@ -199,7 +198,7 @@ func listen() {
 			}
 
 			if value.Map()["contract"].Bool() && value.Map()["unlocked"].Bool() {
-				openBrowser(model, title)
+				openBrowser(caleURL(model, title))
 
 				tip.SetText("已匹配到: " + title+ ", 暂停监听")
 				status.SetText("暂停")
@@ -213,24 +212,31 @@ func listen() {
 	}
 }
 
-func openBrowser(args ...string) {
-	var err error
-	var url string
-	if len(args) > 0 {
-		params := strings.Split(args[0], ".")
+func caleURL(model string, title string)  string {
+	// e.g: [R389.MGL93CH/A] -> [R389 MGL93CH/A]
+	m := strings.Split(model, ".")
+	t := strings.Split(title, " ")
+	// e.g: [上海环贸 iapm iphone12pro 128gb 石墨色] -> [ iphone12pro 128gb 石墨色 ]
+	t = t[len(t) - 3:]
 
-		if strings.Contains(args[1], "pro") {
-			url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?quantity=1&anchor-store="+params[0]+
-				"&store="+params[0]+"&partNumber="+params[1]+"&plan=unlocked"
-		} else {
-			url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+params[0]+
-				"&store="+params[0]+"&partNumber="+params[1]+"&plan=unlocked"
-		}
-
-	} else {
-		url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability?iUP=N"
+	switch t[0] {
+	case "iphone12pro":
+		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?color="+t[2]+"&capacity="+t[1]+
+		"&quantity=1&anchor-store="+m[0]+"&store="+m[0]+"&partNumber="+m[1]+"&channel=&sourceID=&iUID=&iuToken=&iUP=N&appleCare=&rv=&path=&plan=unlocked"
+	case "iphone12":
+		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+m[0]+
+			"&store="+m[0]+"&partNumber="+m[1]+"&plan=unlocked"
+	case "iphone12promax":
+		return ""
+	case "iphone12mini":
+		return ""
+	default:
+		return ""
 	}
+}
 
+func openBrowser(url string) {
+	var err error
 	switch runtime.GOOS {
 	case "linux":
 		err = exec.Command("xdg-open", url).Start()
@@ -244,27 +250,6 @@ func openBrowser(args ...string) {
 	if err != nil {
 		log.Fatalln("自动打开网页失败，请自行手动操作")
 	}
-}
-
-func loadFont() {
-	//dir, err := os.Getwd()
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	//switch runtime.GOOS {
-	//case "linux":
-	//	path = "./zh-cn.ttf"
-	//case "windows":
-	//	path = "./zh-cn.ttf"
-	//case "darwin":
-	//	path = "./zh-cn.ttf"
-	//default:
-	//	path = "./zh-cn.ttf"
-	//}
-
-	_ = os.Setenv("FYNE_FONT", dir+"/zh-cn.ttf")
 }
 
 func stores() []string {
