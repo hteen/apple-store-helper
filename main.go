@@ -83,13 +83,10 @@ var selectModel string
 var listenStores map[string]string
 
 func main() {
-	// 本地测试时手动加载字体
-	// loadFont()
-
 	a := app.NewWithID("ip12")
 	// 打包时自动加载字体
 	a.Settings().SetTheme(&myTheme{})
-	w := a.NewWindow("iPhone12 Pro")
+	w := a.NewWindow("iPhone12|Mini|Pro|ProMax")
 	w.Resize(fyne.NewSize(610, 500))
 
 	body = widget.NewLabel("")
@@ -100,7 +97,7 @@ func main() {
 	listenStores = make(map[string]string)
 
 	w.SetContent(widget.NewVBox(
-		widget.NewLabel("1.首次运行请先点击测试按钮，确保能正确打开网页\n" +
+		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n" +
 			"2.选择门店和型号，点击添加按钮\n" +
 			"3.点击开始\n" +
 			"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
@@ -146,8 +143,11 @@ func main() {
 				isListen = false
 				status.SetText("暂停")
 			}),
-			widget.NewButton("测试", func() {
-				go openBrowser("https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability?iUP=N")
+			widget.NewButton("12注册码", func() {
+				go registerCode("iphone12")
+			}),
+			widget.NewButton("12Pro注册码", func() {
+				go registerCode("iphone12pro")
 			}),
 			widget.NewButton("退出", func() {
 				a.Quit()
@@ -212,23 +212,55 @@ func listen() {
 	}
 }
 
+// 帮助提前获取注册码
+func registerCode(model string){
+	tip.SetText("")
+
+	var url string
+	switch model {
+	case "iphone12":
+		url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/F/availability.json"
+	default:
+		url = "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/availability.json"
+	}
+
+	_, bd, errs := gorequest.New().Get(url).End()
+	if len(errs) != 0 {
+		log.Println(errs)
+		tip.SetText(errs[0].Error())
+	}
+	// 寻找任意一个有货门店
+	for store, items := range gjson.Get(bd, "stores").Map() {
+		for k,v := range items.Map(){
+			if v.Get("availability.contract").Bool() && v.Get("availability.unlocked").Bool() {
+				openBrowser(model2Url(model, store, k))
+				return
+			}
+
+			tip.SetText("所有门店无货，无法前往注册码页面")
+		}
+	}
+}
+
+// 型号对应预约地址
+func model2Url(model string, store string, partNumber string) string {
+	switch model {
+	case "iphone12", "iphone12mini":
+		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+store+
+			"&store="+store+"&partNumber="+partNumber+"&plan=unlocked"
+	default:
+		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?quantity=1&anchor-store="+store+
+			"&store="+store+"&partNumber="+partNumber+"&plan=unlocked"
+	}
+}
+
 func caleURL(model string, title string)  string {
 	// e.g: [R389.MGL93CH/A] -> [R389 MGL93CH/A]
 	m := strings.Split(model, ".")
 	t := strings.Split(title, " ")
 	// e.g: [上海环贸 iapm iphone12pro 128gb 石墨色] -> [ iphone12pro 128gb 石墨色 ]
 	t = t[len(t) - 3:]
-
-	switch t[0] {
-	case "iphone12pro", "iphone12promax":
-		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?color="+t[2]+"&capacity="+t[1]+
-		"&quantity=1&anchor-store="+m[0]+"&store="+m[0]+"&partNumber="+m[1]+"&channel=&sourceID=&iUID=&iuToken=&iUP=N&appleCare=&rv=&path=&plan=unlocked"
-	case "iphone12", "iphone12mini":
-		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+m[0]+
-			"&store="+m[0]+"&partNumber="+m[1]+"&plan=unlocked"
-	default:
-		return ""
-	}
+	return model2Url(t[0], m[0], m[1])
 }
 
 func openBrowser(url string) {
@@ -244,7 +276,7 @@ func openBrowser(url string) {
 		err = fmt.Errorf("unsupported platform")
 	}
 	if err != nil {
-		log.Fatalln("自动打开网页失败，请自行手动操作")
+		tip.SetText("打开网页失败，请自行手动操作\n"+url)
 	}
 }
 
