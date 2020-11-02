@@ -220,16 +220,12 @@ func caleURL(model string, title string)  string {
 	t = t[len(t) - 3:]
 
 	switch t[0] {
-	case "iphone12pro":
+	case "iphone12pro", "iphone12promax":
 		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/A?color="+t[2]+"&capacity="+t[1]+
 		"&quantity=1&anchor-store="+m[0]+"&store="+m[0]+"&partNumber="+m[1]+"&channel=&sourceID=&iUID=&iuToken=&iUP=N&appleCare=&rv=&path=&plan=unlocked"
-	case "iphone12":
+	case "iphone12", "iphone12mini":
 		return "https://reserve-prime.apple.com/CN/zh_CN/reserve/F?quantity=1&anchor-store="+m[0]+
 			"&store="+m[0]+"&partNumber="+m[1]+"&plan=unlocked"
-	case "iphone12promax":
-		return ""
-	case "iphone12mini":
-		return ""
 	default:
 		return ""
 	}
