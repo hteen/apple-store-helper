@@ -33,7 +33,7 @@ fyne package -os darwin
 
 # macos下打包其他平台
 go get github.com/lucor/fyne-cross/cmd/fyne-cross
-fyne-cross --targets=linux/amd64,windows/amd64 
+fyne-cross --targets=linux/amd64,windows/amd64,windows/386,darwin/amd64 
 ```
 
 ## 使用方法
