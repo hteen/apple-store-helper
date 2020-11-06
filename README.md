@@ -13,7 +13,7 @@
 * *助手可以直接进入预约步骤3，快人2步，后续步骤需要自己手动操作*
 * *提前登录*
 * *提前获取注册码，30min内可以复用，获取方式是找个冷门型号走到获取注册码步骤*
-* 经过测试12和12pro系列的注册码不能通用
+* *经过测试12各系列的注册码不能通用*
 
 
 ## 关于开发
@@ -32,8 +32,8 @@ go get fyne.io/fyne/cmd/fyne
 fyne package -os darwin
 
 # macos下打包其他平台
-go get github.com/lucor/fyne-cross/cmd/fyne-cross
-fyne-cross --targets=linux/amd64,windows/amd64,windows/386,darwin/amd64 
+go get github.com/fyne-io/fyne-cross
+fyne-cross windows
 ```
 
 ## 使用方法
