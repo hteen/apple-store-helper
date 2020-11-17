@@ -1,15 +1,17 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
+	"fyne.io/fyne/container"
+	"fyne.io/fyne/dialog"
 	"fyne.io/fyne/layout"
 	"fyne.io/fyne/widget"
 	"github.com/parnurzeal/gorequest"
 	"github.com/tidwall/gjson"
 	"log"
-	"os"
 	"os/exec"
 	"runtime"
 	"strings"
@@ -84,17 +86,23 @@ var models = []string{
 	"iphone12promax 512gb 海蓝色-MGCE3CH/A",
 }
 
-var selectQuantity string
+var selectQuantity = "1" // 默认一台
 var selectStore string
 var selectModel string
 var listenStores map[string]string
+var w fyne.Window
+
+// 地区，中国大陆: CN/zh_CN, 中国澳门: MO/zh_MO
+var area = "CN/zh_CN"
 
 func main() {
+	// 调试模式
+	//os.Setenv("FYNE_FONT", "./zh-cn.ttf")
 	a := app.NewWithID("ip12")
 	// 打包时自动加载字体
 	a.Settings().SetTheme(&myTheme{})
-	w := a.NewWindow("iPhone12|Mini|Pro|ProMax")
-	w.Resize(fyne.NewSize(750, 600))
+	w = a.NewWindow("iPhone12|Mini|Pro|ProMax")
+	w.Resize(fyne.NewSize(800, 600))
 
 	body = widget.NewLabel("")
 	tip = widget.NewLabel("请选择门店和型号")
@@ -105,17 +113,17 @@ func main() {
 	})
 	quantity.PlaceHolder ="预约台数"
 
-	stores := stores()
+	stores := getStores()
 
 	listenStores = make(map[string]string)
 
-	w.SetContent(widget.NewVBox(
+	w.SetContent(container.NewVBox(
 		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n" +
 			"2.选择门店和型号，点击添加按钮\n" +
 			"3.点击开始\n" +
 			"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
 		),
-		widget.NewHBox(
+		container.NewHBox(
 			widget.NewSelect(stores, func(b string) {
 				selectStore = b
 			}),
@@ -142,11 +150,11 @@ func main() {
 		tip,
 		body,
 		layout.NewSpacer(),
-		widget.NewHBox(
+		container.NewHBox(
 			quantity,
 			widget.NewButton("开始", func() {
 				if len(listenStores) < 1 {
-					tip.SetText("请添加要监听的门店和型号")
+					dialog.NewError(errors.New("请添加要监听的门店和型号"), w)
 					return
 				}
 
@@ -179,7 +187,6 @@ func main() {
 	))
 	go listen()
 	w.ShowAndRun()
-	_ = os.Unsetenv("FYNE_FONT")
 }
 
 func listen() {
@@ -196,7 +203,7 @@ func listen() {
 		for model, title := range listenStores {
 			md := title2model(title)
 			if sku[md] == "" {
-				skuUrl := "https://reserve-prime.apple.com/CN/zh_CN/reserve/"+modelCode[md]+"/availability.json"
+				skuUrl := "https://reserve-prime.apple.com/"+area+"/reserve/"+modelCode[md]+"/availability.json"
 				_, bd, _ := gorequest.New().Get(skuUrl).End()
 				sku[md] = bd
 			}
@@ -205,9 +212,9 @@ func listen() {
 			if value.Map()["contract"].Bool() && value.Map()["unlocked"].Bool() {
 				openBrowser(caleURL(model, title))
 
-				tip.SetText("已匹配到: " + title+ ", 暂停监听")
 				status.SetText("暂停")
 				isListen = false
+				dialog.NewInformation("匹配成功", "已匹配到: " + title+ ", 暂停监听", w)
 			} else {
 				str += t+" "+title+"无货\n"
 			}
@@ -219,14 +226,14 @@ func listen() {
 
 // 帮助提前获取注册码
 func registerCode(model string){
-	tip.SetText("")
-	url := "https://reserve-prime.apple.com/CN/zh_CN/reserve/"+modelCode[model]+"/availability.json"
+	url := "https://reserve-prime.apple.com/"+area+"/reserve/"+modelCode[model]+"/availability.json"
 
 	_, bd, errs := gorequest.New().Get(url).End()
 	if len(errs) != 0 {
-		log.Println(errs)
-		tip.SetText(errs[0].Error())
+		dialog.NewError(errs[0], w)
+		return
 	}
+
 	// 寻找任意一个有货门店
 	for store, items := range gjson.Get(bd, "stores").Map() {
 		for k,v := range items.Map(){
@@ -234,15 +241,15 @@ func registerCode(model string){
 				openBrowser(model2Url(model, store, k))
 				return
 			}
-
-			tip.SetText("所有门店无货，无法前往注册码页面")
 		}
 	}
+
+	dialog.NewError(errors.New("所有门店无货，无法前往注册码页面"), w)
 }
 
 // 型号对应预约地址
 func model2Url(model string, store string, partNumber string) string {
-	return "https://reserve-prime.apple.com/CN/zh_CN/reserve/"+modelCode[model]+"?quantity="+selectQuantity+"&anchor-store="+store+
+	return "https://reserve-prime.apple.com/"+area+"/reserve/"+modelCode[model]+"?quantity="+selectQuantity+"&anchor-store="+store+
 		"&store="+store+"&partNumber="+partNumber+"&plan=unlocked"
 }
 
@@ -271,15 +278,15 @@ func openBrowser(url string) {
 		err = fmt.Errorf("unsupported platform")
 	}
 	if err != nil {
-		tip.SetText("打开网页失败，请自行手动操作\n"+url)
+		dialog.NewError(errors.New("打开网页失败，请自行手动操作\n"+url), w)
 	}
 }
 
-func stores() []string {
+func getStores() []string {
 	// 门店列表
 	var stores []string
 
-	availability := "https://reserve-prime.apple.com/CN/zh_CN/reserve/A/stores.json"
+	availability := "https://reserve-prime.apple.com/"+area+"/reserve/A/stores.json"
 	_, bd, errs := gorequest.New().Get(availability).End()
 
 	if len(errs) != 0 {
