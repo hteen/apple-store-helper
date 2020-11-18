@@ -12,16 +12,20 @@ import (
 	"github.com/parnurzeal/gorequest"
 	"github.com/tidwall/gjson"
 	"log"
+	"net/url"
 	"os/exec"
 	"runtime"
 	"strings"
 	"time"
 )
 
+const VERSION = "1.0.5"
+
 var isListen = false
 var body *widget.Label
 var tip *widget.Label
 var status *widget.Label
+var versionWgt *widget.Hyperlink
 var modelCode = map[string]string{
 	"iphone12mini": "H",
 	"iphone12": "F",
@@ -206,11 +210,20 @@ func main() {
 	})
 	areaWgt.PlaceHolder ="地区选择，默认中国大陆"
 
+	releaseUrl, _ := url.Parse("https://github.com/hteen/apple-store-helper/releases")
+	versionWgt = widget.NewHyperlink("", releaseUrl)
+	go getLatestVersion()
+
 	w.SetContent(container.NewVBox(
-		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n" +
-			"2.选择门店和型号，点击添加按钮\n" +
-			"3.点击开始\n" +
-			"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
+		container.NewHBox(
+			widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n" +
+				"2.选择门店和型号，点击添加按钮\n" +
+				"3.点击开始\n" +
+				"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
+			),
+			layout.NewSpacer(),
+			widget.NewLabel("当前版本:"+VERSION),
+			versionWgt,
 		),
 		areaWgt,
 		container.NewHBox(
@@ -314,9 +327,7 @@ func listen() {
 
 // 帮助提前获取注册码
 func registerCode(model string){
-	url := "https://reserve-prime.apple.com/"+area+"/reserve/"+modelCode[model]+"/availability.json"
-
-	_, bd, errs := gorequest.New().Get(url).End()
+	_, bd, errs := gorequest.New().Get("https://reserve-prime.apple.com/"+area+"/reserve/"+modelCode[model]+"/availability.json").End()
 	if len(errs) != 0 {
 		dialog.NewError(errs[0], w)
 		return
@@ -408,4 +419,15 @@ func getValues(slice map[string]string) []string {
 	}
 
 	return values
+}
+
+// 版本查询
+func getLatestVersion() {
+	_, bd, _ := gorequest.New().Get("https://api.github.com/repos/hteen/apple-store-helper/releases").End()
+	latest := gjson.Get(bd, "0.tag_name").String()
+	if latest != "" {
+		versionWgt.SetText("最新:"+latest)
+	} else {
+		versionWgt.SetText("最新版查询失败")
+	}
 }
