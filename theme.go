@@ -10,8 +10,8 @@ import (
 type myTheme struct{}
 
 // return bundled font resource
-func (myTheme) TextFont() fyne.Resource     { return resourceZhCnTtf }
-func (myTheme) TextBoldFont() fyne.Resource { return resourceZhCnTtf }
+func (myTheme) TextFont() fyne.Resource     { return resourceFzhtkTtf }
+func (myTheme) TextBoldFont() fyne.Resource { return resourceFzhtkTtf }
 
 func (myTheme) BackgroundColor() color.Color      { return theme.DarkTheme().BackgroundColor() }
 func (myTheme) ButtonColor() color.Color          { return theme.DarkTheme().ButtonColor() }

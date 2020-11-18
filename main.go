@@ -29,63 +29,120 @@ var modelCode = map[string]string{
 	"iphone12promax": "G",
 }
 
-var models = []string{
-	"iphone12mini 64gb 黑色-MG7Y3CH/A",
-	"iphone12mini 64gb 白色-MG803CH/A",
-	"iphone12mini 64gb 蓝色-MG823CH/A",
-	"iphone12mini 64gb 绿色-MG833CH/A",
-	"iphone12mini 64gb 红色-MG813CH/A",
-	"iphone12mini 128gb 黑色-MG843CH/A",
-	"iphone12mini 128gb 白色-MG853CH/A",
-	"iphone12mini 128gb 蓝色-MG873CH/A",
-	"iphone12mini 128gb 绿色-MG883CH/A",
-	"iphone12mini 128gb 红色-MG863CH/A",
-	"iphone12mini 256gb 黑色-MG893CH/A",
-	"iphone12mini 256gb 白色-MG8A3CH/A",
-	"iphone12mini 256gb 蓝色-MG8D3CH/A",
-	"iphone12mini 256gb 绿色-MG8E3CH/A",
-	"iphone12mini 256gb 红色-MG8C3CH/A",
-	"iphone12 64gb 黑色-MGGM3CH/A",
-	"iphone12 64gb 白色-MGGN3CH/A",
-	"iphone12 64gb 蓝色-MGGQ3CH/A",
-	"iphone12 64gb 绿色-MGGT3CH/A",
-	"iphone12 64gb 红色-MGGP3CH/A",
-	"iphone12 128gb 黑色-MGGU3CH/A",
-	"iphone12 128gb 白色-MGGV3CH/A",
-	"iphone12 128gb 蓝色-MGGX3CH/A",
-	"iphone12 128gb 绿色-MGGY3CH/A",
-	"iphone12 128gb 红色-MGGW3CH/A",
-	"iphone12 256gb 黑色-MGH13CH/A",
-	"iphone12 256gb 白色-MGH23CH/A",
-	"iphone12 256gb 蓝色-MGH43CH/A",
-	"iphone12 256gb 绿色-MGH53CH/A",
-	"iphone12 256gb 红色-MGH33CH/A",
-	"iphone12pro 128gb 石墨色-MGL93CH/A",
-	"iphone12pro 128gb 银色-MGLA3CH/A",
-	"iphone12pro 128gb 金色-MGLC3CH/A",
-	"iphone12pro 128gb 海蓝色-MGLD3CH/A",
-	"iphone12pro 256gb 石墨色-MGLE3CH/A",
-	"iphone12pro 256gb 银色-MGLF3CH/A",
-	"iphone12pro 256gb 金色-MGLG3CH/A",
-	"iphone12pro 256gb 海蓝色-MGLH3CH/A",
-	"iphone12pro 512gb 石墨色-MGLJ3CH/A",
-	"iphone12pro 512gb 银色-MGLK3CH/A",
-	"iphone12pro 512gb 金色-MGLL3CH/A",
-	"iphone12pro 512gb 海蓝色-MGLM3CH/A",
-	"iphone12promax 128gb 石墨色-MGC03CH/A",
-	"iphone12promax 128gb 银色-MGC13CH/A",
-	"iphone12promax 128gb 金色-MGC23CH/A",
-	"iphone12promax 128gb 海蓝色-MGC33CH/A",
-	"iphone12promax 256gb 石墨色-MGC43CH/A",
-	"iphone12promax 256gb 银色-MGC53CH/A",
-	"iphone12promax 256gb 金色-MGC63CH/A",
-	"iphone12promax 256gb 海蓝色-MGC73CH/A",
-	"iphone12promax 512gb 石墨色-MGC93CH/A",
-	"iphone12promax 512gb 银色-MGCA3CH/A",
-	"iphone12promax 512gb 金色-MGCC3CH/A",
-	"iphone12promax 512gb 海蓝色-MGCE3CH/A",
+var models = map[string][]string{
+	"CN/zh_CN": {
+		"iphone12mini 64gb 黑色-MG7Y3CH/A",
+		"iphone12mini 64gb 白色-MG803CH/A",
+		"iphone12mini 64gb 蓝色-MG823CH/A",
+		"iphone12mini 64gb 绿色-MG833CH/A",
+		"iphone12mini 64gb 红色-MG813CH/A",
+		"iphone12mini 128gb 黑色-MG843CH/A",
+		"iphone12mini 128gb 白色-MG853CH/A",
+		"iphone12mini 128gb 蓝色-MG873CH/A",
+		"iphone12mini 128gb 绿色-MG883CH/A",
+		"iphone12mini 128gb 红色-MG863CH/A",
+		"iphone12mini 256gb 黑色-MG893CH/A",
+		"iphone12mini 256gb 白色-MG8A3CH/A",
+		"iphone12mini 256gb 蓝色-MG8D3CH/A",
+		"iphone12mini 256gb 绿色-MG8E3CH/A",
+		"iphone12mini 256gb 红色-MG8C3CH/A",
+		"iphone12 64gb 黑色-MGGM3CH/A",
+		"iphone12 64gb 白色-MGGN3CH/A",
+		"iphone12 64gb 蓝色-MGGQ3CH/A",
+		"iphone12 64gb 绿色-MGGT3CH/A",
+		"iphone12 64gb 红色-MGGP3CH/A",
+		"iphone12 128gb 黑色-MGGU3CH/A",
+		"iphone12 128gb 白色-MGGV3CH/A",
+		"iphone12 128gb 蓝色-MGGX3CH/A",
+		"iphone12 128gb 绿色-MGGY3CH/A",
+		"iphone12 128gb 红色-MGGW3CH/A",
+		"iphone12 256gb 黑色-MGH13CH/A",
+		"iphone12 256gb 白色-MGH23CH/A",
+		"iphone12 256gb 蓝色-MGH43CH/A",
+		"iphone12 256gb 绿色-MGH53CH/A",
+		"iphone12 256gb 红色-MGH33CH/A",
+		"iphone12pro 128gb 石墨色-MGL93CH/A",
+		"iphone12pro 128gb 银色-MGLA3CH/A",
+		"iphone12pro 128gb 金色-MGLC3CH/A",
+		"iphone12pro 128gb 海蓝色-MGLD3CH/A",
+		"iphone12pro 256gb 石墨色-MGLE3CH/A",
+		"iphone12pro 256gb 银色-MGLF3CH/A",
+		"iphone12pro 256gb 金色-MGLG3CH/A",
+		"iphone12pro 256gb 海蓝色-MGLH3CH/A",
+		"iphone12pro 512gb 石墨色-MGLJ3CH/A",
+		"iphone12pro 512gb 银色-MGLK3CH/A",
+		"iphone12pro 512gb 金色-MGLL3CH/A",
+		"iphone12pro 512gb 海蓝色-MGLM3CH/A",
+		"iphone12promax 128gb 石墨色-MGC03CH/A",
+		"iphone12promax 128gb 银色-MGC13CH/A",
+		"iphone12promax 128gb 金色-MGC23CH/A",
+		"iphone12promax 128gb 海蓝色-MGC33CH/A",
+		"iphone12promax 256gb 石墨色-MGC43CH/A",
+		"iphone12promax 256gb 银色-MGC53CH/A",
+		"iphone12promax 256gb 金色-MGC63CH/A",
+		"iphone12promax 256gb 海蓝色-MGC73CH/A",
+		"iphone12promax 512gb 石墨色-MGC93CH/A",
+		"iphone12promax 512gb 银色-MGCA3CH/A",
+		"iphone12promax 512gb 金色-MGCC3CH/A",
+		"iphone12promax 512gb 海蓝色-MGCE3CH/A",
+	},
+	"MO/zh_MO": {
+		"iphone12mini 64gb 黑色-MG7Y3ZA/A",
+		"iphone12mini 64gb 白色-MG803ZA/A",
+		"iphone12mini 64gb 藍色-MG823ZA/A",
+		"iphone12mini 64gb 綠色-MG833ZA/A",
+		"iphone12mini 64gb (PRODUCT)RED-MG813ZA/A",
+		"iphone12mini 128gb 黑色-MG843ZA/A",
+		"iphone12mini 128gb 白色-MG853ZA/A",
+		"iphone12mini 128gb 藍色-MG873ZA/A",
+		"iphone12mini 128gb 綠色-MG883ZA/A",
+		"iphone12mini 128gb (PRODUCT)RED-MG863ZA/A",
+		"iphone12mini 256gb 黑色-MG893ZA/A",
+		"iphone12mini 256gb 白色-MG8A3ZA/A",
+		"iphone12mini 256gb 藍色-MG8D3ZA/A",
+		"iphone12mini 256gb 綠色-MG8E3ZA/A",
+		"iphone12mini 256gb (PRODUCT)RED-MG8C3ZA/A",
+		"iphone12 64gb 黑色-MGGM3ZA/A",
+		"iphone12 64gb 白色-MGGN3ZA/A",
+		"iphone12 64gb 藍色-MGGQ3ZA/A",
+		"iphone12 64gb 綠色-MGGT3ZA/A",
+		"iphone12 64gb (PRODUCT)RED-MGGP3ZA/A",
+		"iphone12 128gb 黑色-MGGU3ZA/A",
+		"iphone12 128gb 白色-MGGV3ZA/A",
+		"iphone12 128gb 藍色-MGGX3ZA/A",
+		"iphone12 128gb 綠色-MGGY3ZA/A",
+		"iphone12 128gb (PRODUCT)RED-MGGW3ZA/A",
+		"iphone12 256gb 黑色-MGH13ZA/A",
+		"iphone12 256gb 白色-MGH23ZA/A",
+		"iphone12 256gb 藍色-MGH43ZA/A",
+		"iphone12 256gb 綠色-MGH53ZA/A",
+		"iphone12 256gb (PRODUCT)RED-MGH33ZA/A",
+		"iphone12pro 128gb 石墨色-MGL93ZA/A",
+		"iphone12pro 128gb 銀色-MGLA3ZA/A",
+		"iphone12pro 128gb 金色-MGLC3ZA/A",
+		"iphone12pro 128gb 太平洋藍色-MGLD3ZA/A",
+		"iphone12pro 256gb 石墨色-MGLE3ZA/A",
+		"iphone12pro 256gb 銀色-MGLF3ZA/A",
+		"iphone12pro 256gb 金色-MGLG3ZA/A",
+		"iphone12pro 256gb 太平洋藍色-MGLH3ZA/A",
+		"iphone12pro 512gb 石墨色-MGLJ3ZA/A",
+		"iphone12pro 512gb 銀色-MGLK3ZA/A",
+		"iphone12pro 512gb 金色-MGLL3ZA/A",
+		"iphone12pro 512gb 太平洋藍色-MGLM3ZA/A",
+		"iphone12promax 128gb 石墨色-MGC03ZA/A",
+		"iphone12promax 128gb 銀色-MGC13ZA/A",
+		"iphone12promax 128gb 金色-MGC23ZA/A",
+		"iphone12promax 128gb 太平洋藍色-MGC33ZA/A",
+		"iphone12promax 256gb 石墨色-MGC43ZA/A",
+		"iphone12promax 256gb 銀色-MGC53ZA/A",
+		"iphone12promax 256gb 金色-MGC63ZA/A",
+		"iphone12promax 256gb 太平洋藍色-MGC73ZA/A",
+		"iphone12promax 512gb 石墨色-MGC93ZA/A",
+		"iphone12promax 512gb 銀色-MGCA3ZA/A",
+		"iphone12promax 512gb 金色-MGCC3ZA/A",
+		"iphone12promax 512gb 太平洋藍色-MGCE3ZA/A",
+	},
 }
-
 var selectQuantity = "1" // 默认一台
 var selectStore string
 var selectModel string
@@ -97,7 +154,7 @@ var area = "CN/zh_CN"
 
 func main() {
 	// 调试模式
-	//os.Setenv("FYNE_FONT", "./zh-cn.ttf")
+	//os.Setenv("FYNE_FONT", "./fzhtk.ttf")
 	a := app.NewWithID("ip12")
 	// 打包时自动加载字体
 	a.Settings().SetTheme(&myTheme{})
@@ -107,15 +164,47 @@ func main() {
 	body = widget.NewLabel("")
 	tip = widget.NewLabel("请选择门店和型号")
 	status = widget.NewLabel("暂停")
+	listenStores = make(map[string]string)
+	stores := getStores()
 	// 单次抢购数量，最多2
-	quantity := widget.NewSelect([]string{"1", "2"}, func(b string) {
+	quantityWgt := widget.NewSelect([]string{"1", "2"}, func(b string) {
 		selectQuantity = b
 	})
-	quantity.PlaceHolder ="预约台数"
+	quantityWgt.PlaceHolder ="预约台数"
+	// 门店选择组件
+	storesWgt := widget.NewSelect(stores, func(b string) {
+		selectStore = b
+	})
+	//
+	modelsWgt := widget.NewSelect(models[area], func(b string) {
+		selectModel = b
+	})
+	// 地区选择组件
+	areaWgt := widget.NewSelect([]string{"中国大陆", "中国澳门"}, func(b string) {
+		area = "CN/zh_CN"
 
-	stores := getStores()
+		if b == "中国澳门" {
+			area = "MO/zh_MO"
+		}
+		// 重置门店
+		stores = getStores()
+		storesWgt.Options = stores
+		storesWgt.ClearSelected()
+		// 重置型号
+		modelsWgt.Options = models[area]
+		modelsWgt.ClearSelected()
+		quantityWgt.ClearSelected()
 
-	listenStores = make(map[string]string)
+		// 重置已有变量
+		listenStores = map[string]string{}
+		selectStore = ""
+		selectModel = ""
+		selectQuantity = "1"
+		isListen = false
+		body.SetText("")
+		status.SetText("暂停")
+	})
+	areaWgt.PlaceHolder ="地区选择，默认中国大陆"
 
 	w.SetContent(container.NewVBox(
 		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n" +
@@ -123,13 +212,10 @@ func main() {
 			"3.点击开始\n" +
 			"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
 		),
+		areaWgt,
 		container.NewHBox(
-			widget.NewSelect(stores, func(b string) {
-				selectStore = b
-			}),
-			widget.NewSelect(models, func(b string) {
-				selectModel = b
-			}),
+			storesWgt,
+			modelsWgt,
 			widget.NewButton("添加", func() {
 				if selectModel != "" && selectStore != "" {
 					md := strings.Split(selectStore, "-")[0]+"."+strings.Split(selectModel, "-")[1]
@@ -145,13 +231,15 @@ func main() {
 			widget.NewButton("清空", func() {
 				listenStores = map[string]string{}
 				body.SetText("")
+				isListen = false
+				status.SetText("暂停")
 			}),
 		),
 		tip,
 		body,
 		layout.NewSpacer(),
 		container.NewHBox(
-			quantity,
+			quantityWgt,
 			widget.NewButton("开始", func() {
 				if len(listenStores) < 1 {
 					dialog.NewError(errors.New("请添加要监听的门店和型号"), w)
