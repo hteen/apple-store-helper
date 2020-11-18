@@ -423,7 +423,7 @@ func getValues(slice map[string]string) []string {
 
 // 版本查询
 func getLatestVersion() {
-	_, bd, _ := gorequest.New().Get("https://api.github.com/repos/hteen/apple-store-helper/releases").End()
+	_, bd, _ := gorequest.New().Get("https://api.github.com/repos/hteen/apple-store-helper/releases?per_page=1").End()
 	latest := gjson.Get(bd, "0.tag_name").String()
 	if latest != "" {
 		versionWgt.SetText("最新:"+latest)
