@@ -27,11 +27,11 @@ func (s *storeService) ByAreaCode(areaCode string) []model.Store {
 	if len(errs) != 0 {
 		panic(errs[0])
 	}
-	
+
 	for _, store := range gjson.Get(bd, "stores").Array() {
 		s.stores[areaCode] = append(s.stores[areaCode], model.Store{
 			StoreNumber:   store.Get("storeNumber").String(),
-			CityStoreName: store.Get("city").String() + store.Get("storeName").String(),
+			CityStoreName: store.Get("city").String() + "-" + store.Get("storeName").String(),
 		})
 	}
 
@@ -45,7 +45,7 @@ func (s *storeService) ByAreaTitleForOptions(areaTitle string) []string {
 
 func (s *storeService) GetStore(areaTitle string, storeTitle string) model.Store {
 	code := Area.Title2Code(areaTitle)
-	
+
 	return funk.Find(s.stores[code], func(x model.Store) bool {
 		return x.CityStoreName == storeTitle
 	}).(model.Store)
