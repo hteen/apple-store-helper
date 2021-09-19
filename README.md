@@ -1,5 +1,15 @@
 # Apple Store 预约助手
-起因是想购买iPhone12Pro，又懒得一直守着官网，然后顺便学习 GUI框架 [fyne](https://github.com/fyne-io/fyne)
+
+## iPhone13系列
+重构, 升级 [fyne](https://github.com/fyne-io/fyne) 至 2.0, 写起来的确比 1.0 舒服得多
+
+#### 注意
+* 截止今日(2021-09-19)还无法预约, 所以13系列未做实际测试
+* 库存接口已经有了(如果后面Apple不改的话)
+* 目前仅有中国大陆, 澳门暂时没库存接口(后面有了再更新)
+* 库存查询间隔由 1秒 调整为 500毫秒
+
+- - -
 
 ## 正常预约步骤
 1. 进入商品预购页面
@@ -22,7 +32,7 @@
 
 ### 运行
 ```shell script
-go run *.go
+go run main.go
 ```
 
 ### 打包
