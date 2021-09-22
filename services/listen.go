@@ -168,7 +168,6 @@ func (s *listenService) RegisterCode(productType string) {
 		}
 	}
 
-	log.Println("asdasdasd")
 	dialog.ShowError(errors.New("所有门店无货，无法前往注册码页面"), s.Window)
 }
 
