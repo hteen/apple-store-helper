@@ -12,7 +12,6 @@ import (
 	"github.com/parnurzeal/gorequest"
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
-	"log"
 	"os/exec"
 	"runtime"
 	"time"
