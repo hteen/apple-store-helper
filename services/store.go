@@ -5,6 +5,7 @@ import (
 	"github.com/parnurzeal/gorequest"
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
+	"sort"
 )
 
 var Store = storeService{
@@ -40,7 +41,9 @@ func (s *storeService) ByAreaCode(areaCode string) []model.Store {
 
 func (s *storeService) ByAreaTitleForOptions(areaTitle string) []string {
 	code := Area.Title2Code(areaTitle)
-	return funk.Get(s.ByAreaCode(code), "CityStoreName").([]string)
+	areas := funk.Get(s.ByAreaCode(code), "CityStoreName").([]string)
+	sort.Strings(areas)
+	return areas
 }
 
 func (s *storeService) GetStore(areaTitle string, storeTitle string) model.Store {
