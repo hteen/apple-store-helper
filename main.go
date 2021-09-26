@@ -43,10 +43,9 @@ func main() {
 	areaWidget.Horizontal = true
 
 	w.SetContent(container.NewVBox(
-		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n"+
-			"2.选择门店和型号，点击添加按钮\n"+
-			"3.点击开始\n"+
-			"4.匹配到之后会直接进入门店预购页面，输入注册码选择预约时间即可",
+		widget.NewLabel("1.选择门店和型号，点击添加按钮\n"+
+			"2.点击开始\n"+
+			"3.匹配到之后会直接进入产品预购页面，选择预约门店和时间",
 		),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择地区:"), areaWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择门店:"), storeWidget),
