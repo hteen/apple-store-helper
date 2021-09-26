@@ -42,8 +42,6 @@ func main() {
 	areaWidget.SetSelected(defaultArea)
 	areaWidget.Horizontal = true
 
-	services.Listen.Quantity.SetSelected("1")
-
 	w.SetContent(container.NewVBox(
 		widget.NewLabel("1.首次运行请先获取Apple注册码，确保能正确打开网页\n"+
 			"2.选择门店和型号，点击添加按钮\n"+
@@ -68,8 +66,6 @@ func main() {
 				}),
 			),
 			container.NewHBox(
-				container.NewCenter(widget.NewLabel("预购数量:")),
-				services.Listen.Quantity,
 				widget.NewButton("开始", func() {
 					services.Listen.Status.Set(services.Running)
 				}),
@@ -83,12 +79,6 @@ func main() {
 		services.Listen.Logs,
 		layout.NewSpacer(),
 		container.NewHBox(
-			widget.NewButton("13mini/13 注册码", func() {
-				go services.Listen.RegisterCode("iphone13")
-			}),
-			widget.NewButton("13p/13pm 注册码", func() {
-				go services.Listen.RegisterCode("iphone13pro")
-			}),
 			layout.NewSpacer(),
 			widget.NewLabel("version: "+common.VERSION),
 		),

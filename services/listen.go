@@ -31,7 +31,6 @@ var Listen = listenService{
 	Status:   binding.NewString(),
 	Area:     model.Areas[0],
 	Logs:     widget.NewLabel(""),
-	Quantity: widget.NewSelect([]string{"1", "2"}, nil),
 }
 
 type listenService struct {
@@ -40,7 +39,6 @@ type listenService struct {
 	Area     model.Area
 	Window   fyne.Window
 	Logs     *widget.Label
-	Quantity *widget.Select
 }
 
 type ListenItem struct {
@@ -111,7 +109,7 @@ func (s *listenService) Run() {
 
 					if status {
 						s.UpdateStatus(key, StatusInStock)
-						s.openBrowser(s.model2Url(item.Product.Type, item.Store.StoreNumber, item.Product.Code))
+						s.openBrowser(s.model2Url(item.Product.Type, item.Product.Code))
 						dialog.ShowInformation("匹配成功", fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title), s.Window)
 					} else {
 						s.UpdateStatus(key, StatusOutStock)
@@ -153,32 +151,20 @@ func (s *listenService) getSkus() map[string]bool {
 	return skus
 }
 
-// RegisterCode 帮助提前获取注册码
-func (s *listenService) RegisterCode(productType string) {
-	stores := s.getSkuByCode(model.TypeCode[productType])
-
-	// 寻找任意一个有货门店
-	for store, items := range stores.Map() {
-		for k, v := range items.Map() {
-			if v.Get("availability.contract").Bool() && v.Get("availability.unlocked").Bool() {
-				s.openBrowser(s.model2Url(productType, store, k))
-				return
-			}
-		}
+// 型号对应预约地址
+func (s *listenService) model2Url(productType string, partNumber string) string {
+	// https://www.apple.com.cn/shop/buy-iphone/iphone-13/MLE73CH/A
+	var t string
+	switch productType {
+	case "iphone13promax", "iphone13pro":
+		t = "iphone-13-pro"
+	case "iphone13mini", "iphone13":
+		t = "iphone-13"
 	}
 
-	dialog.ShowError(errors.New("所有门店无货，无法前往注册码页面"), s.Window)
-}
-
-// 型号对应预约地址
-func (s *listenService) model2Url(productType string, store string, partNumber string) string {
 	return fmt.Sprintf(
-		"https://reserve-prime.apple.com/%s/reserve/%s?quantity=%s&anchor-store=%s&store=%s&partNumber=%s&plan=unlocked",
-		s.Area.Code,
-		model.TypeCode[productType],
-		s.Quantity.Selected,
-		store,
-		store,
+		"https://www.apple.com.cn/shop/buy-iphone/%s/%s",
+		t,
 		partNumber,
 	)
 }
