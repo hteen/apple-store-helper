@@ -12,6 +12,7 @@ import (
 	"github.com/parnurzeal/gorequest"
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
+	"log"
 	"os/exec"
 	"runtime"
 	"time"
@@ -52,7 +53,7 @@ func (s *listenService) Add(areaTitle string, storeTitle string, productTitle st
 
 	store := Store.GetStore(areaTitle, storeTitle)
 	product := Product.GetProduct(areaTitle, productTitle)
-
+	log.Println(store, product)
 	uniqKey := store.StoreNumber + "." + product.Code
 
 	if s.items[uniqKey].Store.StoreNumber == "" {

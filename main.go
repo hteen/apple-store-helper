@@ -11,9 +11,37 @@ import (
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
+	"github.com/thoas/go-funk"
+	"log"
 )
 
 func main() {
+	/*
+	香港地区
+	https://www.apple.com/hk/shop/fulfillment-messages?pl=true&parts.0=MLT83ZA/A&location=hongkong
+	
+	国内
+	https://www.apple.com.cn/shop/fulfillment-messages?pl=true&parts.0=MLDG3CH/A&location=重庆 重庆
+	https://www.apple.com/cn/shop/fulfillment-messages?pl=true&parts.0=MLDG3CH/A&location=重庆 重庆
+	
+	所有门店
+	https://www.apple.com.cn/rsp-web/store-list?locale=zh_CN
+	
+	https://www.apple.com/rsp-web/store-list?locale=zh_CN
+	https://www.apple.com/rsp-web/store-list?locale=zh_HK
+	https://www.apple.com/rsp-web/store-list?locale=zh_MO
+	https://www.apple.com/rsp-web/store-list?locale=zh_TW
+	
+	*/
+	log.Fatalln(funk.Get(services.Area.ProductsByCode("zh_CN"), "Code"))
+	//parts := []string{
+	//	"MLDR3CH/A",
+	//	"MLDG3CH/A",
+	//}
+	//services.Product.GetProductReserve("cn", "重庆 重庆", []string{"R573"}, parts)
+	////services.Product.GetProductReserve("hk", "香港", []string{"MLT83ZA/A"})
+	//
+	//log.Fatalln(1)
 
 	a := app.NewWithID("ip13")
 	a.Settings().SetTheme(&theme.MyTheme{})

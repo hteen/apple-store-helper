@@ -10,10 +10,10 @@ var Area = areaService{}
 
 type areaService struct{}
 
-func (s *areaService) ProductsByCode(code string) []model.Product {
+func (s *areaService) ProductsByCode(locale string) []model.Product {
 
 	area := funk.Find(model.Areas, func(x model.Area) bool {
-		return x.Code == code
+		return x.Locale == locale
 	}).(model.Area)
 
 	var products []model.Product
@@ -31,14 +31,6 @@ func (s *areaService) ProductsByCode(code string) []model.Product {
 
 func (s *areaService) ForOptions() []string {
 	return funk.Get(model.Areas, "Title").([]string)
-}
-
-func (s *areaService) Title2Code(title string) string {
-	area := funk.Find(model.Areas, func(x model.Area) bool {
-		return x.Title == title
-	}).(model.Area)
-
-	return area.Code
 }
 
 func (s *areaService) GetArea(title string) model.Area {
