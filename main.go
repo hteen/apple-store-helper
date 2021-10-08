@@ -24,6 +24,9 @@ func main() {
 	https://www.apple.com.cn/shop/fulfillment-messages?pl=true&parts.0=MLDG3CH/A&location=重庆 重庆
 	https://www.apple.com/cn/shop/fulfillment-messages?pl=true&parts.0=MLDG3CH/A&location=重庆 重庆
 	
+	门店库存
+	https://www.apple.com.cn/shop/fulfillment-messages?little=true&mt=regular&parts.0=MLDG3CH/A&store=R476
+	
 	所有门店
 	https://www.apple.com.cn/rsp-web/store-list?locale=zh_CN
 	
