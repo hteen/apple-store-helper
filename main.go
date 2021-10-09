@@ -4,6 +4,7 @@ import (
 	"apple-store-helper/common"
 	"apple-store-helper/services"
 	"apple-store-helper/theme"
+	"apple-store-helper/view"
 	"errors"
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -11,13 +12,19 @@ import (
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
+	"github.com/faiface/beep"
+	"github.com/faiface/beep/speaker"
+	"time"
 )
 
 func main() {
+	// 初始 mp3 播放器
+	SampleRate := beep.SampleRate(44100)
+	speaker.Init(SampleRate, SampleRate.N(time.Second/10))
 
-	a := app.NewWithID("ip13")
-	a.Settings().SetTheme(&theme.MyTheme{})
-	w := a.NewWindow("iPhone13|Mini|Pro|ProMax")
+	view.App = app.NewWithID("ip13")
+	view.App.Settings().SetTheme(&theme.MyTheme{})
+	view.Window = view.App.NewWindow("iPhone13|Mini|Pro|ProMax")
 
 	defaultArea := services.Listen.Area.Title
 
@@ -38,15 +45,17 @@ func main() {
 		productWidget.ClearSelected()
 
 		services.Listen.Area = services.Area.GetArea(value)
+		services.Listen.Clean()
 	})
 	areaWidget.SetSelected(defaultArea)
 	areaWidget.Horizontal = true
+	help := `1. 提前将需要购买的型号加入购物车，检测有货会打开购物车页面，需要在购物车页面手动选择门
+2. 选择门店和型号，点击 添加 按钮
+3. 点击 开始
+`
 
-	w.SetContent(container.NewVBox(
-		widget.NewLabel("1.选择门店和型号，点击添加按钮\n"+
-			"2.点击开始\n"+
-			"3.匹配到之后会直接进入产品预购页面，选择预约门店和时间",
-		),
+	view.Window.SetContent(container.NewVBox(
+		widget.NewLabel(help),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择地区:"), areaWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择门店:"), storeWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择型号:"), productWidget),
@@ -55,13 +64,16 @@ func main() {
 			container.NewHBox(
 				widget.NewButton("添加", func() {
 					if storeWidget.Selected == "" || productWidget.Selected == "" {
-						dialog.ShowError(errors.New("请选择门店和型号"), w)
+						dialog.ShowError(errors.New("请选择门店和型号"), view.Window)
 					} else {
 						services.Listen.Add(areaWidget.Selected, storeWidget.Selected, productWidget.Selected)
 					}
 				}),
 				widget.NewButton("清空", func() {
 					services.Listen.Clean()
+				}),
+				widget.NewButton("试听(有货提示音)", func() {
+					go services.Listen.AlertMp3()
 				}),
 			),
 			container.NewHBox(
@@ -83,8 +95,7 @@ func main() {
 		),
 	))
 
-	w.Resize(fyne.NewSize(1000, 800))
+	view.Window.Resize(fyne.NewSize(1000, 800))
 	services.Listen.Run()
-	services.Listen.Window = w
-	w.ShowAndRun()
+	view.Window.ShowAndRun()
 }

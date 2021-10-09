@@ -26,3 +26,7 @@ func (*MyTheme) Icon(n fyne.ThemeIconName) fyne.Resource {
 func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
     return theme.DefaultTheme().Size(n)
 }
+
+func Mp3() fyne.Resource {
+    return resource1Mp3
+}

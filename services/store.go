@@ -10,38 +10,59 @@ import (
 
 var Store = storeService{
 	stores: map[string][]model.Store{},
+	storeListData: "",
 }
 
 type storeService struct {
 	stores map[string][]model.Store
+	storeListData string
 }
 
-func (s *storeService) ByAreaCode(areaCode string) []model.Store {
+func (s *storeService) ByArea(area model.Area) []model.Store {
 
-	if len(s.stores[areaCode]) > 0 {
-		return s.stores[areaCode]
+	if len(s.stores[area.Locale]) > 0 {
+		return s.stores[area.Locale]
+	}
+	
+	if s.storeListData == "" {
+		availability := "https://www.apple.com/rsp-web/store-list?locale=zh_CN"
+		_, bd, errs := gorequest.New().Get(availability).End()
+		
+		if len(errs) != 0 {
+			panic(errs[0])
+		}
+		
+		s.storeListData = bd
 	}
 
-	availability := "https://reserve-prime.apple.com/" + areaCode + "/reserve/A/stores.json"
-	_, bd, errs := gorequest.New().Get(availability).End()
-
-	if len(errs) != 0 {
-		panic(errs[0])
+	for _, list := range gjson.Get(s.storeListData, "storeListData").Array() {
+		if list.Get("locale").String() == area.Locale {
+			if list.Get("state").Exists() {
+				for _, state := range list.Get("state").Array() {
+					for _, store := range state.Get("store").Array() {
+						s.stores[area.Locale] = append(s.stores[area.Locale], model.Store{
+							StoreNumber:   store.Get("id").String(),
+							CityStoreName: store.Get("address.stateName").String() + "-" + store.Get("name").String(),
+						})
+					}
+				}
+			} else {
+				for _, store := range list.Get("store").Array() {
+					s.stores[area.Locale] = append(s.stores[area.Locale], model.Store{
+						StoreNumber:   store.Get("id").String(),
+						CityStoreName: store.Get("address.city").String() + "-" + store.Get("name").String(),
+					})
+				}
+			}
+		}
 	}
 
-	for _, store := range gjson.Get(bd, "stores").Array() {
-		s.stores[areaCode] = append(s.stores[areaCode], model.Store{
-			StoreNumber:   store.Get("storeNumber").String(),
-			CityStoreName: store.Get("city").String() + "-" + store.Get("storeName").String(),
-		})
-	}
-
-	return s.stores[areaCode]
+	return s.stores[area.Locale]
 }
 
 func (s *storeService) ByAreaTitleForOptions(areaTitle string) []string {
-	code := Area.Title2Code(areaTitle)
-	areas := funk.Get(s.ByAreaCode(code), "CityStoreName").([]string)
+	area := Area.GetArea(areaTitle)
+	areas := funk.Get(s.ByArea(area), "CityStoreName").([]string)
 	sort.Strings(areas)
 	return areas
 }
