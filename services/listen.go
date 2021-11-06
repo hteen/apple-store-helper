@@ -5,11 +5,13 @@ import (
     "apple-store-helper/theme"
     "apple-store-helper/view"
     "bytes"
+    "errors"
     "fmt"
     "fyne.io/fyne/v2"
     "fyne.io/fyne/v2/data/binding"
     "fyne.io/fyne/v2/dialog"
     "fyne.io/fyne/v2/widget"
+    "github.com/PuerkitoBio/goquery"
     "github.com/faiface/beep"
     "github.com/faiface/beep/mp3"
     "github.com/faiface/beep/speaker"
@@ -20,6 +22,7 @@ import (
     "log"
     "net/url"
     "strconv"
+    "strings"
     "time"
 )
 
@@ -107,7 +110,11 @@ func (s *listenService) Run() {
     go func() {
         for {
             if stats, ok := s.Status.Get(); ok == nil && stats == Running && len(s.items) > 0 {
-                skus := s.groupByStore()
+                skus, err := s.groupByStore()
+                if err != nil {
+                    dialog.ShowInformation("遇到错误", err.Error(), view.Window)
+                    s.Status.Set(Pause)
+                }
                 
                 for key, item := range s.items {
                     status := skus[item.Store.StoreNumber+"."+item.Product.Code]
@@ -139,7 +146,7 @@ func (s *listenService) Run() {
     }()
 }
 
-func  (s *listenService) groupByStore() map[string]bool {
+func  (s *listenService) groupByStore() (map[string]bool,error) {
     skus := map[string]bool{}
     
     defer func() {
@@ -180,25 +187,30 @@ func  (s *listenService) groupByStore() map[string]bool {
     
     count := len(reqs)
     if count < 1 {
-        return skus
+        return skus,nil
     }
     
     ch := make(chan map[string]bool, count)
-    
+    chErr := make(chan error)
     for _, link := range reqs {
-        go s.getSkuByLink(ch, link)
+        go s.getSkuByLink(ch,chErr, link)
     }
     
     for i := 0; i < count; i++ {
-        for key, v := range <-ch {
-            skus[key] = v
+        select {
+        case err := <-chErr:
+            return skus, err
+        case val := <-ch:
+            for key, v := range val {
+                skus[key] = v
+            }
         }
     }
     
-    return skus
+    return skus,nil
 }
 
-func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
+func (s *listenService) getSkuByLink(ch chan map[string]bool, chErr chan error,  skUrl string) {
     skus := map[string]bool{}
     
     resp, body, errs := gorequest.New().
@@ -207,11 +219,24 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
         Timeout(time.Second*3).Get(skUrl).End()
     if len(errs) > 0 {
         log.Println(errs)
-        ch <- skus
+        // chErr <- fmt.Errorf("请求网络遇到错误 %w", errs[0])
+		// 提示信息太复杂，不方便显示，暂时不处理
+		ch <- skus
         return
     }
     
     log.Println(resp.Status, skUrl)
+
+    //开始尝试按照html解析，如果html解析成功，按照失败处理
+    dom, err := goquery.NewDocumentFromReader(strings.NewReader(body))
+    if err == nil {
+        log.Println(body)
+        msg := dom.Find("head").Find("title").Text()
+        if len(msg) > 0 {
+            chErr <- errors.New(msg)
+            return
+        }
+    }
     for _, result := range gjson.Get(body, "body.content.pickupMessage.stores").Array() {
         for productCode, availability := range result.Get("partsAvailability").Map() {
             uniqKey := fmt.Sprintf("%s.%s", result.Get("storeNumber").String(), productCode)
