@@ -4,9 +4,16 @@ go 1.17
 
 require (
 	fyne.io/fyne/v2 v2.1.0
+	github.com/faiface/beep v1.1.0
+	github.com/golang-module/carbon v1.5.4
+	github.com/parnurzeal/gorequest v0.2.16
+	github.com/thoas/go-funk v0.9.1
+	github.com/tidwall/gjson v1.9.1
+)
+
+require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/elazarl/goproxy v0.0.0-20210801061803-8e322dfb79c4 // indirect
-	github.com/faiface/beep v1.1.0
 	github.com/fredbi/uri v0.0.0-20181227131451-3dcfdacbaaf3 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/go-gl/gl v0.0.0-20210813123233-e4099ee2221f // indirect
@@ -16,11 +23,9 @@ require (
 	github.com/gobuffalo/packr v1.30.1 // indirect
 	github.com/godbus/dbus/v5 v5.0.4 // indirect
 	github.com/goki/freetype v0.0.0-20181231101311-fa8a33aabaff // indirect
-	github.com/golang-module/carbon v1.5.4
 	github.com/hajimehoshi/go-mp3 v0.3.0 // indirect
 	github.com/hajimehoshi/oto v0.7.1 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
-	github.com/parnurzeal/gorequest v0.2.16
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rogpeppe/go-internal v1.8.0 // indirect
@@ -28,8 +33,6 @@ require (
 	github.com/srwiley/oksvg v0.0.0-20200311192757-870daf9aa564 // indirect
 	github.com/srwiley/rasterx v0.0.0-20200120212402-85cb7272f5e9 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
-	github.com/thoas/go-funk v0.9.1
-	github.com/tidwall/gjson v1.9.1
 	github.com/tidwall/match v1.0.3 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/yuin/goldmark v1.3.8 // indirect
