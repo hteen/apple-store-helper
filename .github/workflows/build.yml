@@ -1,25 +1,93 @@
-name: Go
-
-on:
+name: Publishon:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-jobs:
-
-  build:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'jobs:
+  compile:
+    name: dart compile exe
+    strategy:
+      matrix:
+        include:
+          - runs-on: ubuntu-latest
+            binary-name: mycli_linux_amd64
+          - runs-on: macos-latest
+            binary-name: mycli_macos_amd64
+          - runs-on: windows-latest
+            binary-name: mycli_windows.exe
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: mkdir ${{ matrix.runs-on }}
+      - run: dart compile exe bin/mycli.dart -o ${{ matrix.runs-on }}/${{ matrix.binary-name }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: bin-${{ matrix.runs-on }}
+          path: ${{ matrix.runs-on }}
+  release:
+    needs: compile
+    name: github release
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
-
-    - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-ubuntu-latest
+          path: bin-linux
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-macos-latest
+          path: bin-macos
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-windows-latest
+          path: bin-windows
+      - uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: bin-*/*name: Publishon:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'jobs:
+  compile:
+    name: dart compile exe
+    strategy:
+      matrix:
+        include:
+          - runs-on: ubuntu-latest
+            binary-name: mycli_linux_amd64
+          - runs-on: macos-latest
+            binary-name: mycli_macos_amd64
+          - runs-on: windows-latest
+            binary-name: mycli_windows.exe
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: mkdir ${{ matrix.runs-on }}
+      - run: dart compile exe bin/mycli.dart -o ${{ matrix.runs-on }}/${{ matrix.binary-name }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: bin-${{ matrix.runs-on }}
+          path: ${{ matrix.runs-on }}
+  release:
+    needs: compile
+    name: github release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-ubuntu-latest
+          path: bin-linux
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-macos-latest
+          path: bin-macos
+      - uses: actions/download-artifact@v2
+        with:
+          name: bin-windows-latest
+          path: bin-windows
+      - uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: bin-*/*
