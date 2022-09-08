@@ -118,8 +118,12 @@ func (s *listenService) Run() {
 						s.UpdateStatus(key, StatusInStock)
 						s.Status.Set(Pause)
 
+						openUrl := fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
 						// 进入购物袋, 手动选择门店
-						s.openBrowser(fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode))
+						if s.Area.ShortCode == "cn" {
+							openUrl = "https://www.apple.com.cn/shop/bag"
+						}
+						s.openBrowser(openUrl)
 						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
 						dialog.ShowInformation("匹配成功", msg, view.Window)
 						view.App.SendNotification(&fyne.Notification{

@@ -20,7 +20,7 @@ func (s *areaService) ProductsByCode(local string) []model.Product {
 	for _, result := range area.Products {
 		products = append(products, model.Product{
 			Color: result.Get("dimensionColor").String(),
-			Title: result.Get("familyType").String(),
+			Title: result.Get("familyType").String() + "-" + result.Get("dimensionCapacity").String(),
 			Type:  result.Get("familyType").String(),
 			Code:  result.Get("partNumber").String(),
 		})
