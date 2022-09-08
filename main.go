@@ -22,9 +22,9 @@ func main() {
 	SampleRate := beep.SampleRate(44100)
 	speaker.Init(SampleRate, SampleRate.N(time.Second/10))
 
-	view.App = app.NewWithID("ip13")
+	view.App = app.NewWithID("ip14")
 	view.App.Settings().SetTheme(&theme.MyTheme{})
-	view.Window = view.App.NewWindow("iPhone13|Mini|Pro|ProMax")
+	view.Window = view.App.NewWindow("iPhone14|Plus|Pro|ProMax")
 
 	defaultArea := services.Listen.Area.Title
 
