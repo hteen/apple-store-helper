@@ -217,7 +217,7 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	for _, result := range gjson.Get(body, "body.content.pickupMessage.stores").Array() {
 		for productCode, availability := range result.Get("partsAvailability").Map() {
 			uniqKey := fmt.Sprintf("%s.%s", result.Get("storeNumber").String(), productCode)
-			skus[uniqKey] = availability.Get("storePickEligible").Bool()
+			skus[uniqKey] = availability.Get("messageTypes.compact.storeSelectionEnabled").Bool()
 		}
 	}
 
