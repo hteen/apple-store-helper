@@ -6,6 +6,8 @@ import (
 	"apple-store-helper/theme"
 	"apple-store-helper/view"
 	"errors"
+	"time"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -14,7 +16,6 @@ import (
 	"fyne.io/fyne/v2/widget"
 	"github.com/faiface/beep"
 	"github.com/faiface/beep/speaker"
-	"time"
 )
 
 func main() {
@@ -49,9 +50,9 @@ func main() {
 	})
 	areaWidget.SetSelected(defaultArea)
 	areaWidget.Horizontal = true
-	help := `1. 提前将需要购买的型号加入购物车，检测有货会打开购物车页面，需要在购物车页面手动选择门
-2. 选择门店和型号，点击 添加 按钮
-3. 点击 开始
+	help := `1. 在 Apple 官网将需要购买的型号加入购物车
+2. 选择地区、门店和型号，点击“添加”按钮，将需要监听的型号添加到监听列表
+3. 点击“开始”按钮，开始监听，检测到有货时会自动打开购物车页面
 `
 
 	view.Window.SetContent(container.NewVBox(

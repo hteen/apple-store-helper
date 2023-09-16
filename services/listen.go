@@ -118,7 +118,7 @@ func (s *listenService) Run() {
 						s.UpdateStatus(key, StatusInStock)
 						s.Status.Set(Pause)
 
-						// 进入购物袋, 手动选择门店
+						// 进入购物袋
 						s.openBrowser(fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode))
 						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
 						dialog.ShowInformation("匹配成功", msg, view.Window)
@@ -226,13 +226,15 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 
 // 型号对应预约地址
 func (s *listenService) model2Url(productType string, partNumber string) string {
-	// https://www.apple.com.cn/shop/buy-iphone/iphone-13/MLE73CH/A
+	// https://www.apple.com.cn/shop/buy-iphone/iphone-15/MTLJ3CH/A
+	// https://www.apple.com.cn/shop/buy-iphone/iphone-15-pro/MU2Q3CH/A
+
 	var t string
 	switch productType {
-	case "iphone13promax", "iphone13pro":
-		t = "iphone-13-pro"
-	case "iphone13mini", "iphone13":
-		t = "iphone-13"
+	case "iphone15promax", "iphone15pro":
+		t = "iphone-15-pro"
+	case "iphone15":
+		t = "iphone-15"
 	}
 
 	return fmt.Sprintf(
