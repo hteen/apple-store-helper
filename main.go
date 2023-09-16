@@ -6,7 +6,6 @@ import (
 	"apple-store-helper/theme"
 	"apple-store-helper/view"
 	"errors"
-	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
@@ -49,9 +48,10 @@ func main() {
 	})
 	areaWidget.SetSelected(defaultArea)
 	areaWidget.Horizontal = true
-	help := `1. 提前将需要购买的型号加入购物车，检测有货会打开购物车页面，需要在购物车页面手动选择门
+	help := `1. 提前将需要购买的型号加入购物车，检测有货会打开购物车页面，需要在购物车页面手动选择门店
 2. 选择门店和型号，点击 添加 按钮
 3. 点击 开始
+4. 抢到了的话记得去微博关注 @Sunbelife，因为这个工具是他适配的
 `
 
 	view.Window.SetContent(container.NewVBox(
