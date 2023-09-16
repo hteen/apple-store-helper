@@ -6,6 +6,7 @@ import (
 	"apple-store-helper/theme"
 	"apple-store-helper/view"
 	"errors"
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
@@ -23,7 +24,7 @@ func main() {
 
 	view.App = app.NewWithID("apple-store-helper")
 	view.App.Settings().SetTheme(&theme.MyTheme{})
-	view.Window = view.App.NewWindow("Apple Store Helper")
+	view.Window = view.App.NewWindow("Apple Store 抢你妹")
 
 	defaultArea := services.Listen.Area.Title
 
@@ -33,7 +34,7 @@ func main() {
 
 	// 型号 selector
 	productWidget := widget.NewSelect(services.Product.ByAreaTitleForOptions(defaultArea), nil)
-	productWidget.PlaceHolder = "请选择 iPhone 型号"
+	productWidget.PlaceHolder = "请选择手机"
 
 	// 地区 selector
 	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
