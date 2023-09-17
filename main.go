@@ -49,7 +49,7 @@ func main() {
 
 	help := `1. 在 Apple 官网将需要购买的型号加入购物车
 2. 选择地区、门店和型号，点击“添加”按钮，将需要监听的型号添加到监听列表
-3. 点击“开始”按钮，开始监听，检测到有货时会自动打开购物车页面
+3. 点击“开始”按钮开始监听，检测到有货时会自动打开购物车页面
 `
 
 	loadUserSettingsCache(areaWidget, storeWidget, productWidget)
