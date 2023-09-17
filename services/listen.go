@@ -78,6 +78,15 @@ func (s *listenService) Clean() {
 	s.UpdateLogStr()
 }
 
+func (s *listenService) SetListenItems(items map[string]ListenItem) {
+	s.items = items
+	s.UpdateLogStr()
+}
+
+func (s *listenService) GetListenItems() map[string]ListenItem {
+	return s.items
+}
+
 func (s *listenService) UpdateLogStr() {
 	var str string
 
