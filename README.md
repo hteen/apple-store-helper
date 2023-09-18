@@ -1,6 +1,8 @@
 # Apple Store 预约助手
 
-## 更新 iPhone 15 系列
+## 支持 iPhone 15 系列
+
+![UI](v1.5.1-light.png)
 
 ## 重要提示
 * *这不是外挂，不能全自动一劳永逸*
@@ -38,12 +40,17 @@ GOROOT 为 GO 安装目录，根据实际安装位置修改
 
 ## 使用方法
 
-1. 前往 `release` 页面下载，启动 
-2. 提前将需要购买的型号加入购物车，检测有货会打开购物车页面，需要在购物车页面手动选择门店
-3. 选择门店和型号，点击 `添加` 到监控列表
-4. 点击 `开始` 即可
+1. 前往 [release](https://github.com/hteen/apple-store-helper/releases) 页面下载对应系统的程序，启动 
+2. 在 Apple 官网将需要购买的型号加入购物车
+3. 选择地区、门店和型号，点击`添加`按钮，将需要监听的型号添加到监听列表
+4. 点击`开始`按钮开始监听，检测到有货时会自动打开购物车页面
+5. 匹配到有货后会自动暂停监听，直到再次点击 `开始`
 
-匹配到之后会暂停监听，直到再次点击 `开始`
+## Contributors
+- [@Hteen](https://github.com/hteen)
+- [@Timssse](https://github.com/Timssse)
+- [@Black-Hole](https://github.com/BlackHole1)
+- [@RayJason](https://github.com/RayJason)
 
 ## 一杯卡布奇诺 ☕️
 
