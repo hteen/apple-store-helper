@@ -71,7 +71,8 @@ func main() {
 		createVersionLabel(),
 	))
 
-	view.Window.Resize(fyne.NewSize(1000, 800))
+	view.Window.Resize(fyne.NewSize(1000, 600))
+	view.Window.CenterOnScreen()
 	services.Listen.Run()
 	view.Window.ShowAndRun()
 }
