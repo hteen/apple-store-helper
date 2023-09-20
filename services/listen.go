@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 	"time"
 
 	"fyne.io/fyne/v2"
@@ -42,10 +44,11 @@ var Listen = listenService{
 }
 
 type listenService struct {
-	items  map[string]ListenItem
-	Status binding.String
-	Area   model.Area
-	Logs   *widget.Label
+	items         map[string]ListenItem
+	Status        binding.String
+	Area          model.Area
+	Logs          *widget.Label
+	BarkNotifyUrl string
 }
 
 type ListenItem struct {
@@ -55,7 +58,7 @@ type ListenItem struct {
 	Time    carbon.DateTime
 }
 
-func (s *listenService) Add(areaTitle string, storeTitle string, productTitle string) {
+func (s *listenService) Add(areaTitle string, storeTitle string, productTitle string, barkNotifyUrl string) {
 
 	store := Store.GetStore(areaTitle, storeTitle)
 	product := Product.GetProduct(areaTitle, productTitle)
@@ -70,6 +73,7 @@ func (s *listenService) Add(areaTitle string, storeTitle string, productTitle st
 		}
 	}
 
+	s.BarkNotifyUrl = barkNotifyUrl
 	s.UpdateLogStr()
 }
 
@@ -127,8 +131,9 @@ func (s *listenService) Run() {
 						s.UpdateStatus(key, StatusInStock)
 						s.Status.Set(Pause)
 
+						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
 						// 进入购物袋
-						s.openBrowser(fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode))
+						s.openBrowser(bagUrl)
 						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
 						dialog.ShowInformation("匹配成功", msg, view.Window)
 						view.App.SendNotification(&fyne.Notification{
@@ -136,6 +141,7 @@ func (s *listenService) Run() {
 							Content: msg,
 						})
 						go s.AlertMp3()
+						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
 						break
 					} else {
 						s.UpdateStatus(key, StatusOutStock)
@@ -281,4 +287,20 @@ func (s *listenService) AlertMp3() {
 		done <- true
 	})))
 	<-done
+}
+
+func (s *listenService) SendPushNotificationByBark(title string, content string, bagUrl string) {
+
+	if len(s.BarkNotifyUrl) <= 0 {
+		return
+	}
+
+	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
+
+	response, err := http.Get(apiUrl)
+	if err != nil {
+		panic(err)
+		return
+	}
+	defer response.Body.Close()
 }

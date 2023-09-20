@@ -46,11 +46,18 @@ GOROOT 为 GO 安装目录，根据实际安装位置修改
 4. 点击`开始`按钮开始监听，检测到有货时会自动打开购物车页面
 5. 匹配到有货后会自动暂停监听，直到再次点击 `开始`
 
+### 有货时推送通知到 iOS 设备
+1. App Store 下载并安装 App 「Bark」，并允许「Bark」进行推送
+2. 打开「Bark」，复制应用中代表你自己设备的地址（格式如` https://api.day.app/xxxxxxxxx `），粘贴至本应用的`Bark 通知地址`栏
+3. 点击 `测试 Bark 通知`，确认应用能够通知到你的 iOS 设备
+4. 更多内容请参考 `https://bark.day.app/`
+
 ## Contributors
 - [@Hteen](https://github.com/hteen)
 - [@Timssse](https://github.com/Timssse)
 - [@Black-Hole](https://github.com/BlackHole1)
 - [@RayJason](https://github.com/RayJason)
+- [@Warkeeper](https://github.com/Warkeeper)
 
 ## 一杯卡布奇诺 ☕️
 
