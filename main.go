@@ -34,6 +34,10 @@ func main() {
 	productWidget := widget.NewSelect(services.Product.ByAreaTitleForOptions(defaultArea), nil)
 	productWidget.PlaceHolder = "请选择 iPhone 型号"
 
+	// Bark 通知输入框
+	barkWidget := widget.NewEntry()
+	barkWidget.SetPlaceHolder("https://api.day.app/你的BarkKey")
+
 	// 地区选择器 (Area Selector)
 	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
 		storeWidget.Options = services.Store.ByAreaTitleForOptions(value)
@@ -45,6 +49,7 @@ func main() {
 		services.Listen.Area = services.Area.GetArea(value)
 		services.Listen.Clean()
 	})
+
 	areaWidget.Horizontal = true
 
 	help := `1. 在 Apple 官网将需要购买的型号加入购物车
@@ -52,7 +57,7 @@ func main() {
 3. 点击“开始”按钮开始监听，检测到有货时会自动打开购物车页面
 `
 
-	loadUserSettingsCache(areaWidget, storeWidget, productWidget)
+	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget)
 
 	// 初始化 GUI 窗口内容 (Initialize GUI)
 	view.Window.SetContent(container.NewVBox(
@@ -60,9 +65,10 @@ func main() {
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择地区:"), areaWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择门店:"), storeWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择型号:"), productWidget),
+		container.New(layout.NewFormLayout(), widget.NewLabel("Bark 通知地址"), barkWidget),
 
 		container.NewBorder(nil, nil,
-			createActionButtons(areaWidget, storeWidget, productWidget),
+			createActionButtons(areaWidget, storeWidget, productWidget, barkWidget),
 			createControlButtons(),
 		),
 
@@ -90,30 +96,33 @@ func initFyneApp() {
 }
 
 // 加载用户设置缓存 (Load user settings cache)
-func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select) {
+func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) {
 	settings, err := services.LoadSettings()
 	if err == nil {
 		areaWidget.SetSelected(settings.SelectedArea)
 		storeWidget.SetSelected(settings.SelectedStore)
 		productWidget.SetSelected(settings.SelectedProduct)
 		services.Listen.SetListenItems(settings.ListenItems)
+		barkNotifyWidget.Text = settings.BarkNotifyUrl
+		services.Listen.BarkNotifyUrl = settings.BarkNotifyUrl
 	} else {
 		areaWidget.SetSelected(services.Listen.Area.Title)
 	}
 }
 
 // 创建动作按钮 (Create action buttons)
-func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select) *fyne.Container {
+func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) *fyne.Container {
 	return container.NewHBox(
 		widget.NewButton("添加", func() {
 			if storeWidget.Selected == "" || productWidget.Selected == "" {
 				dialog.ShowError(errors.New("请选择门店和型号"), view.Window)
 			} else {
-				services.Listen.Add(areaWidget.Selected, storeWidget.Selected, productWidget.Selected)
+				services.Listen.Add(areaWidget.Selected, storeWidget.Selected, productWidget.Selected, barkNotifyWidget.Text)
 				services.SaveSettings(services.UserSettings{
 					SelectedArea:    areaWidget.Selected,
 					SelectedStore:   storeWidget.Selected,
 					SelectedProduct: productWidget.Selected,
+					BarkNotifyUrl:   barkNotifyWidget.Text,
 					ListenItems:     services.Listen.GetListenItems(),
 				})
 			}
@@ -124,6 +133,10 @@ func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Sele
 		}),
 		widget.NewButton("试听(有货提示音)", func() {
 			go services.Listen.AlertMp3()
+		}),
+		widget.NewButton("测试 Bark 通知", func() {
+			services.Listen.BarkNotifyUrl = barkNotifyWidget.Text
+			services.Listen.SendPushNotificationByBark("有货提醒（测试）", "此为测试提醒，点击通知将跳转到相关链接", "https://www.apple.com.cn/")
 		}),
 	)
 }
