@@ -1,8 +1,8 @@
 # Apple Store 预约助手
 
-## 支持 iPhone 15 系列
+## 支持 iPhone 16 系列
 
-![UI](v1.5.1-light.png)
+![UI](screenshot.png)
 
 ## 重要提示
 * *这不是外挂，不能全自动一劳永逸*
