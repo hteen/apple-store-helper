@@ -2,19 +2,20 @@ package services
 
 import (
 	"apple-store-helper/model"
+	"sort"
+
 	"github.com/parnurzeal/gorequest"
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
-	"sort"
 )
 
 var Store = storeService{
-	stores: map[string][]model.Store{},
+	stores:        map[string][]model.Store{},
 	storeListData: "",
 }
 
 type storeService struct {
-	stores map[string][]model.Store
+	stores        map[string][]model.Store
 	storeListData string
 }
 
@@ -23,15 +24,15 @@ func (s *storeService) ByArea(area model.Area) []model.Store {
 	if len(s.stores[area.Locale]) > 0 {
 		return s.stores[area.Locale]
 	}
-	
+
 	if s.storeListData == "" {
 		availability := "https://www.apple.com/rsp-web/store-list?locale=zh_CN"
 		_, bd, errs := gorequest.New().Get(availability).End()
-		
+
 		if len(errs) != 0 {
 			panic(errs[0])
 		}
-		
+
 		s.storeListData = bd
 	}
 

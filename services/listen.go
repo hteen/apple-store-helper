@@ -229,10 +229,10 @@ func (s *listenService) model2Url(productType string, partNumber string) string 
 	// https://www.apple.com.cn/shop/buy-iphone/iphone-13/MLE73CH/A
 	var t string
 	switch productType {
-	case "iphone13promax", "iphone13pro":
-		t = "iphone-13-pro"
-	case "iphone13mini", "iphone13":
-		t = "iphone-13"
+	case "iphone16promax", "iphone16pro":
+		t = "iphone-16-pro"
+	case "iphone16mini", "iphone16":
+		t = "iphone-16"
 	}
 
 	return fmt.Sprintf(
