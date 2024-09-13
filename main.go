@@ -78,6 +78,7 @@ func main() {
 	))
 
 	view.Window.Resize(fyne.NewSize(1000, 800))
+	view.Window.CenterOnScreen()
 	services.Listen.Run()
 	view.Window.ShowAndRun()
 }
