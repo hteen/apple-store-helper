@@ -104,8 +104,7 @@ func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Se
 		storeWidget.SetSelected(settings.SelectedStore)
 		productWidget.SetSelected(settings.SelectedProduct)
 		services.Listen.SetListenItems(settings.ListenItems)
-		barkNotifyWidget.Text = settings.BarkNotifyUrl
-		services.Listen.BarkNotifyUrl = settings.BarkNotifyUrl
+		barkNotifyWidget.SetText(settings.BarkNotifyUrl)
 	} else {
 		areaWidget.SetSelected(services.Listen.Area.Title)
 	}
@@ -137,7 +136,7 @@ func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Sele
 		}),
 		widget.NewButton("测试 Bark 通知", func() {
 			services.Listen.BarkNotifyUrl = barkNotifyWidget.Text
-			services.Listen.SendPushNotificationByBark("有货提醒（测试）", "此为测试提醒，点击通知将跳转到相关链接", "https://www.apple.com.cn/")
+			services.Listen.SendPushNotificationByBark("有货提醒（测试）", "此为测试提醒，点击通知将跳转到相关链接", "https://www.apple.com.cn/shop/bag")
 		}),
 	)
 }
