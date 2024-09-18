@@ -240,23 +240,22 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 }
 
 // 型号对应预约地址
-func (s *listenService) model2Url(productType string, partNumber string) string {
-	// https://www.apple.com.cn/shop/buy-iphone/iphone-15/MTLJ3CH/A
-	// https://www.apple.com.cn/shop/buy-iphone/iphone-15-pro/MU2Q3CH/A
+func (s *listenService) model2Url(productType string) string {
+	// https://www.apple.com.cn/shop/buy-iphone/iphone-16
+	// https://www.apple.com.cn/shop/buy-iphone/iphone-16-pro
 
 	var t string
 	switch productType {
-	case "iphone15promax", "iphone15pro":
-		t = "iphone-15-pro"
-	case "iphone15":
-		t = "iphone-15"
+	case "iphone16promax", "iphone16pro":
+		t = "iphone-16-pro"
+	case "iphone16":
+		t = "iphone-16"
 	}
 
 	return fmt.Sprintf(
-		"https://www.apple.com/%s/shop/buy-iphone/%s/%s",
+		"https://www.apple.com/%s/shop/buy-iphone/%s",
 		s.Area.ShortCode,
 		t,
-		partNumber,
 	)
 }
 
@@ -300,7 +299,6 @@ func (s *listenService) SendPushNotificationByBark(title string, content string,
 	response, err := http.Get(apiUrl)
 	if err != nil {
 		panic(err)
-		return
 	}
 	defer response.Body.Close()
 }

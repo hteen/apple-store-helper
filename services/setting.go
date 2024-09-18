@@ -2,7 +2,6 @@ package services
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"os"
 )
 
@@ -20,13 +19,13 @@ func SaveSettings(settings UserSettings) error {
 	if err != nil {
 		return err
 	}
-	return ioutil.WriteFile("user_settings.json", data, 0644)
+	return os.WriteFile("user_settings.json", data, 0644)
 }
 
 // 加载缓存配置 LoadSettings loads settings from a file
 func LoadSettings() (UserSettings, error) {
 	var settings UserSettings
-	data, err := ioutil.ReadFile("user_settings.json")
+	data, err := os.ReadFile("user_settings.json")
 	if err != nil {
 		return settings, err
 	}
