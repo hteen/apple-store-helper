@@ -294,7 +294,39 @@ func (s *listenService) SendPushNotificationByBark(title string, content string,
 		return
 	}
 
-	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
+	baseUrl := "https://api.day.app/"
+	var token, queryParams string
+
+	// 判断是否包含基础URL
+	if strings.HasPrefix(s.BarkNotifyUrl, baseUrl) {
+		// 移除基础URL
+		remainingUrl := strings.TrimPrefix(s.BarkNotifyUrl, baseUrl)
+
+		// 分割 token 和查询参数
+		if strings.Contains(remainingUrl, "?") {
+			parts := strings.Split(remainingUrl, "?")
+			token = strings.Split(parts[0], "/")[0] // 保留 token 部分
+			queryParams = parts[1]
+		} else {
+			token = strings.Split(remainingUrl, "/")[0] // 保留 token 部分
+		}
+	} else {
+		// 如果不包含基础URL，直接返回
+		return
+	}
+
+	// 检查 token 是否为空
+	if token == "" {
+		return
+	}
+
+	// 构造 API URL，保留 baseUrl, token, title, content
+	apiUrl := fmt.Sprintf("%s%s/%s/%s?url=%s", baseUrl, token, title, content, bagUrl)
+
+	// 如果有额外的查询参数，添加到 apiUrl 中
+	if queryParams != "" {
+		apiUrl += "&" + queryParams
+	}
 
 	response, err := http.Get(apiUrl)
 	if err != nil {
