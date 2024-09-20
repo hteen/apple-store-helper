@@ -58,4 +58,5 @@ GOROOT 为 GO 安装目录，根据实际安装位置修改
 - [@Black-Hole](https://github.com/BlackHole1)
 - [@RayJason](https://github.com/RayJason)
 - [@Warkeeper](https://github.com/Warkeeper)
+- [@JiangJamm](https://github.com/JiangJamm)
 
