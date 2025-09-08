@@ -1,2 +1,4 @@
 fyne-cross
 .idea
+tmp/main
+tmp/build-errors.log

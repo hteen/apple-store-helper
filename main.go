@@ -37,6 +37,7 @@ func main() {
 	productWidget.PlaceHolder = "请选择手机"
 
 	// 地区 selector
+
 	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
 		storeWidget.Options = services.Store.ByAreaTitleForOptions(value)
 		storeWidget.ClearSelected()
@@ -45,7 +46,7 @@ func main() {
 		productWidget.ClearSelected()
 
 		services.Listen.Area = services.Area.GetArea(value)
-		services.Listen.Clean()
+		// services.Listen.Clean()
 	})
 	areaWidget.SetSelected(defaultArea)
 	areaWidget.Horizontal = true
