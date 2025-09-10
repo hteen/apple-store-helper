@@ -1,0 +1,27 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "tr",
+  "stores": [
+    {
+      "StoreNumber": "R588",
+      "CityStoreName": "Üsküdar İstanbul-Akasya",
+      "Province": "İstanbul",
+      "City": "Üsküdar İstanbul",
+      "District": "34660"
+    },
+    {
+      "StoreNumber": "R583",
+      "CityStoreName": "Beşiktaş İstanbul-Zorlu Center",
+      "Province": "İstanbul",
+      "City": "Beşiktaş İstanbul",
+      "District": "34340"
+    },
+    {
+      "StoreNumber": "R724",
+      "CityStoreName": "Kadıköy İstanbul-Bağdat Caddesi",
+      "Province": "İstanbul",
+      "City": "Kadıköy İstanbul",
+      "District": "34728"
+    }
+  ]
+}

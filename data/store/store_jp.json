@@ -1,0 +1,83 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "jp",
+  "stores": [
+    {
+      "StoreNumber": "R718",
+      "CityStoreName": "Chiyoda-ku-Marunouchi",
+      "Province": "Tokyo",
+      "City": "Chiyoda-ku",
+      "District": "100-0005"
+    },
+    {
+      "StoreNumber": "R119",
+      "CityStoreName": "Shibuya-ku-Shibuya",
+      "Province": "Tokyo",
+      "City": "Shibuya-ku",
+      "District": "150-0041"
+    },
+    {
+      "StoreNumber": "R224",
+      "CityStoreName": "Shibuya-ku-Omotesando",
+      "Province": "Tokyo",
+      "City": "Shibuya-ku",
+      "District": "150-0001"
+    },
+    {
+      "StoreNumber": "R128",
+      "CityStoreName": "Shinjuku-ku-Shinjuku",
+      "Province": "Tokyo",
+      "City": "Shinjuku-ku",
+      "District": "160-0022"
+    },
+    {
+      "StoreNumber": "R079",
+      "CityStoreName": "Chuo-ku-Ginza",
+      "Province": "Tokyo",
+      "City": "Chuo-ku",
+      "District": "104-0061"
+    },
+    {
+      "StoreNumber": "R005",
+      "CityStoreName": "Nagoya-shi-Nagoya Sakae",
+      "Province": "Aichi",
+      "City": "Nagoya-shi",
+      "District": "460-0008"
+    },
+    {
+      "StoreNumber": "R710",
+      "CityStoreName": "Kawasaki-shi-Kawasaki",
+      "Province": "Kanagawa",
+      "City": "Kawasaki-shi",
+      "District": "212-8576"
+    },
+    {
+      "StoreNumber": "R711",
+      "CityStoreName": "Kyoto-shi-Kyoto",
+      "Province": "Kyoto",
+      "City": "Kyoto-shi",
+      "District": "600-8006"
+    },
+    {
+      "StoreNumber": "R048",
+      "CityStoreName": "Fukuoka-shi-Fukuoka",
+      "Province": "Fukuoka",
+      "City": "Fukuoka-shi",
+      "District": "810-0001"
+    },
+    {
+      "StoreNumber": "R768",
+      "CityStoreName": "Osaka-shi-Umeda",
+      "Province": "Osaka",
+      "City": "Osaka-shi",
+      "District": "530-0011"
+    },
+    {
+      "StoreNumber": "R091",
+      "CityStoreName": "Osaka-shi-Shinsaibashi",
+      "Province": "Osaka",
+      "City": "Osaka-shi",
+      "District": "542-0086"
+    }
+  ]
+}

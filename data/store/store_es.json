@@ -1,0 +1,90 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "es",
+  "stores": [
+    {
+      "StoreNumber": "R368",
+      "CityStoreName": "Barcelona-Passeig de Gràcia",
+      "Province": "Barcelona",
+      "City": "Barcelona",
+      "District": "08007"
+    },
+    {
+      "StoreNumber": "R406",
+      "CityStoreName": "Barcelona-La Maquinista",
+      "Province": "Barcelona",
+      "City": "Barcelona",
+      "District": "08030"
+    },
+    {
+      "StoreNumber": "R538",
+      "CityStoreName": "Arroyo de la Encomienda-Río Shopping",
+      "Province": "Valladolid",
+      "City": "Arroyo de la Encomienda",
+      "District": "47195"
+    },
+    {
+      "StoreNumber": "R468",
+      "CityStoreName": "Marbella-La Cañada",
+      "Province": "Málaga",
+      "City": "Marbella",
+      "District": "29600"
+    },
+    {
+      "StoreNumber": "R419",
+      "CityStoreName": "Valencia-Valencia",
+      "Province": "Valencia",
+      "City": "Valencia",
+      "District": "46004"
+    },
+    {
+      "StoreNumber": "R435",
+      "CityStoreName": "Majadahonda-Gran Plaza 2",
+      "Province": "Madrid",
+      "City": "Majadahonda",
+      "District": "28222"
+    },
+    {
+      "StoreNumber": "R436",
+      "CityStoreName": "Leganés-Parquesur",
+      "Province": "Madrid",
+      "City": "Leganés",
+      "District": "28916"
+    },
+    {
+      "StoreNumber": "R450",
+      "CityStoreName": "Madrid-Puerta del Sol",
+      "Province": "Madrid",
+      "City": "Madrid",
+      "District": "28013"
+    },
+    {
+      "StoreNumber": "R624",
+      "CityStoreName": "Madrid-La Vaguada",
+      "Province": "Madrid",
+      "City": "Madrid",
+      "District": "28029"
+    },
+    {
+      "StoreNumber": "R397",
+      "CityStoreName": "Arroyomolinos-Xanadú",
+      "Province": "Madrid",
+      "City": "Arroyomolinos",
+      "District": "28939"
+    },
+    {
+      "StoreNumber": "R507",
+      "CityStoreName": "Churra-Nueva Condomina",
+      "Province": "Murcia",
+      "City": "Churra",
+      "District": "30110"
+    },
+    {
+      "StoreNumber": "R377",
+      "CityStoreName": "Zaragoza-Puerto Venecia",
+      "Province": "Zaragoza",
+      "City": "Zaragoza",
+      "District": "50021"
+    }
+  ]
+}

@@ -2,36 +2,17 @@ package services
 
 import (
 	"apple-store-helper/model"
-	"fmt"
 	"github.com/thoas/go-funk"
-	"github.com/tidwall/gjson"
 )
 
 var Area = areaService{}
 
 type areaService struct{}
 
+// ProductsByCode - Deprecated: Use Product.GetDynamicProducts() instead
 func (s *areaService) ProductsByCode(local string) []model.Product {
-
-	area := funk.Find(model.Areas, func(x model.Area) bool {
-		return x.Locale == local
-	}).(model.Area)
-
-	var products []model.Product
-
-	for _, pJson := range area.ProductsJson {
-		json := gjson.Parse(pJson)
-		for _, result := range json.Get("products").Array() {
-			color := json.Get(fmt.Sprintf("displayValues.dimensionColor.%s.value", result.Get("dimensionColor")))
-			products = append(products, model.Product{
-				Title: fmt.Sprintf("%s - %s - %s", result.Get("familyType"), color, result.Get("dimensionCapacity")),
-				Type:  result.Get("familyType").String(),
-				Code:  result.Get("partNumber").String(),
-			})
-		}
-	}
-
-	return products
+	// Return empty slice as we're using dynamic data only
+	return []model.Product{}
 }
 
 func (s *areaService) ForOptions() []string {

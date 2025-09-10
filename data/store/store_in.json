@@ -1,0 +1,34 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "in",
+  "stores": [
+    {
+      "StoreNumber": "R756",
+      "CityStoreName": "New Delhi-Saket",
+      "Province": "Delhi",
+      "City": "New Delhi",
+      "District": "110017"
+    },
+    {
+      "StoreNumber": "R790",
+      "CityStoreName": "Bengaluru-Hebbal",
+      "Province": "Karnataka",
+      "City": "Bengaluru",
+      "District": "560092"
+    },
+    {
+      "StoreNumber": "R788",
+      "CityStoreName": "Pune-Koregaon Park",
+      "Province": "Maharashtra",
+      "City": "Pune",
+      "District": "411001"
+    },
+    {
+      "StoreNumber": "R744",
+      "CityStoreName": "Mumbai-BKC",
+      "Province": "Maharashtra",
+      "City": "Mumbai",
+      "District": "400051"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "ae",
+  "stores": [
+    {
+      "StoreNumber": "R596",
+      "CityStoreName": "Dubai-Mall of the Emirates",
+      "Province": "Dubai",
+      "City": "Dubai",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R597",
+      "CityStoreName": "Dubai-Dubai Mall",
+      "Province": "Dubai",
+      "City": "Dubai",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R706",
+      "CityStoreName": "Abu Dhabi-Al Maryah Island",
+      "Province": "Abu Dhabi",
+      "City": "Abu Dhabi",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R595",
+      "CityStoreName": "Abu Dhabi-Yas Mall",
+      "Province": "Abu Dhabi",
+      "City": "Abu Dhabi",
+      "District": ""
+    }
+  ]
+}

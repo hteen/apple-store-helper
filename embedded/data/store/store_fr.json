@@ -1,0 +1,146 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "fr",
+  "stores": [
+    {
+      "StoreNumber": "R438",
+      "CityStoreName": "Lieusaint-Carré Sénart",
+      "Province": "Seine-et-Marne",
+      "City": "Lieusaint",
+      "District": "77127"
+    },
+    {
+      "StoreNumber": "R425",
+      "CityStoreName": "Marne-la-Vallee-Val d’Europe",
+      "Province": "Seine-et-Marne",
+      "City": "Marne-la-Vallee",
+      "District": "77711"
+    },
+    {
+      "StoreNumber": "R395",
+      "CityStoreName": "Nice-CAP 3000",
+      "Province": "Alpes-Maritimes",
+      "City": "Nice",
+      "District": "06700"
+    },
+    {
+      "StoreNumber": "R522",
+      "CityStoreName": "Dijon-La Toison d’Or",
+      "Province": "Côte d’Or",
+      "City": "Dijon",
+      "District": "21078"
+    },
+    {
+      "StoreNumber": "R424",
+      "CityStoreName": "Bordeaux-Sainte-Catherine",
+      "Province": "Gironde",
+      "City": "Bordeaux",
+      "District": "33000"
+    },
+    {
+      "StoreNumber": "R367",
+      "CityStoreName": "Montpellier-Odysseum",
+      "Province": "Hérault",
+      "City": "Montpellier",
+      "District": "34000"
+    },
+    {
+      "StoreNumber": "R470",
+      "CityStoreName": "Saint Herblain-Atlantis",
+      "Province": "Loire-Atlantique",
+      "City": "Saint Herblain",
+      "District": "44811"
+    },
+    {
+      "StoreNumber": "R394",
+      "CityStoreName": "Strasbourg-Strasbourg",
+      "Province": "Bas-Rhin",
+      "City": "Strasbourg",
+      "District": "67000"
+    },
+    {
+      "StoreNumber": "R376",
+      "CityStoreName": "Lille-Lille",
+      "Province": "Nord-Pas-de-Calais",
+      "City": "Lille",
+      "District": "59800"
+    },
+    {
+      "StoreNumber": "R374",
+      "CityStoreName": "Le Chesnay-Parly 2",
+      "Province": "Yvelines",
+      "City": "Le Chesnay",
+      "District": "78158"
+    },
+    {
+      "StoreNumber": "R315",
+      "CityStoreName": "Velizy-Villacoublay-Vélizy 2",
+      "Province": "Yvelines",
+      "City": "Velizy-Villacoublay",
+      "District": "78140"
+    },
+    {
+      "StoreNumber": "R178",
+      "CityStoreName": "Puteaux - la Defense-Les Quatre Temps",
+      "Province": "Hauts-de-Seine",
+      "City": "Puteaux - la Defense",
+      "District": "92800"
+    },
+    {
+      "StoreNumber": "R373",
+      "CityStoreName": "Lyon-Part-Dieu",
+      "Province": "Rhône",
+      "City": "Lyon",
+      "District": "69003"
+    },
+    {
+      "StoreNumber": "R469",
+      "CityStoreName": "Lyon-Confluence",
+      "Province": "Rhône",
+      "City": "Lyon",
+      "District": "69002"
+    },
+    {
+      "StoreNumber": "R357",
+      "CityStoreName": "Marseille-Marseille",
+      "Province": "Bouches-du-Rhône",
+      "City": "Marseille",
+      "District": "13002"
+    },
+    {
+      "StoreNumber": "R477",
+      "CityStoreName": "Aix-en-Provence-Aix-en-Provence",
+      "Province": "Bouches-du-Rhône",
+      "City": "Aix-en-Provence",
+      "District": "13100"
+    },
+    {
+      "StoreNumber": "R536",
+      "CityStoreName": "Rosny-Sous-Bois-Rosny 2",
+      "Province": "Seine-Saint-Denis",
+      "City": "Rosny-Sous-Bois",
+      "District": "93117"
+    },
+    {
+      "StoreNumber": "R675",
+      "CityStoreName": "Paris-Champs-Élysées",
+      "Province": "Île-de-France",
+      "City": "Paris",
+      "District": "75008"
+    },
+    {
+      "StoreNumber": "R566",
+      "CityStoreName": "Paris-Marché Saint-Germain",
+      "Province": "Paris",
+      "City": "Paris",
+      "District": "75006"
+    },
+    {
+      "StoreNumber": "R277",
+      "CityStoreName": "Paris-Opéra",
+      "Province": "Paris",
+      "City": "Paris",
+      "District": "75009"
+    }
+  ]
+}

@@ -1,0 +1,1644 @@
+{
+  "update_time": "2025-09-11 04:10:00",
+  "total_count": 273,
+  "urls": [
+    {
+      "url": "https://www.apple.com/",
+      "hreflang": "en-US",
+      "country": "us",
+      "language": "en-US"
+    },
+    {
+      "url": "https://www.apple.com/ae-ar/",
+      "hreflang": "ar-AE",
+      "country": "ae",
+      "language": "ar-AE"
+    },
+    {
+      "url": "https://www.apple.com/ae/",
+      "hreflang": "en-AE",
+      "country": "ae",
+      "language": "en-AE"
+    },
+    {
+      "url": "https://www.apple.com/am/",
+      "hreflang": "en-AM",
+      "country": "am",
+      "language": "en-AM"
+    },
+    {
+      "url": "https://www.apple.com/at/",
+      "hreflang": "de-AT",
+      "country": "at",
+      "language": "de-AT"
+    },
+    {
+      "url": "https://www.apple.com/au/",
+      "hreflang": "en-AU",
+      "country": "au",
+      "language": "en-AU"
+    },
+    {
+      "url": "https://www.apple.com/az/",
+      "hreflang": "en-AZ",
+      "country": "az",
+      "language": "en-AZ"
+    },
+    {
+      "url": "https://www.apple.com/befr/",
+      "hreflang": "fr-BE",
+      "country": "be",
+      "language": "fr-BE"
+    },
+    {
+      "url": "https://www.apple.com/benl/",
+      "hreflang": "nl-BE",
+      "country": "be",
+      "language": "nl-BE"
+    },
+    {
+      "url": "https://www.apple.com/bg/",
+      "hreflang": "bg-BG",
+      "country": "bg",
+      "language": "bg-BG"
+    },
+    {
+      "url": "https://www.apple.com/bh-ar/",
+      "hreflang": "ar-BH",
+      "country": "bh",
+      "language": "ar-BH"
+    },
+    {
+      "url": "https://www.apple.com/bh/",
+      "hreflang": "en-BH",
+      "country": "bh",
+      "language": "en-BH"
+    },
+    {
+      "url": "https://www.apple.com/br/",
+      "hreflang": "pt-BR",
+      "country": "br",
+      "language": "pt-BR"
+    },
+    {
+      "url": "https://www.apple.com/bw/",
+      "hreflang": "en-BW",
+      "country": "bw",
+      "language": "en-BW"
+    },
+    {
+      "url": "https://www.apple.com/ca/",
+      "hreflang": "en-CA",
+      "country": "ca",
+      "language": "en-CA"
+    },
+    {
+      "url": "https://www.apple.com/ca/fr/",
+      "hreflang": "fr-CA",
+      "country": "ca",
+      "language": "fr-CA"
+    },
+    {
+      "url": "https://www.apple.com/cf/",
+      "hreflang": "fr-CF",
+      "country": "cf",
+      "language": "fr-CF"
+    },
+    {
+      "url": "https://www.apple.com/chde/",
+      "hreflang": "de-CH",
+      "country": "ch",
+      "language": "de-CH"
+    },
+    {
+      "url": "https://www.apple.com/chfr/",
+      "hreflang": "fr-CH",
+      "country": "ch",
+      "language": "fr-CH"
+    },
+    {
+      "url": "https://www.apple.com/ci/",
+      "hreflang": "fr-CI",
+      "country": "ci",
+      "language": "fr-CI"
+    },
+    {
+      "url": "https://www.apple.com/cl/",
+      "hreflang": "es-CL",
+      "country": "cl",
+      "language": "es-CL"
+    },
+    {
+      "url": "https://www.apple.com/cm/",
+      "hreflang": "fr-CM",
+      "country": "cm",
+      "language": "fr-CM"
+    },
+    {
+      "url": "https://www.apple.com/co/",
+      "hreflang": "es-CO",
+      "country": "co",
+      "language": "es-CO"
+    },
+    {
+      "url": "https://www.apple.com/cz/",
+      "hreflang": "cs-CZ",
+      "country": "cz",
+      "language": "cs-CZ"
+    },
+    {
+      "url": "https://www.apple.com/de/",
+      "hreflang": "de-DE",
+      "country": "de",
+      "language": "de-DE"
+    },
+    {
+      "url": "https://www.apple.com/dk/",
+      "hreflang": "da-DK",
+      "country": "dk",
+      "language": "da-DK"
+    },
+    {
+      "url": "https://www.apple.com/ee/",
+      "hreflang": "et-EE",
+      "country": "ee",
+      "language": "et-EE"
+    },
+    {
+      "url": "https://www.apple.com/eg-ar/",
+      "hreflang": "ar-EG",
+      "country": "eg",
+      "language": "ar-EG"
+    },
+    {
+      "url": "https://www.apple.com/eg/",
+      "hreflang": "en-EG",
+      "country": "eg",
+      "language": "en-EG"
+    },
+    {
+      "url": "https://www.apple.com/es/",
+      "hreflang": "es-ES",
+      "country": "es",
+      "language": "es-ES"
+    },
+    {
+      "url": "https://www.apple.com/fi/",
+      "hreflang": "fi-FI",
+      "country": "fi",
+      "language": "fi-FI"
+    },
+    {
+      "url": "https://www.apple.com/fr/",
+      "hreflang": "fr-FR",
+      "country": "fr",
+      "language": "fr-FR"
+    },
+    {
+      "url": "https://www.apple.com/ge/",
+      "hreflang": "en-GE",
+      "country": "ge",
+      "language": "en-GE"
+    },
+    {
+      "url": "https://www.apple.com/gn/",
+      "hreflang": "fr-GN",
+      "country": "gn",
+      "language": "fr-GN"
+    },
+    {
+      "url": "https://www.apple.com/gq/",
+      "hreflang": "fr-GQ",
+      "country": "gq",
+      "language": "fr-GQ"
+    },
+    {
+      "url": "https://www.apple.com/gr/",
+      "hreflang": "el-GR",
+      "country": "gr",
+      "language": "el-GR"
+    },
+    {
+      "url": "https://www.apple.com/gw/",
+      "hreflang": "en-GW",
+      "country": "gw",
+      "language": "en-GW"
+    },
+    {
+      "url": "https://www.apple.com/hk/",
+      "hreflang": "zh-HK",
+      "country": "hk",
+      "language": "zh-HK"
+    },
+    {
+      "url": "https://www.apple.com/hk/en/",
+      "hreflang": "en-HK",
+      "country": "hk",
+      "language": "en-HK"
+    },
+    {
+      "url": "https://www.apple.com/hr/",
+      "hreflang": "hr-HR",
+      "country": "hr",
+      "language": "hr-HR"
+    },
+    {
+      "url": "https://www.apple.com/hu/",
+      "hreflang": "hu-HU",
+      "country": "hu",
+      "language": "hu-HU"
+    },
+    {
+      "url": "https://www.apple.com/id/",
+      "hreflang": "en-ID",
+      "country": "id",
+      "language": "en-ID"
+    },
+    {
+      "url": "https://www.apple.com/ie/",
+      "hreflang": "en-IE",
+      "country": "ie",
+      "language": "en-IE"
+    },
+    {
+      "url": "https://www.apple.com/il/",
+      "hreflang": "en-IL",
+      "country": "il",
+      "language": "en-IL"
+    },
+    {
+      "url": "https://www.apple.com/in/",
+      "hreflang": "en-IN",
+      "country": "in",
+      "language": "en-IN"
+    },
+    {
+      "url": "https://www.apple.com/it/",
+      "hreflang": "it-IT",
+      "country": "it",
+      "language": "it-IT"
+    },
+    {
+      "url": "https://www.apple.com/jo-ar/",
+      "hreflang": "ar-JO",
+      "country": "jo",
+      "language": "ar-JO"
+    },
+    {
+      "url": "https://www.apple.com/jo/",
+      "hreflang": "en-JO",
+      "country": "jo",
+      "language": "en-JO"
+    },
+    {
+      "url": "https://www.apple.com/jp/",
+      "hreflang": "ja-JP",
+      "country": "jp",
+      "language": "ja-JP"
+    },
+    {
+      "url": "https://www.apple.com/ke/",
+      "hreflang": "en-KE",
+      "country": "ke",
+      "language": "en-KE"
+    },
+    {
+      "url": "https://www.apple.com/kg/",
+      "hreflang": "en-KG",
+      "country": "kg",
+      "language": "en-KG"
+    },
+    {
+      "url": "https://www.apple.com/kr/",
+      "hreflang": "ko-KR",
+      "country": "kr",
+      "language": "ko-KR"
+    },
+    {
+      "url": "https://www.apple.com/kw-ar/",
+      "hreflang": "ar-KW",
+      "country": "kw",
+      "language": "ar-KW"
+    },
+    {
+      "url": "https://www.apple.com/kw/",
+      "hreflang": "en-KW",
+      "country": "kw",
+      "language": "en-KW"
+    },
+    {
+      "url": "https://www.apple.com/kz/",
+      "hreflang": "en-KZ",
+      "country": "kz",
+      "language": "en-KZ"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-HN",
+      "country": "hn",
+      "language": "es-HN"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-AR",
+      "country": "ar",
+      "language": "es-AR"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-SV",
+      "country": "sv",
+      "language": "es-SV"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-DO",
+      "country": "do",
+      "language": "es-DO"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-EC",
+      "country": "ec",
+      "language": "es-EC"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-GT",
+      "country": "gt",
+      "language": "es-GT"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-PE",
+      "country": "pe",
+      "language": "es-PE"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-BO",
+      "country": "bo",
+      "language": "es-BO"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-NI",
+      "country": "ni",
+      "language": "es-NI"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-VE",
+      "country": "ve",
+      "language": "es-VE"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-PA",
+      "country": "pa",
+      "language": "es-PA"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-CR",
+      "country": "cr",
+      "language": "es-CR"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-UY",
+      "country": "uy",
+      "language": "es-UY"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "es-PY",
+      "country": "py",
+      "language": "es-PY"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-AG",
+      "country": "ag",
+      "language": "en-AG"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-BS",
+      "country": "bs",
+      "language": "en-BS"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-TC",
+      "country": "tc",
+      "language": "en-TC"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-TT",
+      "country": "tt",
+      "language": "en-TT"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-SR",
+      "country": "sr",
+      "language": "en-SR"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-BM",
+      "country": "bm",
+      "language": "en-BM"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-BB",
+      "country": "bb",
+      "language": "en-BB"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-BZ",
+      "country": "bz",
+      "language": "en-BZ"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-GD",
+      "country": "gd",
+      "language": "en-GD"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-KY",
+      "country": "ky",
+      "language": "en-KY"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-LC",
+      "country": "lc",
+      "language": "en-LC"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-MS",
+      "country": "ms",
+      "language": "en-MS"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-KN",
+      "country": "kn",
+      "language": "en-KN"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-AI",
+      "country": "ai",
+      "language": "en-AI"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-VC",
+      "country": "vc",
+      "language": "en-VC"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-GY",
+      "country": "gy",
+      "language": "en-GY"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-VG",
+      "country": "vg",
+      "language": "en-VG"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-DM",
+      "country": "dm",
+      "language": "en-DM"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "en-JM",
+      "country": "jm",
+      "language": "en-JM"
+    },
+    {
+      "url": "https://www.apple.com/li/",
+      "hreflang": "de-LI",
+      "country": "li",
+      "language": "de-LI"
+    },
+    {
+      "url": "https://www.apple.com/lt/",
+      "hreflang": "lt-LT",
+      "country": "lt",
+      "language": "lt-LT"
+    },
+    {
+      "url": "https://www.apple.com/lu/",
+      "hreflang": "fr-LU",
+      "country": "lu",
+      "language": "fr-LU"
+    },
+    {
+      "url": "https://www.apple.com/lv/",
+      "hreflang": "lv-LV",
+      "country": "lv",
+      "language": "lv-LV"
+    },
+    {
+      "url": "https://www.apple.com/ma/",
+      "hreflang": "fr-MA",
+      "country": "ma",
+      "language": "fr-MA"
+    },
+    {
+      "url": "https://www.apple.com/md/",
+      "hreflang": "en-MD",
+      "country": "md",
+      "language": "en-MD"
+    },
+    {
+      "url": "https://www.apple.com/me/",
+      "hreflang": "en-ME",
+      "country": "me",
+      "language": "en-ME"
+    },
+    {
+      "url": "https://www.apple.com/mg/",
+      "hreflang": "en-MG",
+      "country": "mg",
+      "language": "en-MG"
+    },
+    {
+      "url": "https://www.apple.com/mk/",
+      "hreflang": "en-MK",
+      "country": "mk",
+      "language": "en-MK"
+    },
+    {
+      "url": "https://www.apple.com/ml/",
+      "hreflang": "fr-ML",
+      "country": "ml",
+      "language": "fr-ML"
+    },
+    {
+      "url": "https://www.apple.com/mo/",
+      "hreflang": "zh-MO",
+      "country": "mo",
+      "language": "zh-MO"
+    },
+    {
+      "url": "https://www.apple.com/mt/",
+      "hreflang": "en-MT",
+      "country": "mt",
+      "language": "en-MT"
+    },
+    {
+      "url": "https://www.apple.com/mu/",
+      "hreflang": "fr-MU",
+      "country": "mu",
+      "language": "fr-MU"
+    },
+    {
+      "url": "https://www.apple.com/mx/",
+      "hreflang": "es-MX",
+      "country": "mx",
+      "language": "es-MX"
+    },
+    {
+      "url": "https://www.apple.com/my/",
+      "hreflang": "en-MY",
+      "country": "my",
+      "language": "en-MY"
+    },
+    {
+      "url": "https://www.apple.com/mz/",
+      "hreflang": "en-MZ",
+      "country": "mz",
+      "language": "en-MZ"
+    },
+    {
+      "url": "https://www.apple.com/ne/",
+      "hreflang": "fr-NE",
+      "country": "ne",
+      "language": "fr-NE"
+    },
+    {
+      "url": "https://www.apple.com/ng/",
+      "hreflang": "en-NG",
+      "country": "ng",
+      "language": "en-NG"
+    },
+    {
+      "url": "https://www.apple.com/nl/",
+      "hreflang": "nl-NL",
+      "country": "nl",
+      "language": "nl-NL"
+    },
+    {
+      "url": "https://www.apple.com/no/",
+      "hreflang": "no-NO",
+      "country": "no",
+      "language": "no-NO"
+    },
+    {
+      "url": "https://www.apple.com/nz/",
+      "hreflang": "en-NZ",
+      "country": "nz",
+      "language": "en-NZ"
+    },
+    {
+      "url": "https://www.apple.com/om-ar/",
+      "hreflang": "ar-OM",
+      "country": "om",
+      "language": "ar-OM"
+    },
+    {
+      "url": "https://www.apple.com/om/",
+      "hreflang": "en-OM",
+      "country": "om",
+      "language": "en-OM"
+    },
+    {
+      "url": "https://www.apple.com/ph/",
+      "hreflang": "en-PH",
+      "country": "ph",
+      "language": "en-PH"
+    },
+    {
+      "url": "https://www.apple.com/pl/",
+      "hreflang": "pl-PL",
+      "country": "pl",
+      "language": "pl-PL"
+    },
+    {
+      "url": "https://www.apple.com/pt/",
+      "hreflang": "pt-PT",
+      "country": "pt",
+      "language": "pt-PT"
+    },
+    {
+      "url": "https://www.apple.com/qa-ar/",
+      "hreflang": "ar-QA",
+      "country": "qa",
+      "language": "ar-QA"
+    },
+    {
+      "url": "https://www.apple.com/qa/",
+      "hreflang": "en-QA",
+      "country": "qa",
+      "language": "en-QA"
+    },
+    {
+      "url": "https://www.apple.com/ro/",
+      "hreflang": "ro-RO",
+      "country": "ro",
+      "language": "ro-RO"
+    },
+    {
+      "url": "https://www.apple.com/sa-ar/",
+      "hreflang": "ar-SA",
+      "country": "sa",
+      "language": "ar-SA"
+    },
+    {
+      "url": "https://www.apple.com/sa/",
+      "hreflang": "en-SA",
+      "country": "sa",
+      "language": "en-SA"
+    },
+    {
+      "url": "https://www.apple.com/se/",
+      "hreflang": "sv-SE",
+      "country": "se",
+      "language": "sv-SE"
+    },
+    {
+      "url": "https://www.apple.com/sg/",
+      "hreflang": "en-SG",
+      "country": "sg",
+      "language": "en-SG"
+    },
+    {
+      "url": "https://www.apple.com/si/",
+      "hreflang": "en-SI",
+      "country": "si",
+      "language": "en-SI"
+    },
+    {
+      "url": "https://www.apple.com/sk/",
+      "hreflang": "sk-SK",
+      "country": "sk",
+      "language": "sk-SK"
+    },
+    {
+      "url": "https://www.apple.com/sn/",
+      "hreflang": "fr-SN",
+      "country": "sn",
+      "language": "fr-SN"
+    },
+    {
+      "url": "https://www.apple.com/th/",
+      "hreflang": "th-TH",
+      "country": "th",
+      "language": "th-TH"
+    },
+    {
+      "url": "https://www.apple.com/tj/",
+      "hreflang": "en-TJ",
+      "country": "tj",
+      "language": "en-TJ"
+    },
+    {
+      "url": "https://www.apple.com/tm/",
+      "hreflang": "en-TM",
+      "country": "tm",
+      "language": "en-TM"
+    },
+    {
+      "url": "https://www.apple.com/tn/",
+      "hreflang": "fr-TN",
+      "country": "tn",
+      "language": "fr-TN"
+    },
+    {
+      "url": "https://www.apple.com/tr/",
+      "hreflang": "tr-TR",
+      "country": "tr",
+      "language": "tr-TR"
+    },
+    {
+      "url": "https://www.apple.com/tw/",
+      "hreflang": "zh-TW",
+      "country": "tw",
+      "language": "zh-TW"
+    },
+    {
+      "url": "https://www.apple.com/ua/",
+      "hreflang": "uk-UA",
+      "country": "ua",
+      "language": "uk-UA"
+    },
+    {
+      "url": "https://www.apple.com/ug/",
+      "hreflang": "en-UG",
+      "country": "ug",
+      "language": "en-UG"
+    },
+    {
+      "url": "https://www.apple.com/uk/",
+      "hreflang": "en-GB",
+      "country": "gb",
+      "language": "en-GB"
+    },
+    {
+      "url": "https://www.apple.com/uz/",
+      "hreflang": "en-UZ",
+      "country": "uz",
+      "language": "en-UZ"
+    },
+    {
+      "url": "https://www.apple.com/vn/",
+      "hreflang": "vi-VN",
+      "country": "vn",
+      "language": "vi-VN"
+    },
+    {
+      "url": "https://www.apple.com/za/",
+      "hreflang": "en-ZA",
+      "country": "za",
+      "language": "en-ZA"
+    },
+    {
+      "url": "https://www.apple.com.cn/",
+      "hreflang": "",
+      "country": "cn",
+      "language": "zh-CN"
+    },
+    {
+      "url": "https://www.apple.com/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ae-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/am/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/at/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/au/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/az/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/befr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/benl/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/bg/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/bh-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/bh/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/br/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/bw/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ca/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ca/fr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/cf/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/chde/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/chfr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ci/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/cl/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/cm/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/co/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/cz/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/de/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/dk/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ee/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/eg-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/eg/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/es/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/fi/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/fr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ge/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/gn/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/gq/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/gr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/gw/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/hk/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/hk/en/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/hr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/hu/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/id/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ie/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/il/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/in/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/it/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/jo-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/jo/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/jp/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ke/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/kg/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/kr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/kw-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/kw/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/kz/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/la/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lae/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/li/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lt/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lu/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/lv/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ma/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/md/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/me/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mg/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mk/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ml/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mo/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mt/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mu/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mx/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/my/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/mz/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ne/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ng/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/nl/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/no/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/nz/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/om-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/om/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ph/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/pl/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/pt/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/qa-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/qa/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ro/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/sa-ar/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/sa/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/se/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/sg/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/si/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/sk/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/sn/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/th/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/tj/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/tm/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/tn/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/tr/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/tw/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ua/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/ug/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/uk/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/uz/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/vn/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    },
+    {
+      "url": "https://www.apple.com/za/",
+      "hreflang": "",
+      "country": "unknown",
+      "language": "unknown"
+    }
+  ]
+}

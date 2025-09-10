@@ -1,0 +1,13 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "my",
+  "stores": [
+    {
+      "StoreNumber": "R742",
+      "CityStoreName": "Kuala Lumpur-The Exchange TRX",
+      "Province": "Kuala Lumpur",
+      "City": "Kuala Lumpur",
+      "District": "55188"
+    }
+  ]
+}

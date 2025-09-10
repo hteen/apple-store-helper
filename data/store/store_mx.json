@@ -1,0 +1,20 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "mx",
+  "stores": [
+    {
+      "StoreNumber": "R740",
+      "CityStoreName": "Mexico City-Antara",
+      "Province": "Mexico City",
+      "City": "Mexico City",
+      "District": "11520"
+    },
+    {
+      "StoreNumber": "R708",
+      "CityStoreName": "Cuajimalpa de Morelos-Vía Santa Fe",
+      "Province": "Mexico City",
+      "City": "Cuajimalpa de Morelos",
+      "District": "05109"
+    }
+  ]
+}

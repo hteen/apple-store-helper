@@ -1,0 +1,20 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "br",
+  "stores": [
+    {
+      "StoreNumber": "R567",
+      "CityStoreName": "Barra da Tijuca-VillageMall",
+      "Province": "Rio de Janeiro",
+      "City": "Barra da Tijuca",
+      "District": "22640"
+    },
+    {
+      "StoreNumber": "R608",
+      "CityStoreName": "São Paulo-Morumbi",
+      "Province": "SP",
+      "City": "São Paulo",
+      "District": "04707-900"
+    }
+  ]
+}

@@ -1,3 +1,3 @@
 package common
 
-const VERSION = "1.4.2"
+const VERSION = "1.6.2"

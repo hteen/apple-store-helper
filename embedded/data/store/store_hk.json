@@ -1,0 +1,48 @@
+{
+  "update_time": "2025-09-10 22:05:05",
+  "area_code": "hk",
+  "stores": [
+    {
+      "StoreNumber": "R428",
+      "CityStoreName": "ifc mall",
+      "Province": "",
+      "City": "Central",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R499",
+      "CityStoreName": "Canton Road",
+      "Province": "",
+      "City": "Tsim Sha Tsui",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R409",
+      "CityStoreName": "Causeway Bay",
+      "Province": "",
+      "City": "Causeway Bay",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R485",
+      "CityStoreName": "Festival Walk",
+      "Province": "",
+      "City": "Kowloon Tong",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R673",
+      "CityStoreName": "apm Hong Kong",
+      "Province": "",
+      "City": "Kwun Tong",
+      "District": ""
+    },
+    {
+      "StoreNumber": "R610",
+      "CityStoreName": "New Town Plaza",
+      "Province": "",
+      "City": "Sha Tin",
+      "District": ""
+    }
+  ]
+}

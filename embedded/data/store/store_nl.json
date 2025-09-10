@@ -1,0 +1,27 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "nl",
+  "stores": [
+    {
+      "StoreNumber": "R540",
+      "CityStoreName": "The Hague-Den Haag",
+      "Province": "Zuid-Holland",
+      "City": "The Hague",
+      "District": "2511 AB"
+    },
+    {
+      "StoreNumber": "R408",
+      "CityStoreName": "Amsterdam-Amsterdam",
+      "Province": "Noord-Holland",
+      "City": "Amsterdam",
+      "District": "1017 PS"
+    },
+    {
+      "StoreNumber": "R539",
+      "CityStoreName": "Haarlem-Haarlem",
+      "Province": "Noord-Holland",
+      "City": "Haarlem",
+      "District": "2011 SH"
+    }
+  ]
+}

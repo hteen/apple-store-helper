@@ -1,0 +1,20 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "th",
+  "stores": [
+    {
+      "StoreNumber": "R733",
+      "CityStoreName": "Bangkok-Central World",
+      "Province": "Bangkok",
+      "City": "Bangkok",
+      "District": "10330"
+    },
+    {
+      "StoreNumber": "R728",
+      "CityStoreName": "Bangkok-Iconsiam",
+      "Province": "Bangkok",
+      "City": "Bangkok",
+      "District": "10600"
+    }
+  ]
+}

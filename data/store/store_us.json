@@ -1,0 +1,1924 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "us",
+  "stores": [
+    {
+      "StoreNumber": "R035",
+      "CityStoreName": "Chicago-Michigan Avenue",
+      "Province": "Illinois",
+      "City": "Chicago",
+      "District": "60611"
+    },
+    {
+      "StoreNumber": "R018",
+      "CityStoreName": "Schaumburg-Woodfield",
+      "Province": "Illinois",
+      "City": "Schaumburg",
+      "District": "60173"
+    },
+    {
+      "StoreNumber": "R141",
+      "CityStoreName": "Northbrook-Northbrook",
+      "Province": "Illinois",
+      "City": "Northbrook",
+      "District": "60062"
+    },
+    {
+      "StoreNumber": "R237",
+      "CityStoreName": "Orland Park-Orland Square Mall",
+      "Province": "Illinois",
+      "City": "Orland Park",
+      "District": "60462"
+    },
+    {
+      "StoreNumber": "R284",
+      "CityStoreName": "Chicago-Lincoln Park",
+      "Province": "Illinois",
+      "City": "Chicago",
+      "District": "60642"
+    },
+    {
+      "StoreNumber": "R089",
+      "CityStoreName": "Skokie-Old Orchard",
+      "Province": "Illinois",
+      "City": "Skokie",
+      "District": "60077"
+    },
+    {
+      "StoreNumber": "R258",
+      "CityStoreName": "Deer Park-Deer Park",
+      "Province": "Illinois",
+      "City": "Deer Park",
+      "District": "60010"
+    },
+    {
+      "StoreNumber": "R348",
+      "CityStoreName": "Naperville-Main Place",
+      "Province": "Illinois",
+      "City": "Naperville",
+      "District": "60540"
+    },
+    {
+      "StoreNumber": "R056",
+      "CityStoreName": "Oak Brook-Oakbrook",
+      "Province": "Illinois",
+      "City": "Oak Brook",
+      "District": "60523"
+    },
+    {
+      "StoreNumber": "R283",
+      "CityStoreName": "Leawood-Leawood",
+      "Province": "Kansas",
+      "City": "Leawood",
+      "District": "66209"
+    },
+    {
+      "StoreNumber": "R271",
+      "CityStoreName": "Reston-Reston",
+      "Province": "Virginia",
+      "City": "Reston",
+      "District": "20190"
+    },
+    {
+      "StoreNumber": "R078",
+      "CityStoreName": "Richmond-Short Pump Town Center",
+      "Province": "Virginia",
+      "City": "Richmond",
+      "District": "23233"
+    },
+    {
+      "StoreNumber": "R614",
+      "CityStoreName": "Virginia Beach-Lynnhaven Mall",
+      "Province": "Virginia",
+      "City": "Virginia Beach",
+      "District": "23452"
+    },
+    {
+      "StoreNumber": "R036",
+      "CityStoreName": "Arlington-Clarendon",
+      "Province": "Virginia",
+      "City": "Arlington",
+      "District": "22201"
+    },
+    {
+      "StoreNumber": "R010",
+      "CityStoreName": "McLean-Tysons Corner",
+      "Province": "Virginia",
+      "City": "McLean",
+      "District": "22102"
+    },
+    {
+      "StoreNumber": "R129",
+      "CityStoreName": "Arlington-Pentagon City",
+      "Province": "Virginia",
+      "City": "Arlington",
+      "District": "22202"
+    },
+    {
+      "StoreNumber": "R598",
+      "CityStoreName": "Woodbridge-Stonebridge Potomac Town Center",
+      "Province": "Virginia",
+      "City": "Woodbridge",
+      "District": "22191"
+    },
+    {
+      "StoreNumber": "R221",
+      "CityStoreName": "Fairfax-Fairfax Corner",
+      "Province": "Virginia",
+      "City": "Fairfax",
+      "District": "22030"
+    },
+    {
+      "StoreNumber": "R318",
+      "CityStoreName": "Charleston-Charleston",
+      "Province": "South Carolina",
+      "City": "Charleston",
+      "District": "29401"
+    },
+    {
+      "StoreNumber": "R355",
+      "CityStoreName": "Greenville-Haywood Mall",
+      "Province": "South Carolina",
+      "City": "Greenville",
+      "District": "29607"
+    },
+    {
+      "StoreNumber": "R225",
+      "CityStoreName": "Birmingham-The Summit",
+      "Province": "Alabama",
+      "City": "Birmingham",
+      "District": "35243"
+    },
+    {
+      "StoreNumber": "R266",
+      "CityStoreName": "Huntsville-Bridge Street",
+      "Province": "Alabama",
+      "City": "Huntsville",
+      "District": "35806"
+    },
+    {
+      "StoreNumber": "R059",
+      "CityStoreName": "Wauwatosa-Mayfair",
+      "Province": "Wisconsin",
+      "City": "Wauwatosa",
+      "District": "53226"
+    },
+    {
+      "StoreNumber": "R257",
+      "CityStoreName": "Glendale-Bayshore",
+      "Province": "Wisconsin",
+      "City": "Glendale",
+      "District": "53217"
+    },
+    {
+      "StoreNumber": "R229",
+      "CityStoreName": "Madison-Hilldale",
+      "Province": "Wisconsin",
+      "City": "Madison",
+      "District": "53705"
+    },
+    {
+      "StoreNumber": "R353",
+      "CityStoreName": "Akron-Summit Mall",
+      "Province": "Ohio",
+      "City": "Akron",
+      "District": "44333"
+    },
+    {
+      "StoreNumber": "R417",
+      "CityStoreName": "Columbus-Polaris Fashion Place",
+      "Province": "Ohio",
+      "City": "Columbus",
+      "District": "43240"
+    },
+    {
+      "StoreNumber": "R081",
+      "CityStoreName": "Woodmere-Eton",
+      "Province": "Ohio",
+      "City": "Woodmere",
+      "District": "44122"
+    },
+    {
+      "StoreNumber": "R028",
+      "CityStoreName": "Cincinnati-Kenwood Towne Centre",
+      "Province": "Ohio",
+      "City": "Cincinnati",
+      "District": "45236"
+    },
+    {
+      "StoreNumber": "R009",
+      "CityStoreName": "Columbus-Easton Town Center",
+      "Province": "Ohio",
+      "City": "Columbus",
+      "District": "43219"
+    },
+    {
+      "StoreNumber": "R192",
+      "CityStoreName": "Westlake-Crocker Park",
+      "Province": "Ohio",
+      "City": "Westlake",
+      "District": "44145"
+    },
+    {
+      "StoreNumber": "R518",
+      "CityStoreName": "Beavercreek-The Greene",
+      "Province": "Ohio",
+      "City": "Beavercreek",
+      "District": "45440"
+    },
+    {
+      "StoreNumber": "R299",
+      "CityStoreName": "Toledo-Franklin Park Mall",
+      "Province": "Ohio",
+      "City": "Toledo",
+      "District": "43623"
+    },
+    {
+      "StoreNumber": "R070",
+      "CityStoreName": "Sacramento-Arden Fair",
+      "Province": "California",
+      "City": "Sacramento",
+      "District": "95815"
+    },
+    {
+      "StoreNumber": "R015",
+      "CityStoreName": "Newport Beach-Fashion Island",
+      "Province": "California",
+      "City": "Newport Beach",
+      "District": "92660"
+    },
+    {
+      "StoreNumber": "R148",
+      "CityStoreName": "Sherman Oaks-Sherman Oaks",
+      "Province": "California",
+      "City": "Sherman Oaks",
+      "District": "91423"
+    },
+    {
+      "StoreNumber": "R002",
+      "CityStoreName": "Palo Alto-Palo Alto",
+      "Province": "California",
+      "City": "Palo Alto",
+      "District": "94301"
+    },
+    {
+      "StoreNumber": "R069",
+      "CityStoreName": "Mission Viejo-Mission Viejo",
+      "Province": "California",
+      "City": "Mission Viejo",
+      "District": "92691"
+    },
+    {
+      "StoreNumber": "R040",
+      "CityStoreName": "San Diego-Fashion Valley",
+      "Province": "California",
+      "City": "San Diego",
+      "District": "92108"
+    },
+    {
+      "StoreNumber": "R050",
+      "CityStoreName": "Los Angeles-The Grove",
+      "Province": "California",
+      "City": "Los Angeles",
+      "District": "90036"
+    },
+    {
+      "StoreNumber": "R039",
+      "CityStoreName": "Santa Clara-Valley Fair",
+      "Province": "California",
+      "City": "Santa Clara",
+      "District": "95050"
+    },
+    {
+      "StoreNumber": "R033",
+      "CityStoreName": "San Francisco-Stonestown",
+      "Province": "California",
+      "City": "San Francisco",
+      "District": "94132"
+    },
+    {
+      "StoreNumber": "R122",
+      "CityStoreName": "Manhattan Beach-Manhattan Village",
+      "Province": "California",
+      "City": "Manhattan Beach",
+      "District": "90266"
+    },
+    {
+      "StoreNumber": "R014",
+      "CityStoreName": "Walnut Creek-Broadway Plaza",
+      "Province": "California",
+      "City": "Walnut Creek",
+      "District": "94596"
+    },
+    {
+      "StoreNumber": "R051",
+      "CityStoreName": "Santa Monica-Third Street Promenade",
+      "Province": "California",
+      "City": "Santa Monica",
+      "District": "90401"
+    },
+    {
+      "StoreNumber": "R317",
+      "CityStoreName": "Santa Barbara-State Street",
+      "Province": "California",
+      "City": "Santa Barbara",
+      "District": "93101"
+    },
+    {
+      "StoreNumber": "R082",
+      "CityStoreName": "San Diego-UTC",
+      "Province": "California",
+      "City": "San Diego",
+      "District": "92122"
+    },
+    {
+      "StoreNumber": "R156",
+      "CityStoreName": "Brea-Brea Mall",
+      "Province": "California",
+      "City": "Brea",
+      "District": "92821"
+    },
+    {
+      "StoreNumber": "R101",
+      "CityStoreName": "Pleasanton-Stoneridge Mall",
+      "Province": "California",
+      "City": "Pleasanton",
+      "District": "94588"
+    },
+    {
+      "StoreNumber": "R057",
+      "CityStoreName": "Emeryville-Bay Street",
+      "Province": "California",
+      "City": "Emeryville",
+      "District": "94608"
+    },
+    {
+      "StoreNumber": "R294",
+      "CityStoreName": "Carlsbad-Carlsbad",
+      "Province": "California",
+      "City": "Carlsbad",
+      "District": "92009"
+    },
+    {
+      "StoreNumber": "R075",
+      "CityStoreName": "San Francisco-Union Square",
+      "Province": "California",
+      "City": "San Francisco",
+      "District": "94108"
+    },
+    {
+      "StoreNumber": "R300",
+      "CityStoreName": "Cerritos-Los Cerritos",
+      "Province": "California",
+      "City": "Cerritos",
+      "District": "90703"
+    },
+    {
+      "StoreNumber": "R550",
+      "CityStoreName": "Bakersfield-Valley Plaza",
+      "Province": "California",
+      "City": "Bakersfield",
+      "District": "93304"
+    },
+    {
+      "StoreNumber": "R105",
+      "CityStoreName": "San Jose-Oakridge",
+      "Province": "California",
+      "City": "San Jose",
+      "District": "95123"
+    },
+    {
+      "StoreNumber": "R297",
+      "CityStoreName": "Palm Desert-El Paseo Village",
+      "Province": "California",
+      "City": "Palm Desert",
+      "District": "92260"
+    },
+    {
+      "StoreNumber": "R094",
+      "CityStoreName": "Rancho Cucamonga-Victoria Gardens",
+      "Province": "California",
+      "City": "Rancho Cucamonga",
+      "District": "91739"
+    },
+    {
+      "StoreNumber": "R124",
+      "CityStoreName": "Los Angeles-Beverly Center",
+      "Province": "California",
+      "City": "Los Angeles",
+      "District": "90048"
+    },
+    {
+      "StoreNumber": "R462",
+      "CityStoreName": "Valencia-Valencia Town Center",
+      "Province": "California",
+      "City": "Valencia",
+      "District": "91355"
+    },
+    {
+      "StoreNumber": "R189",
+      "CityStoreName": "Canoga Park-Topanga",
+      "Province": "California",
+      "City": "Canoga Park",
+      "District": "91303"
+    },
+    {
+      "StoreNumber": "R322",
+      "CityStoreName": "Modesto-Vintage Faire",
+      "Province": "California",
+      "City": "Modesto",
+      "District": "95356"
+    },
+    {
+      "StoreNumber": "R720",
+      "CityStoreName": "Los Angeles-Tower Theatre",
+      "Province": "California",
+      "City": "Los Angeles",
+      "District": "90014"
+    },
+    {
+      "StoreNumber": "R023",
+      "CityStoreName": "Northridge-Northridge",
+      "Province": "California",
+      "City": "Northridge",
+      "District": "91324"
+    },
+    {
+      "StoreNumber": "R071",
+      "CityStoreName": "Corte Madera-Corte Madera",
+      "Province": "California",
+      "City": "Corte Madera",
+      "District": "94925"
+    },
+    {
+      "StoreNumber": "R044",
+      "CityStoreName": "Santa Rosa-Santa Rosa Plaza",
+      "Province": "California",
+      "City": "Santa Rosa",
+      "District": "95401"
+    },
+    {
+      "StoreNumber": "R146",
+      "CityStoreName": "Irvine-Irvine Spectrum Center",
+      "Province": "California",
+      "City": "Irvine",
+      "District": "92618"
+    },
+    {
+      "StoreNumber": "R199",
+      "CityStoreName": "San Luis Obispo-Higuera Street",
+      "Province": "California",
+      "City": "San Luis Obispo",
+      "District": "93401"
+    },
+    {
+      "StoreNumber": "R285",
+      "CityStoreName": "Escondido-North County",
+      "Province": "California",
+      "City": "Escondido",
+      "District": "92025"
+    },
+    {
+      "StoreNumber": "R001",
+      "CityStoreName": "Glendale-Glendale Galleria",
+      "Province": "California",
+      "City": "Glendale",
+      "District": "91210"
+    },
+    {
+      "StoreNumber": "R236",
+      "CityStoreName": "Fresno-Fashion Fair",
+      "Province": "California",
+      "City": "Fresno",
+      "District": "93710"
+    },
+    {
+      "StoreNumber": "R298",
+      "CityStoreName": "Roseville-Roseville",
+      "Province": "California",
+      "City": "Roseville",
+      "District": "95678"
+    },
+    {
+      "StoreNumber": "R108",
+      "CityStoreName": "Los Angeles-Century City",
+      "Province": "California",
+      "City": "Los Angeles",
+      "District": "90067"
+    },
+    {
+      "StoreNumber": "R451",
+      "CityStoreName": "Glendale-The Americana at Brand",
+      "Province": "California",
+      "City": "Glendale",
+      "District": "91210"
+    },
+    {
+      "StoreNumber": "R154",
+      "CityStoreName": "Thousand Oaks-The Oaks",
+      "Province": "California",
+      "City": "Thousand Oaks",
+      "District": "91360"
+    },
+    {
+      "StoreNumber": "R414",
+      "CityStoreName": "Berkeley-4th Street",
+      "Province": "California",
+      "City": "Berkeley",
+      "District": "94710"
+    },
+    {
+      "StoreNumber": "R217",
+      "CityStoreName": "San Francisco-Chestnut Street",
+      "Province": "California",
+      "City": "San Francisco",
+      "District": "94123"
+    },
+    {
+      "StoreNumber": "R004",
+      "CityStoreName": "Costa Mesa-South Coast Plaza",
+      "Province": "California",
+      "City": "Costa Mesa",
+      "District": "92626"
+    },
+    {
+      "StoreNumber": "R777",
+      "CityStoreName": "Torrance-Del Amo",
+      "Province": "California",
+      "City": "Torrance",
+      "District": "90503"
+    },
+    {
+      "StoreNumber": "R824",
+      "CityStoreName": "Cupertino-Apple Park Visitor Center",
+      "Province": "California",
+      "City": "Cupertino",
+      "District": "95014"
+    },
+    {
+      "StoreNumber": "R099",
+      "CityStoreName": "Palo Alto-Stanford Shopping Center",
+      "Province": "California",
+      "City": "Palo Alto",
+      "District": "94304"
+    },
+    {
+      "StoreNumber": "R213",
+      "CityStoreName": "Chula Vista-Otay Ranch",
+      "Province": "California",
+      "City": "Chula Vista",
+      "District": "91915"
+    },
+    {
+      "StoreNumber": "R240",
+      "CityStoreName": "Los Gatos-Los Gatos",
+      "Province": "California",
+      "City": "Los Gatos",
+      "District": "95030"
+    },
+    {
+      "StoreNumber": "R034",
+      "CityStoreName": "Pasadena-Pasadena",
+      "Province": "California",
+      "City": "Pasadena",
+      "District": "91105"
+    },
+    {
+      "StoreNumber": "R029",
+      "CityStoreName": "Burlingame-Burlingame",
+      "Province": "California",
+      "City": "Burlingame",
+      "District": "94010"
+    },
+    {
+      "StoreNumber": "R345",
+      "CityStoreName": "Temecula-Promenade Temecula",
+      "Province": "California",
+      "City": "Temecula",
+      "District": "92591"
+    },
+    {
+      "StoreNumber": "R305",
+      "CityStoreName": "Monterey-Del Monte",
+      "Province": "California",
+      "City": "Monterey",
+      "District": "93940"
+    },
+    {
+      "StoreNumber": "R231",
+      "CityStoreName": "San Mateo-Hillsdale",
+      "Province": "California",
+      "City": "San Mateo",
+      "District": "94403"
+    },
+    {
+      "StoreNumber": "R599",
+      "CityStoreName": "Farmington-Station Park",
+      "Province": "Utah",
+      "City": "Farmington",
+      "District": "84025"
+    },
+    {
+      "StoreNumber": "R125",
+      "CityStoreName": "Salt Lake City-City Creek Center",
+      "Province": "Utah",
+      "City": "Salt Lake City",
+      "District": "84101"
+    },
+    {
+      "StoreNumber": "R461",
+      "CityStoreName": "Murray-Fashion Place",
+      "Province": "Utah",
+      "City": "Murray",
+      "District": "84107"
+    },
+    {
+      "StoreNumber": "R177",
+      "CityStoreName": "Albuquerque-ABQ Uptown",
+      "Province": "New Mexico",
+      "City": "Albuquerque",
+      "District": "87110"
+    },
+    {
+      "StoreNumber": "R303",
+      "CityStoreName": "Boise-Boise Towne Square",
+      "Province": "Idaho",
+      "City": "Boise",
+      "District": "83704"
+    },
+    {
+      "StoreNumber": "R262",
+      "CityStoreName": "Anchorage-Anchorage 5th Avenue Mall",
+      "Province": "Alaska",
+      "City": "Anchorage",
+      "District": "99501"
+    },
+    {
+      "StoreNumber": "R324",
+      "CityStoreName": "Ridgeland-Renaissance at Colony Park",
+      "Province": "Mississippi",
+      "City": "Ridgeland",
+      "District": "39157"
+    },
+    {
+      "StoreNumber": "R104",
+      "CityStoreName": "Bridgewater-Bridgewater",
+      "Province": "New Jersey",
+      "City": "Bridgewater",
+      "District": "08807"
+    },
+    {
+      "StoreNumber": "R325",
+      "CityStoreName": "Wayne-Willowbrook",
+      "Province": "New Jersey",
+      "City": "Wayne",
+      "District": "07470"
+    },
+    {
+      "StoreNumber": "R013",
+      "CityStoreName": "Woodcliff Lake-Tice's Corner",
+      "Province": "New Jersey",
+      "City": "Woodcliff Lake",
+      "District": "07677"
+    },
+    {
+      "StoreNumber": "R103",
+      "CityStoreName": "Rockaway-Rockaway",
+      "Province": "New Jersey",
+      "City": "Rockaway",
+      "District": "07866"
+    },
+    {
+      "StoreNumber": "R088",
+      "CityStoreName": "Marlton-Sagemore",
+      "Province": "New Jersey",
+      "City": "Marlton",
+      "District": "08053"
+    },
+    {
+      "StoreNumber": "R549",
+      "CityStoreName": "Lawrence Township-Quaker Bridge",
+      "Province": "New Jersey",
+      "City": "Lawrence Township",
+      "District": "08648"
+    },
+    {
+      "StoreNumber": "R138",
+      "CityStoreName": "Freehold-Freehold Raceway Mall",
+      "Province": "New Jersey",
+      "City": "Freehold",
+      "District": "07728"
+    },
+    {
+      "StoreNumber": "R117",
+      "CityStoreName": "Paramus-Garden State Plaza",
+      "Province": "New Jersey",
+      "City": "Paramus",
+      "District": "07652"
+    },
+    {
+      "StoreNumber": "R755",
+      "CityStoreName": "East Rutherford-American Dream",
+      "Province": "New Jersey",
+      "City": "East Rutherford",
+      "District": "07073"
+    },
+    {
+      "StoreNumber": "R067",
+      "CityStoreName": "Edison-Menlo Park",
+      "Province": "New Jersey",
+      "City": "Edison",
+      "District": "08837"
+    },
+    {
+      "StoreNumber": "R043",
+      "CityStoreName": "Short Hills-Short Hills",
+      "Province": "New Jersey",
+      "City": "Short Hills",
+      "District": "07078"
+    },
+    {
+      "StoreNumber": "R206",
+      "CityStoreName": "Cherry Hill-Cherry Hill",
+      "Province": "New Jersey",
+      "City": "Cherry Hill",
+      "District": "08002"
+    },
+    {
+      "StoreNumber": "R063",
+      "CityStoreName": "Towson-Towson Town Center",
+      "Province": "Maryland",
+      "City": "Towson",
+      "District": "21204"
+    },
+    {
+      "StoreNumber": "R084",
+      "CityStoreName": "Bethesda-Montgomery Mall",
+      "Province": "Maryland",
+      "City": "Bethesda",
+      "District": "20817"
+    },
+    {
+      "StoreNumber": "R168",
+      "CityStoreName": "Columbia-Columbia",
+      "Province": "Maryland",
+      "City": "Columbia",
+      "District": "21044"
+    },
+    {
+      "StoreNumber": "R112",
+      "CityStoreName": "Bethesda-Bethesda Row",
+      "Province": "Maryland",
+      "City": "Bethesda",
+      "District": "20814"
+    },
+    {
+      "StoreNumber": "R142",
+      "CityStoreName": "Annapolis-Annapolis",
+      "Province": "Maryland",
+      "City": "Annapolis",
+      "District": "21401"
+    },
+    {
+      "StoreNumber": "R109",
+      "CityStoreName": "West Des Moines-Jordan Creek",
+      "Province": "Iowa",
+      "City": "West Des Moines",
+      "District": "50266"
+    },
+    {
+      "StoreNumber": "R097",
+      "CityStoreName": "Kansas City-Country Club Plaza",
+      "Province": "Missouri",
+      "City": "Kansas City",
+      "District": "64112"
+    },
+    {
+      "StoreNumber": "R114",
+      "CityStoreName": "Saint Louis-Saint Louis Galleria",
+      "Province": "Missouri",
+      "City": "Saint Louis",
+      "District": "63117"
+    },
+    {
+      "StoreNumber": "R062",
+      "CityStoreName": "Saint Louis-West County",
+      "Province": "Missouri",
+      "City": "Saint Louis",
+      "District": "63131"
+    },
+    {
+      "StoreNumber": "R360",
+      "CityStoreName": "Mishawaka-University Park Mall",
+      "Province": "Indiana",
+      "City": "Mishawaka",
+      "District": "46545"
+    },
+    {
+      "StoreNumber": "R066",
+      "CityStoreName": "Indianapolis-The Fashion Mall at Keystone",
+      "Province": "Indiana",
+      "City": "Indianapolis",
+      "District": "46240"
+    },
+    {
+      "StoreNumber": "R055",
+      "CityStoreName": "Troy-Somerset",
+      "Province": "Michigan",
+      "City": "Troy",
+      "District": "48084"
+    },
+    {
+      "StoreNumber": "R132",
+      "CityStoreName": "Grand Rapids-Woodland",
+      "Province": "Michigan",
+      "City": "Grand Rapids",
+      "District": "49512"
+    },
+    {
+      "StoreNumber": "R218",
+      "CityStoreName": "Clinton Township-Partridge Creek",
+      "Province": "Michigan",
+      "City": "Clinton Township",
+      "District": "48038"
+    },
+    {
+      "StoreNumber": "R763",
+      "CityStoreName": "Detroit-Downtown Detroit",
+      "Province": "Michigan",
+      "City": "Detroit",
+      "District": "48226"
+    },
+    {
+      "StoreNumber": "R616",
+      "CityStoreName": "Lansing-Eastwood Towne Center",
+      "Province": "Michigan",
+      "City": "Lansing",
+      "District": "48912"
+    },
+    {
+      "StoreNumber": "R230",
+      "CityStoreName": "Ann Arbor-Briarwood",
+      "Province": "Michigan",
+      "City": "Ann Arbor",
+      "District": "48108"
+    },
+    {
+      "StoreNumber": "R041",
+      "CityStoreName": "Novi-Twelve Oaks",
+      "Province": "Michigan",
+      "City": "Novi",
+      "District": "48377"
+    },
+    {
+      "StoreNumber": "R233",
+      "CityStoreName": "Tulsa-Woodland Hills",
+      "Province": "Oklahoma",
+      "City": "Tulsa",
+      "District": "74133"
+    },
+    {
+      "StoreNumber": "R130",
+      "CityStoreName": "Oklahoma City-Penn Square",
+      "Province": "Oklahoma",
+      "City": "Oklahoma City",
+      "District": "73118"
+    },
+    {
+      "StoreNumber": "R047",
+      "CityStoreName": "Denver-Cherry Creek",
+      "Province": "Colorado",
+      "City": "Denver",
+      "District": "80206"
+    },
+    {
+      "StoreNumber": "R338",
+      "CityStoreName": "Colorado Springs-The Promenade Shops at Briargate",
+      "Province": "Colorado",
+      "City": "Colorado Springs",
+      "District": "80920"
+    },
+    {
+      "StoreNumber": "R172",
+      "CityStoreName": "Boulder-Twenty Ninth Street",
+      "Province": "Colorado",
+      "City": "Boulder",
+      "District": "80301"
+    },
+    {
+      "StoreNumber": "R228",
+      "CityStoreName": "Lone Tree-Park Meadows",
+      "Province": "Colorado",
+      "City": "Lone Tree",
+      "District": "80124"
+    },
+    {
+      "StoreNumber": "R182",
+      "CityStoreName": "Broomfield-FlatIron Crossing",
+      "Province": "Colorado",
+      "City": "Broomfield",
+      "District": "80021"
+    },
+    {
+      "StoreNumber": "R030",
+      "CityStoreName": "Littleton-Aspen Grove",
+      "Province": "Colorado",
+      "City": "Littleton",
+      "District": "80120"
+    },
+    {
+      "StoreNumber": "R190",
+      "CityStoreName": "Omaha-Village Pointe",
+      "Province": "Nebraska",
+      "City": "Omaha",
+      "District": "68118"
+    },
+    {
+      "StoreNumber": "R307",
+      "CityStoreName": "South Portland-Maine Mall",
+      "Province": "Maine",
+      "City": "South Portland",
+      "District": "04106"
+    },
+    {
+      "StoreNumber": "R261",
+      "CityStoreName": "Yonkers-Ridge Hill",
+      "Province": "New York",
+      "City": "Yonkers",
+      "District": "10710"
+    },
+    {
+      "StoreNumber": "R107",
+      "CityStoreName": "Syracuse-Syracuse",
+      "Province": "New York",
+      "City": "Syracuse",
+      "District": "13204"
+    },
+    {
+      "StoreNumber": "R250",
+      "CityStoreName": "New York-West 14th Street",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10014"
+    },
+    {
+      "StoreNumber": "R594",
+      "CityStoreName": "Brooklyn-Williamsburg",
+      "Province": "New York",
+      "City": "Brooklyn",
+      "District": "11211"
+    },
+    {
+      "StoreNumber": "R140",
+      "CityStoreName": "Victor-Eastview",
+      "Province": "New York",
+      "City": "Victor",
+      "District": "14564"
+    },
+    {
+      "StoreNumber": "R016",
+      "CityStoreName": "Buffalo-Walden Galleria",
+      "Province": "New York",
+      "City": "Buffalo",
+      "District": "14225"
+    },
+    {
+      "StoreNumber": "R060",
+      "CityStoreName": "Garden City-Roosevelt Field",
+      "Province": "New York",
+      "City": "Garden City",
+      "District": "11530"
+    },
+    {
+      "StoreNumber": "R095",
+      "CityStoreName": "New York-Fifth Avenue",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10153"
+    },
+    {
+      "StoreNumber": "R068",
+      "CityStoreName": "Huntington Station-Walt Whitman",
+      "Province": "New York",
+      "City": "Huntington Station",
+      "District": "11746"
+    },
+    {
+      "StoreNumber": "R139",
+      "CityStoreName": "Lake Grove-Smith Haven",
+      "Province": "New York",
+      "City": "Lake Grove",
+      "District": "11755"
+    },
+    {
+      "StoreNumber": "R753",
+      "CityStoreName": "Bronx-The Mall at Bay Plaza",
+      "Province": "New York",
+      "City": "Bronx",
+      "District": "10475"
+    },
+    {
+      "StoreNumber": "R612",
+      "CityStoreName": "Elmhurst-Queens Center",
+      "Province": "New York",
+      "City": "Elmhurst",
+      "District": "11373"
+    },
+    {
+      "StoreNumber": "R046",
+      "CityStoreName": "Nanuet-Nanuet",
+      "Province": "New York",
+      "City": "Nanuet",
+      "District": "10954"
+    },
+    {
+      "StoreNumber": "R152",
+      "CityStoreName": "Staten Island-Staten Island",
+      "Province": "New York",
+      "City": "Staten Island",
+      "District": "10314"
+    },
+    {
+      "StoreNumber": "R654",
+      "CityStoreName": "New York-World Trade Center",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10007"
+    },
+    {
+      "StoreNumber": "R032",
+      "CityStoreName": "New York-SoHo",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10012"
+    },
+    {
+      "StoreNumber": "R017",
+      "CityStoreName": "Albany-Crossgates",
+      "Province": "New York",
+      "City": "Albany",
+      "District": "12203"
+    },
+    {
+      "StoreNumber": "R715",
+      "CityStoreName": "Brooklyn-Downtown Brooklyn",
+      "Province": "New York",
+      "City": "Brooklyn",
+      "District": "11217-1483"
+    },
+    {
+      "StoreNumber": "R327",
+      "CityStoreName": "Manhasset-Manhasset",
+      "Province": "New York",
+      "City": "Manhasset",
+      "District": "11030"
+    },
+    {
+      "StoreNumber": "R251",
+      "CityStoreName": "New York-Upper West Side",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10023"
+    },
+    {
+      "StoreNumber": "R582",
+      "CityStoreName": "New York-Upper East Side",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10021"
+    },
+    {
+      "StoreNumber": "R415",
+      "CityStoreName": "New York-Grand Central",
+      "Province": "New York",
+      "City": "New York",
+      "District": "10017"
+    },
+    {
+      "StoreNumber": "R061",
+      "CityStoreName": "White Plains-The Westchester",
+      "Province": "New York",
+      "City": "White Plains",
+      "District": "10601"
+    },
+    {
+      "StoreNumber": "R263",
+      "CityStoreName": "Baton Rouge-Mall of Louisiana",
+      "Province": "Louisiana",
+      "City": "Baton Rouge",
+      "District": "70836"
+    },
+    {
+      "StoreNumber": "R235",
+      "CityStoreName": "Metairie-Lakeside Shopping Center",
+      "Province": "Louisiana",
+      "City": "Metairie",
+      "District": "70002"
+    },
+    {
+      "StoreNumber": "R264",
+      "CityStoreName": "Louisville-Oxmoor",
+      "Province": "Kentucky",
+      "City": "Louisville",
+      "District": "40222"
+    },
+    {
+      "StoreNumber": "R288",
+      "CityStoreName": "Lexington-Fritz Farm",
+      "Province": "Kentucky",
+      "City": "Lexington",
+      "District": "40517"
+    },
+    {
+      "StoreNumber": "R191",
+      "CityStoreName": "Holyoke-Holyoke",
+      "Province": "Massachusetts",
+      "City": "Holyoke",
+      "District": "01040"
+    },
+    {
+      "StoreNumber": "R346",
+      "CityStoreName": "Dedham-Legacy Place",
+      "Province": "Massachusetts",
+      "City": "Dedham",
+      "District": "02026"
+    },
+    {
+      "StoreNumber": "R622",
+      "CityStoreName": "Marlborough-Solomon Pond Mall",
+      "Province": "Massachusetts",
+      "City": "Marlborough",
+      "District": "01752"
+    },
+    {
+      "StoreNumber": "R232",
+      "CityStoreName": "Natick-Natick",
+      "Province": "Massachusetts",
+      "City": "Natick",
+      "District": "01760"
+    },
+    {
+      "StoreNumber": "R076",
+      "CityStoreName": "Chestnut Hill-Chestnut Hill",
+      "Province": "Massachusetts",
+      "City": "Chestnut Hill",
+      "District": "02467"
+    },
+    {
+      "StoreNumber": "R149",
+      "CityStoreName": "Boston-Boylston Street",
+      "Province": "Massachusetts",
+      "City": "Boston",
+      "District": "02116"
+    },
+    {
+      "StoreNumber": "R021",
+      "CityStoreName": "Cambridge-CambridgeSide",
+      "Province": "Massachusetts",
+      "City": "Cambridge",
+      "District": "02141"
+    },
+    {
+      "StoreNumber": "R137",
+      "CityStoreName": "Hingham-Derby Street",
+      "Province": "Massachusetts",
+      "City": "Hingham",
+      "District": "02043"
+    },
+    {
+      "StoreNumber": "R011",
+      "CityStoreName": "Lynnfield-MarketStreet",
+      "Province": "Massachusetts",
+      "City": "Lynnfield",
+      "District": "01940"
+    },
+    {
+      "StoreNumber": "R110",
+      "CityStoreName": "Braintree-South Shore",
+      "Province": "Massachusetts",
+      "City": "Braintree",
+      "District": "02184"
+    },
+    {
+      "StoreNumber": "R155",
+      "CityStoreName": "Burlington-Burlington",
+      "Province": "Massachusetts",
+      "City": "Burlington",
+      "District": "01803"
+    },
+    {
+      "StoreNumber": "R413",
+      "CityStoreName": "Pittsburgh-Ross Park",
+      "Province": "Pennsylvania",
+      "City": "Pittsburgh",
+      "District": "15237"
+    },
+    {
+      "StoreNumber": "R304",
+      "CityStoreName": "Lancaster-Park City",
+      "Province": "Pennsylvania",
+      "City": "Lancaster",
+      "District": "17601"
+    },
+    {
+      "StoreNumber": "R162",
+      "CityStoreName": "Philadelphia-Walnut Street",
+      "Province": "Pennsylvania",
+      "City": "Philadelphia",
+      "District": "19103"
+    },
+    {
+      "StoreNumber": "R234",
+      "CityStoreName": "Willow Grove-Willow Grove Park",
+      "Province": "Pennsylvania",
+      "City": "Willow Grove",
+      "District": "19090"
+    },
+    {
+      "StoreNumber": "R281",
+      "CityStoreName": "Whitehall-Lehigh Valley",
+      "Province": "Pennsylvania",
+      "City": "Whitehall",
+      "District": "18052"
+    },
+    {
+      "StoreNumber": "R096",
+      "CityStoreName": "Pittsburgh-Shadyside",
+      "Province": "Pennsylvania",
+      "City": "Pittsburgh",
+      "District": "15232"
+    },
+    {
+      "StoreNumber": "R065",
+      "CityStoreName": "King of Prussia-King of Prussia",
+      "Province": "Pennsylvania",
+      "City": "King of Prussia",
+      "District": "19406"
+    },
+    {
+      "StoreNumber": "R147",
+      "CityStoreName": "Pittsburgh-South Hills Village",
+      "Province": "Pennsylvania",
+      "City": "Pittsburgh",
+      "District": "15241"
+    },
+    {
+      "StoreNumber": "R166",
+      "CityStoreName": "Ardmore-Suburban Square",
+      "Province": "Pennsylvania",
+      "City": "Ardmore",
+      "District": "19003"
+    },
+    {
+      "StoreNumber": "R186",
+      "CityStoreName": "Reno-Shayden Summit",
+      "Province": "Nevada",
+      "City": "Reno",
+      "District": "89511"
+    },
+    {
+      "StoreNumber": "R219",
+      "CityStoreName": "Las Vegas-Town Square",
+      "Province": "Nevada",
+      "City": "Las Vegas",
+      "District": "89119"
+    },
+    {
+      "StoreNumber": "R161",
+      "CityStoreName": "Las Vegas-The Forum Shops",
+      "Province": "Nevada",
+      "City": "Las Vegas",
+      "District": "89109"
+    },
+    {
+      "StoreNumber": "R650",
+      "CityStoreName": "Las Vegas-Summerlin",
+      "Province": "Nevada",
+      "City": "Las Vegas",
+      "District": "89135"
+    },
+    {
+      "StoreNumber": "R064",
+      "CityStoreName": "Las Vegas-Fashion Show",
+      "Province": "Nevada",
+      "City": "Las Vegas",
+      "District": "89109"
+    },
+    {
+      "StoreNumber": "R513",
+      "CityStoreName": "Franklin-CoolSprings Galleria",
+      "Province": "Tennessee",
+      "City": "Franklin",
+      "District": "37067"
+    },
+    {
+      "StoreNumber": "R123",
+      "CityStoreName": "Nashville-Green Hills",
+      "Province": "Tennessee",
+      "City": "Nashville",
+      "District": "37215"
+    },
+    {
+      "StoreNumber": "R020",
+      "CityStoreName": "Germantown-Saddle Creek",
+      "Province": "Tennessee",
+      "City": "Germantown",
+      "District": "38138"
+    },
+    {
+      "StoreNumber": "R203",
+      "CityStoreName": "Knoxville-West Town Mall",
+      "Province": "Tennessee",
+      "City": "Knoxville",
+      "District": "37919"
+    },
+    {
+      "StoreNumber": "R133",
+      "CityStoreName": "Nashville-Downtown Nashville",
+      "Province": "Tennessee",
+      "City": "Nashville",
+      "District": "37203"
+    },
+    {
+      "StoreNumber": "R286",
+      "CityStoreName": "Little Rock-The Promenade at Chenal",
+      "Province": "Arkansas",
+      "City": "Little Rock",
+      "District": "72223"
+    },
+    {
+      "StoreNumber": "R293",
+      "CityStoreName": "Greensboro-Friendly Center",
+      "Province": "North Carolina",
+      "City": "Greensboro",
+      "District": "27410"
+    },
+    {
+      "StoreNumber": "R796",
+      "CityStoreName": "Huntersville-Birkdale Village",
+      "Province": "North Carolina",
+      "City": "Huntersville",
+      "District": "28078"
+    },
+    {
+      "StoreNumber": "R116",
+      "CityStoreName": "Raleigh-Crabtree Valley Mall",
+      "Province": "North Carolina",
+      "City": "Raleigh",
+      "District": "27612"
+    },
+    {
+      "StoreNumber": "R083",
+      "CityStoreName": "Charlotte-SouthPark",
+      "Province": "North Carolina",
+      "City": "Charlotte",
+      "District": "28211"
+    },
+    {
+      "StoreNumber": "R049",
+      "CityStoreName": "Durham-Southpoint",
+      "Province": "North Carolina",
+      "City": "Durham",
+      "District": "27713"
+    },
+    {
+      "StoreNumber": "R631",
+      "CityStoreName": "Manchester-The Mall of New Hampshire",
+      "Province": "New Hampshire",
+      "City": "Manchester",
+      "District": "03103"
+    },
+    {
+      "StoreNumber": "R354",
+      "CityStoreName": "Nashua-Pheasant Lane",
+      "Province": "New Hampshire",
+      "City": "Nashua",
+      "District": "03060"
+    },
+    {
+      "StoreNumber": "R027",
+      "CityStoreName": "Salem-Rockingham Park",
+      "Province": "New Hampshire",
+      "City": "Salem",
+      "District": "03079"
+    },
+    {
+      "StoreNumber": "R003",
+      "CityStoreName": "Bellevue-Bellevue Square",
+      "Province": "Washington",
+      "City": "Bellevue",
+      "District": "98004"
+    },
+    {
+      "StoreNumber": "R072",
+      "CityStoreName": "Seattle-University Village",
+      "Province": "Washington",
+      "City": "Seattle",
+      "District": "98105"
+    },
+    {
+      "StoreNumber": "R420",
+      "CityStoreName": "Spokane-River Park Square",
+      "Province": "Washington",
+      "City": "Spokane",
+      "District": "99201"
+    },
+    {
+      "StoreNumber": "R106",
+      "CityStoreName": "Tukwila-Southcenter",
+      "Province": "Washington",
+      "City": "Tukwila",
+      "District": "98188"
+    },
+    {
+      "StoreNumber": "R100",
+      "CityStoreName": "Lynnwood-Alderwood",
+      "Province": "Washington",
+      "City": "Lynnwood",
+      "District": "98037"
+    },
+    {
+      "StoreNumber": "R339",
+      "CityStoreName": "Tacoma-Tacoma Mall",
+      "Province": "Washington",
+      "City": "Tacoma",
+      "District": "98409"
+    },
+    {
+      "StoreNumber": "R102",
+      "CityStoreName": "Newark-Christiana Mall",
+      "Province": "Delaware",
+      "City": "Newark",
+      "District": "19702"
+    },
+    {
+      "StoreNumber": "R267",
+      "CityStoreName": "Gilbert-SanTan Village",
+      "Province": "Arizona",
+      "City": "Gilbert",
+      "District": "85295"
+    },
+    {
+      "StoreNumber": "R031",
+      "CityStoreName": "Scottsdale-Scottsdale Fashion Square",
+      "Province": "Arizona",
+      "City": "Scottsdale",
+      "District": "85251"
+    },
+    {
+      "StoreNumber": "R026",
+      "CityStoreName": "Chandler-Chandler Fashion Center",
+      "Province": "Arizona",
+      "City": "Chandler",
+      "District": "85226"
+    },
+    {
+      "StoreNumber": "R292",
+      "CityStoreName": "Scottsdale-Scottsdale Quarter",
+      "Province": "Arizona",
+      "City": "Scottsdale",
+      "District": "85254"
+    },
+    {
+      "StoreNumber": "R086",
+      "CityStoreName": "Tucson-La Encantada",
+      "Province": "Arizona",
+      "City": "Tucson",
+      "District": "85718"
+    },
+    {
+      "StoreNumber": "R247",
+      "CityStoreName": "Glendale-Arrowhead",
+      "Province": "Arizona",
+      "City": "Glendale",
+      "District": "85308"
+    },
+    {
+      "StoreNumber": "R019",
+      "CityStoreName": "Tampa-International Plaza",
+      "Province": "Florida",
+      "City": "Tampa",
+      "District": "33607"
+    },
+    {
+      "StoreNumber": "R615",
+      "CityStoreName": "Sarasota-University Town Center",
+      "Province": "Florida",
+      "City": "Sarasota",
+      "District": "34243"
+    },
+    {
+      "StoreNumber": "R143",
+      "CityStoreName": "Orlando-Florida Mall",
+      "Province": "Florida",
+      "City": "Orlando",
+      "District": "32809"
+    },
+    {
+      "StoreNumber": "R312",
+      "CityStoreName": "Miami-Dadeland",
+      "Province": "Florida",
+      "City": "Miami",
+      "District": "33156"
+    },
+    {
+      "StoreNumber": "R053",
+      "CityStoreName": "Orlando-Millenia",
+      "Province": "Florida",
+      "City": "Orlando",
+      "District": "32839"
+    },
+    {
+      "StoreNumber": "R752",
+      "CityStoreName": "Miami-Miami Worldcenter",
+      "Province": "Florida",
+      "City": "Miami",
+      "District": "33132"
+    },
+    {
+      "StoreNumber": "R289",
+      "CityStoreName": "Brandon-Brandon",
+      "Province": "Florida",
+      "City": "Brandon",
+      "District": "33511"
+    },
+    {
+      "StoreNumber": "R291",
+      "CityStoreName": "Altamonte Springs-Altamonte",
+      "Province": "Florida",
+      "City": "Altamonte Springs",
+      "District": "32701"
+    },
+    {
+      "StoreNumber": "R074",
+      "CityStoreName": "Boca Raton-Boca Raton",
+      "Province": "Florida",
+      "City": "Boca Raton",
+      "District": "33431"
+    },
+    {
+      "StoreNumber": "R169",
+      "CityStoreName": "Naples-Waterside Shops",
+      "Province": "Florida",
+      "City": "Naples",
+      "District": "34108"
+    },
+    {
+      "StoreNumber": "R111",
+      "CityStoreName": "Jacksonville-St. Johns Town Center",
+      "Province": "Florida",
+      "City": "Jacksonville",
+      "District": "32246"
+    },
+    {
+      "StoreNumber": "R214",
+      "CityStoreName": "Fort Lauderdale-The Galleria",
+      "Province": "Florida",
+      "City": "Fort Lauderdale",
+      "District": "33304"
+    },
+    {
+      "StoreNumber": "R127",
+      "CityStoreName": "Palm Beach Gardens-The Gardens Mall",
+      "Province": "Florida",
+      "City": "Palm Beach Gardens",
+      "District": "33410"
+    },
+    {
+      "StoreNumber": "R185",
+      "CityStoreName": "Estero-Coconut Point",
+      "Province": "Florida",
+      "City": "Estero",
+      "District": "33928"
+    },
+    {
+      "StoreNumber": "R115",
+      "CityStoreName": "Miami Beach-Lincoln Road",
+      "Province": "Florida",
+      "City": "Miami Beach",
+      "District": "33139"
+    },
+    {
+      "StoreNumber": "R024",
+      "CityStoreName": "Wellington-Wellington Green",
+      "Province": "Florida",
+      "City": "Wellington",
+      "District": "33414"
+    },
+    {
+      "StoreNumber": "R087",
+      "CityStoreName": "Aventura-Aventura",
+      "Province": "Florida",
+      "City": "Aventura",
+      "District": "33180"
+    },
+    {
+      "StoreNumber": "R623",
+      "CityStoreName": "Miami-Brickell City Centre",
+      "Province": "Florida",
+      "City": "Miami",
+      "District": "33130"
+    },
+    {
+      "StoreNumber": "R012",
+      "CityStoreName": "Miami-The Falls",
+      "Province": "Florida",
+      "City": "Miami",
+      "District": "33176"
+    },
+    {
+      "StoreNumber": "R167",
+      "CityStoreName": "Providence-Providence Place",
+      "Province": "Rhode Island",
+      "City": "Providence",
+      "District": "02903"
+    },
+    {
+      "StoreNumber": "R054",
+      "CityStoreName": "Edina-Southdale",
+      "Province": "Minnesota",
+      "City": "Edina",
+      "District": "55435"
+    },
+    {
+      "StoreNumber": "R007",
+      "CityStoreName": "Bloomington-Mall of America",
+      "Province": "Minnesota",
+      "City": "Bloomington",
+      "District": "55425"
+    },
+    {
+      "StoreNumber": "R183",
+      "CityStoreName": "Minnetonka-Ridgedale",
+      "Province": "Minnesota",
+      "City": "Minnetonka",
+      "District": "55305"
+    },
+    {
+      "StoreNumber": "R022",
+      "CityStoreName": "Roseville-Rosedale Center",
+      "Province": "Minnesota",
+      "City": "Roseville",
+      "District": "55113"
+    },
+    {
+      "StoreNumber": "R210",
+      "CityStoreName": "Honolulu-Kahala",
+      "Province": "Hawaii",
+      "City": "Honolulu",
+      "District": "96816"
+    },
+    {
+      "StoreNumber": "R073",
+      "CityStoreName": "Honolulu-Ala Moana",
+      "Province": "Hawaii",
+      "City": "Honolulu",
+      "District": "96814"
+    },
+    {
+      "StoreNumber": "R134",
+      "CityStoreName": "Tigard-Bridgeport Village",
+      "Province": "Oregon",
+      "City": "Tigard",
+      "District": "97224"
+    },
+    {
+      "StoreNumber": "R090",
+      "CityStoreName": "Tigard-Washington Square",
+      "Province": "Oregon",
+      "City": "Tigard",
+      "District": "97223"
+    },
+    {
+      "StoreNumber": "R077",
+      "CityStoreName": "Portland-Pioneer Place",
+      "Province": "Oregon",
+      "City": "Portland",
+      "District": "97204"
+    },
+    {
+      "StoreNumber": "R282",
+      "CityStoreName": "Greenwich-Greenwich Avenue",
+      "Province": "Connecticut",
+      "City": "Greenwich",
+      "District": "06830"
+    },
+    {
+      "StoreNumber": "R446",
+      "CityStoreName": "New Haven-New Haven",
+      "Province": "Connecticut",
+      "City": "New Haven",
+      "District": "06511"
+    },
+    {
+      "StoreNumber": "R025",
+      "CityStoreName": "Farmington-Westfarms",
+      "Province": "Connecticut",
+      "City": "Farmington",
+      "District": "06032"
+    },
+    {
+      "StoreNumber": "R613",
+      "CityStoreName": "South Windsor-Evergreen Walk",
+      "Province": "Connecticut",
+      "City": "South Windsor",
+      "District": "06074"
+    },
+    {
+      "StoreNumber": "R202",
+      "CityStoreName": "Norwalk-SoNo Collection",
+      "Province": "Connecticut",
+      "City": "Norwalk",
+      "District": "06854"
+    },
+    {
+      "StoreNumber": "R629",
+      "CityStoreName": "Trumbull-Trumbull",
+      "Province": "Connecticut",
+      "City": "Trumbull",
+      "District": "06611"
+    },
+    {
+      "StoreNumber": "R093",
+      "CityStoreName": "Danbury-Danbury Fair Mall",
+      "Province": "Connecticut",
+      "City": "Danbury",
+      "District": "06810"
+    },
+    {
+      "StoreNumber": "R006",
+      "CityStoreName": "Atlanta-Lenox Square",
+      "Province": "Georgia",
+      "City": "Atlanta",
+      "District": "30326"
+    },
+    {
+      "StoreNumber": "R364",
+      "CityStoreName": "Augusta-Augusta",
+      "Province": "Georgia",
+      "City": "Augusta",
+      "District": "30909"
+    },
+    {
+      "StoreNumber": "R259",
+      "CityStoreName": "Buford-Mall of Georgia",
+      "Province": "Georgia",
+      "City": "Buford",
+      "District": "30519"
+    },
+    {
+      "StoreNumber": "R184",
+      "CityStoreName": "Atlanta-Perimeter",
+      "Province": "Georgia",
+      "City": "Atlanta",
+      "District": "30346"
+    },
+    {
+      "StoreNumber": "R591",
+      "CityStoreName": "Atlanta-Cumberland Mall",
+      "Province": "Georgia",
+      "City": "Atlanta",
+      "District": "30339"
+    },
+    {
+      "StoreNumber": "R080",
+      "CityStoreName": "Alpharetta-Avalon",
+      "Province": "Georgia",
+      "City": "Alpharetta",
+      "District": "30009"
+    },
+    {
+      "StoreNumber": "R164",
+      "CityStoreName": "Houston-Memorial City",
+      "Province": "Texas",
+      "City": "Houston",
+      "District": "77024"
+    },
+    {
+      "StoreNumber": "R492",
+      "CityStoreName": "El Paso-Cielo Vista Mall",
+      "Province": "Texas",
+      "City": "El Paso",
+      "District": "79925"
+    },
+    {
+      "StoreNumber": "R144",
+      "CityStoreName": "Dallas-NorthPark Center",
+      "Province": "Texas",
+      "City": "Dallas",
+      "District": "75225"
+    },
+    {
+      "StoreNumber": "R058",
+      "CityStoreName": "Houston-Houston Galleria",
+      "Province": "Texas",
+      "City": "Houston",
+      "District": "77056"
+    },
+    {
+      "StoreNumber": "R316",
+      "CityStoreName": "Fort Worth-University Park Village",
+      "Province": "Texas",
+      "City": "Fort Worth",
+      "District": "76107"
+    },
+    {
+      "StoreNumber": "R042",
+      "CityStoreName": "Dallas-Knox Street",
+      "Province": "Texas",
+      "City": "Dallas",
+      "District": "75205"
+    },
+    {
+      "StoreNumber": "R204",
+      "CityStoreName": "Friendswood-Baybrook",
+      "Province": "Texas",
+      "City": "Friendswood",
+      "District": "77546"
+    },
+    {
+      "StoreNumber": "R216",
+      "CityStoreName": "Austin-Domain NORTHSIDE",
+      "Province": "Texas",
+      "City": "Austin",
+      "District": "78758"
+    },
+    {
+      "StoreNumber": "R085",
+      "CityStoreName": "Austin-Barton Creek",
+      "Province": "Texas",
+      "City": "Austin",
+      "District": "78746"
+    },
+    {
+      "StoreNumber": "R321",
+      "CityStoreName": "Houston-Willowbrook Mall",
+      "Province": "Texas",
+      "City": "Houston",
+      "District": "77070"
+    },
+    {
+      "StoreNumber": "R205",
+      "CityStoreName": "Sugar Land-First Colony Mall",
+      "Province": "Texas",
+      "City": "Sugar Land",
+      "District": "77479"
+    },
+    {
+      "StoreNumber": "R746",
+      "CityStoreName": "Dallas-Galleria Dallas",
+      "Province": "Texas",
+      "City": "Dallas",
+      "District": "75240"
+    },
+    {
+      "StoreNumber": "R151",
+      "CityStoreName": "Southlake-Southlake Town Square",
+      "Province": "Texas",
+      "City": "Southlake",
+      "District": "76092"
+    },
+    {
+      "StoreNumber": "R290",
+      "CityStoreName": "San Antonio-North Star",
+      "Province": "Texas",
+      "City": "San Antonio",
+      "District": "78216"
+    },
+    {
+      "StoreNumber": "R437",
+      "CityStoreName": "Houston-Highland Village",
+      "Province": "Texas",
+      "City": "Houston",
+      "District": "77027"
+    },
+    {
+      "StoreNumber": "R131",
+      "CityStoreName": "San Antonio-La Cantera",
+      "Province": "Texas",
+      "City": "San Antonio",
+      "District": "78256"
+    },
+    {
+      "StoreNumber": "R126",
+      "CityStoreName": "The Woodlands-The Woodlands",
+      "Province": "Texas",
+      "City": "The Woodlands",
+      "District": "77380"
+    },
+    {
+      "StoreNumber": "R287",
+      "CityStoreName": "Washington-Georgetown",
+      "Province": "District of Columbia",
+      "City": "Washington",
+      "District": "20007"
+    },
+    {
+      "StoreNumber": "R516",
+      "CityStoreName": "Washington-Carnegie Library",
+      "Province": "District of Columbia",
+      "City": "Washington",
+      "District": "20001"
+    }
+  ]
+}

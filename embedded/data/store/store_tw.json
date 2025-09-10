@@ -1,0 +1,20 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "tw",
+  "stores": [
+    {
+      "StoreNumber": "R694",
+      "CityStoreName": "台北市-信義 A13",
+      "Province": "台北市",
+      "City": "台北市",
+      "District": "11051"
+    },
+    {
+      "StoreNumber": "R713",
+      "CityStoreName": "台北市-台北 101",
+      "Province": "台北市",
+      "City": "台北市",
+      "District": "110"
+    }
+  ]
+}

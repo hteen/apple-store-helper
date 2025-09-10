@@ -1,0 +1,13 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "at",
+  "stores": [
+    {
+      "StoreNumber": "R687",
+      "CityStoreName": "Vienna-Kärntner Straße",
+      "Province": "Vienna",
+      "City": "Vienna",
+      "District": "1010"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "it",
+  "stores": [
+    {
+      "StoreNumber": "R441",
+      "CityStoreName": "Rozzano-Fiordaliso",
+      "Province": "Milan",
+      "City": "Rozzano",
+      "District": "20089"
+    },
+    {
+      "StoreNumber": "R365",
+      "CityStoreName": "Carugate-Carosello",
+      "Province": "Milan",
+      "City": "Carugate",
+      "District": "20061"
+    },
+    {
+      "StoreNumber": "R667",
+      "CityStoreName": "Milan-Piazza Liberty",
+      "Province": "Lombardy",
+      "City": "Milan",
+      "District": "20121"
+    },
+    {
+      "StoreNumber": "R547",
+      "CityStoreName": "Lonato-il Leone",
+      "Province": "Brescia",
+      "City": "Lonato",
+      "District": "25017"
+    },
+    {
+      "StoreNumber": "R454",
+      "CityStoreName": "Misterbianco-Centro Sicilia",
+      "Province": "Catania",
+      "City": "Misterbianco",
+      "District": "95045"
+    },
+    {
+      "StoreNumber": "R278",
+      "CityStoreName": "Grugliasco-Le Gru",
+      "Province": "Turin",
+      "City": "Grugliasco",
+      "District": "10095"
+    },
+    {
+      "StoreNumber": "R442",
+      "CityStoreName": "Turin-Via Roma",
+      "Province": "Piedmont",
+      "City": "Turin",
+      "District": "10121"
+    },
+    {
+      "StoreNumber": "R564",
+      "CityStoreName": "Rimini-Le Befane",
+      "Province": "Rimini",
+      "City": "Rimini",
+      "District": "47900"
+    },
+    {
+      "StoreNumber": "R381",
+      "CityStoreName": "Roma Bufalotta-Porta di Roma",
+      "Province": "Rome",
+      "City": "Roma Bufalotta",
+      "District": "00139"
+    },
+    {
+      "StoreNumber": "R382",
+      "CityStoreName": "Rome-Via del Corso",
+      "Province": "Rome",
+      "City": "Rome",
+      "District": "00186"
+    },
+    {
+      "StoreNumber": "R562",
+      "CityStoreName": "Roma-Euroma2",
+      "Province": "Rome",
+      "City": "Roma",
+      "District": "00144"
+    },
+    {
+      "StoreNumber": "R453",
+      "CityStoreName": "Marcianise-Campania",
+      "Province": "Caserta",
+      "City": "Marcianise",
+      "District": "81025"
+    },
+    {
+      "StoreNumber": "R602",
+      "CityStoreName": "Florence-Firenze",
+      "Province": "Florence",
+      "City": "Florence",
+      "District": "50123"
+    },
+    {
+      "StoreNumber": "R449",
+      "CityStoreName": "Campi Bisenzio-I Gigli",
+      "Province": "Florence",
+      "City": "Campi Bisenzio",
+      "District": "50013"
+    },
+    {
+      "StoreNumber": "R625",
+      "CityStoreName": "Mestre-Nave de Vero",
+      "Province": "Venice",
+      "City": "Mestre",
+      "District": "30175"
+    },
+    {
+      "StoreNumber": "R427",
+      "CityStoreName": "Bologna-Via Rizzoli",
+      "Province": "Bologna",
+      "City": "Bologna",
+      "District": "40125"
+    },
+    {
+      "StoreNumber": "R418",
+      "CityStoreName": "Orio al Serio-Oriocenter",
+      "Province": "Bergamo",
+      "City": "Orio al Serio",
+      "District": "24050"
+    }
+  ]
+}

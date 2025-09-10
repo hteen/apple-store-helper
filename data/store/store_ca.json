@@ -1,0 +1,202 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "ca",
+  "stores": [
+    {
+      "StoreNumber": "R369",
+      "CityStoreName": "Winnipeg-Polo Park",
+      "Province": "Manitoba",
+      "City": "Winnipeg",
+      "District": "R3G 0W4"
+    },
+    {
+      "StoreNumber": "R512",
+      "CityStoreName": "Brossard-DIX30",
+      "Province": "Quebec",
+      "City": "Brossard",
+      "District": "J4Y 0L3"
+    },
+    {
+      "StoreNumber": "R392",
+      "CityStoreName": "Pointe-Claire-Fairview Pointe-Claire",
+      "Province": "Quebec",
+      "City": "Pointe-Claire",
+      "District": "H9R 5J2"
+    },
+    {
+      "StoreNumber": "R412",
+      "CityStoreName": "Quebec City-Place Ste-Foy",
+      "Province": "Quebec",
+      "City": "Quebec City",
+      "District": "G1V 2L1"
+    },
+    {
+      "StoreNumber": "R248",
+      "CityStoreName": "Montreal-Sainte-Catherine",
+      "Province": "Quebec",
+      "City": "Montreal",
+      "District": "H3G 1P7"
+    },
+    {
+      "StoreNumber": "R207",
+      "CityStoreName": "Laval-Carrefour Laval",
+      "Province": "Quebec",
+      "City": "Laval",
+      "District": "H7T 1C8"
+    },
+    {
+      "StoreNumber": "R421",
+      "CityStoreName": "Richmond-Richmond Centre",
+      "Province": "British Columbia",
+      "City": "Richmond",
+      "District": "V6Y 2B6"
+    },
+    {
+      "StoreNumber": "R601",
+      "CityStoreName": "Surrey-Guildford Town Centre",
+      "Province": "British Columbia",
+      "City": "Surrey",
+      "District": "V3R 7C1"
+    },
+    {
+      "StoreNumber": "R280",
+      "CityStoreName": "Vancouver-Pacific Centre",
+      "Province": "British Columbia",
+      "City": "Vancouver",
+      "District": "V7Y 1G5"
+    },
+    {
+      "StoreNumber": "R488",
+      "CityStoreName": "Coquitlam-Coquitlam Centre",
+      "Province": "British Columbia",
+      "City": "Coquitlam",
+      "District": "V3B 5R5"
+    },
+    {
+      "StoreNumber": "R460",
+      "CityStoreName": "Burnaby-Metrotown",
+      "Province": "British Columbia",
+      "City": "Burnaby",
+      "District": "V5H 4J2"
+    },
+    {
+      "StoreNumber": "R464",
+      "CityStoreName": "Waterloo-Conestoga",
+      "Province": "Ontario",
+      "City": "Waterloo",
+      "District": "N2L 5W6"
+    },
+    {
+      "StoreNumber": "R350",
+      "CityStoreName": "Mississauga-Square One",
+      "Province": "Ontario",
+      "City": "Mississauga",
+      "District": "L5B 2C9"
+    },
+    {
+      "StoreNumber": "R447",
+      "CityStoreName": "Burlington-Mapleview Centre",
+      "Province": "Ontario",
+      "City": "Burlington",
+      "District": "L7S 2J8"
+    },
+    {
+      "StoreNumber": "R332",
+      "CityStoreName": "Ottawa-Rideau",
+      "Province": "Ontario",
+      "City": "Ottawa",
+      "District": "K1N 9J7"
+    },
+    {
+      "StoreNumber": "R120",
+      "CityStoreName": "Toronto-Yorkdale",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "District": "M6A 3A1"
+    },
+    {
+      "StoreNumber": "R208",
+      "CityStoreName": "Toronto-Sherway Gardens",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "District": "M9C 1B8"
+    },
+    {
+      "StoreNumber": "R490",
+      "CityStoreName": "Ottawa-Bayshore Shopping Centre",
+      "Province": "Ontario",
+      "City": "Ottawa",
+      "District": "K2B 8C1"
+    },
+    {
+      "StoreNumber": "R333",
+      "CityStoreName": "Toronto-Fairview",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "District": "M2J 5A7"
+    },
+    {
+      "StoreNumber": "R515",
+      "CityStoreName": "Markham-Markville Shopping Centre",
+      "Province": "Ontario",
+      "City": "Markham",
+      "District": "L3R 4M9"
+    },
+    {
+      "StoreNumber": "R489",
+      "CityStoreName": "London-Masonville",
+      "Province": "Ontario",
+      "City": "London",
+      "District": "N6G 3Y9"
+    },
+    {
+      "StoreNumber": "R121",
+      "CityStoreName": "Toronto-Eaton Centre",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "District": "M5B 2H1"
+    },
+    {
+      "StoreNumber": "R429",
+      "CityStoreName": "Newmarket-Upper Canada Mall",
+      "Province": "Ontario",
+      "City": "Newmarket",
+      "District": "L3Y 4Z1"
+    },
+    {
+      "StoreNumber": "R514",
+      "CityStoreName": "Halifax-Halifax Shopping Centre",
+      "Province": "Nova Scotia",
+      "City": "Halifax",
+      "District": "B3L 2H8"
+    },
+    {
+      "StoreNumber": "R301",
+      "CityStoreName": "Calgary-Market Mall",
+      "Province": "Alberta",
+      "City": "Calgary",
+      "District": "T3A 0E2"
+    },
+    {
+      "StoreNumber": "R411",
+      "CityStoreName": "Edmonton-Southgate Centre",
+      "Province": "Alberta",
+      "City": "Edmonton",
+      "District": "T6H 4M6"
+    },
+    {
+      "StoreNumber": "R273",
+      "CityStoreName": "Edmonton-West Edmonton",
+      "Province": "Alberta",
+      "City": "Edmonton",
+      "District": "T5T 4M2"
+    },
+    {
+      "StoreNumber": "R209",
+      "CityStoreName": "Calgary-Chinook Centre",
+      "Province": "Alberta",
+      "City": "Calgary",
+      "District": "T2H 0K8"
+    }
+  ]
+}

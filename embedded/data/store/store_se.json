@@ -1,0 +1,27 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "se",
+  "stores": [
+    {
+      "StoreNumber": "R626",
+      "CityStoreName": "Solna-Mall of Scandinavia",
+      "Province": "Solna",
+      "City": "Solna",
+      "District": "169 79"
+    },
+    {
+      "StoreNumber": "R505",
+      "CityStoreName": "Täby-Täby Centrum",
+      "Province": "Uppland",
+      "City": "Täby",
+      "District": "183 34"
+    },
+    {
+      "StoreNumber": "R503",
+      "CityStoreName": "Malmö-Emporia",
+      "Province": "Scania",
+      "City": "Malmö",
+      "District": "21532"
+    }
+  ]
+}

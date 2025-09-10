@@ -1,0 +1,118 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "de",
+  "stores": [
+    {
+      "StoreNumber": "R430",
+      "CityStoreName": "Dresden-Altmarkt-Galerie",
+      "Province": "Saxony",
+      "City": "Dresden",
+      "District": "01067"
+    },
+    {
+      "StoreNumber": "R519",
+      "CityStoreName": "Sindelfingen-Sindelfingen",
+      "Province": "Baden-Württemberg",
+      "City": "Sindelfingen",
+      "District": "71065"
+    },
+    {
+      "StoreNumber": "R352",
+      "CityStoreName": "Frankfurt-Grosse Bockenheimer Strasse",
+      "Province": "Hesse",
+      "City": "Frankfurt",
+      "District": "60313"
+    },
+    {
+      "StoreNumber": "R434",
+      "CityStoreName": "Sulzbach-MTZ",
+      "Province": "Hesse",
+      "City": "Sulzbach",
+      "District": "65843"
+    },
+    {
+      "StoreNumber": "R045",
+      "CityStoreName": "Munich-Rosenstrasse",
+      "Province": "Bavaria",
+      "City": "Munich",
+      "District": "80331"
+    },
+    {
+      "StoreNumber": "R431",
+      "CityStoreName": "Augsburg-City-Galerie",
+      "Province": "Bavaria",
+      "City": "Augsburg",
+      "District": "86153"
+    },
+    {
+      "StoreNumber": "R521",
+      "CityStoreName": "Munich-OEZ",
+      "Province": "Bavaria",
+      "City": "Munich",
+      "District": "80993"
+    },
+    {
+      "StoreNumber": "R455",
+      "CityStoreName": "Hannover-Hannover",
+      "Province": "Lower Saxony",
+      "City": "Hannover",
+      "District": "30159"
+    },
+    {
+      "StoreNumber": "R366",
+      "CityStoreName": "Hamburg-Alstertal",
+      "Province": "Hamburg",
+      "City": "Hamburg",
+      "District": "22391"
+    },
+    {
+      "StoreNumber": "R396",
+      "CityStoreName": "Hamburg-Jungfernstieg",
+      "Province": "Hamburg",
+      "City": "Hamburg",
+      "District": "20354"
+    },
+    {
+      "StoreNumber": "R520",
+      "CityStoreName": "Cologne-Rhein Center",
+      "Province": "North Rhine-Westphalia",
+      "City": "Cologne",
+      "District": "50858"
+    },
+    {
+      "StoreNumber": "R403",
+      "CityStoreName": "Oberhausen-CentrO",
+      "Province": "North Rhine-Westphalia",
+      "City": "Oberhausen",
+      "District": "46047"
+    },
+    {
+      "StoreNumber": "R331",
+      "CityStoreName": "Düsseldorf-Düsseldorf",
+      "Province": "North Rhine-Westphalia",
+      "City": "Düsseldorf",
+      "District": "40212"
+    },
+    {
+      "StoreNumber": "R559",
+      "CityStoreName": "Cologne-Schildergasse",
+      "Province": "North Rhine-Westphalia",
+      "City": "Cologne",
+      "District": "50667"
+    },
+    {
+      "StoreNumber": "R358",
+      "CityStoreName": "Berlin-Kurfürstendamm",
+      "Province": "Berlin",
+      "City": "Berlin",
+      "District": "10719"
+    },
+    {
+      "StoreNumber": "R443",
+      "CityStoreName": "Berlin-Rosenthaler Strasse",
+      "Province": "Berlin",
+      "City": "Berlin",
+      "District": "10178"
+    }
+  ]
+}

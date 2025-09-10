@@ -1,0 +1,13 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "be",
+  "stores": [
+    {
+      "StoreNumber": "R486",
+      "CityStoreName": "Brussels-Brussels",
+      "Province": "Brabant",
+      "City": "Brussels",
+      "District": "1050"
+    }
+  ]
+}

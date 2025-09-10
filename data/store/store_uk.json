@@ -1,0 +1,286 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "uk",
+  "stores": [
+    {
+      "StoreNumber": "R363",
+      "CityStoreName": "Aberdeen-Union Square",
+      "Province": "Aberdeen",
+      "City": "Aberdeen",
+      "District": "AB11 5PN"
+    },
+    {
+      "StoreNumber": "R242",
+      "CityStoreName": "Grays-Lakeside",
+      "Province": "Essex",
+      "City": "Grays",
+      "District": "RM20 2ZP"
+    },
+    {
+      "StoreNumber": "R410",
+      "CityStoreName": "London-Stratford City",
+      "Province": "Greater London",
+      "City": "London",
+      "District": "E20 1EQ"
+    },
+    {
+      "StoreNumber": "R227",
+      "CityStoreName": "Kingston upon Thames-Bentall Centre",
+      "Province": "Greater London",
+      "City": "Kingston upon Thames",
+      "District": "KT1 1TP"
+    },
+    {
+      "StoreNumber": "R163",
+      "CityStoreName": "London-Brent Cross",
+      "Province": "Greater London",
+      "City": "London",
+      "District": "NW4 3FP"
+    },
+    {
+      "StoreNumber": "R762",
+      "CityStoreName": "London-Battersea",
+      "Province": "Greater London",
+      "City": "London",
+      "District": "SW11 8AL"
+    },
+    {
+      "StoreNumber": "R226",
+      "CityStoreName": "London-White City",
+      "Province": "Greater London",
+      "City": "London",
+      "District": "W12 7GF"
+    },
+    {
+      "StoreNumber": "R176",
+      "CityStoreName": "Reading-The Oracle",
+      "Province": "Berkshire",
+      "City": "Reading",
+      "District": "RG1 2AG"
+    },
+    {
+      "StoreNumber": "R215",
+      "CityStoreName": "Manchester-Manchester Arndale",
+      "Province": "Greater Manchester",
+      "City": "Manchester",
+      "District": "M4 3AJ"
+    },
+    {
+      "StoreNumber": "R136",
+      "CityStoreName": "Manchester-Trafford Centre",
+      "Province": "Greater Manchester",
+      "City": "Manchester",
+      "District": "M17 8BL"
+    },
+    {
+      "StoreNumber": "R270",
+      "CityStoreName": "Cambridge-Grand Arcade",
+      "Province": "Cambridgeshire",
+      "City": "Cambridge",
+      "District": "CB2 3AX"
+    },
+    {
+      "StoreNumber": "R335",
+      "CityStoreName": "Bath-SouthGate",
+      "Province": "Somerset",
+      "City": "Bath",
+      "District": "BA1 1AP"
+    },
+    {
+      "StoreNumber": "R308",
+      "CityStoreName": "Leicester-Highcross",
+      "Province": "Leicestershire",
+      "City": "Leicester",
+      "District": "LE1 4FT"
+    },
+    {
+      "StoreNumber": "R372",
+      "CityStoreName": "Leeds-Trinity Leeds",
+      "Province": "West Yorkshire",
+      "City": "Leeds",
+      "District": "LS1 5AR"
+    },
+    {
+      "StoreNumber": "R239",
+      "CityStoreName": "Liverpool-Liverpool",
+      "Province": "Merseyside",
+      "City": "Liverpool",
+      "District": "L1 8BU"
+    },
+    {
+      "StoreNumber": "R174",
+      "CityStoreName": "Southampton-Southampton",
+      "Province": "Hampshire",
+      "City": "Southampton",
+      "District": "SO15 1QE"
+    },
+    {
+      "StoreNumber": "R482",
+      "CityStoreName": "Basingstoke-Festival Place",
+      "Province": "Hampshire",
+      "City": "Basingstoke",
+      "District": "RG21 7BE"
+    },
+    {
+      "StoreNumber": "R252",
+      "CityStoreName": "Bristol-Bristol",
+      "Province": "Bristol",
+      "City": "Bristol",
+      "District": "BS1 3BZ"
+    },
+    {
+      "StoreNumber": "R393",
+      "CityStoreName": "Bristol-Cribbs Causeway",
+      "Province": "Bristol",
+      "City": "Bristol",
+      "District": "BS34 5DG"
+    },
+    {
+      "StoreNumber": "R092",
+      "CityStoreName": "London-Regent Street",
+      "Province": "Central London",
+      "City": "London",
+      "District": "W1B 2EL"
+    },
+    {
+      "StoreNumber": "R245",
+      "CityStoreName": "London-Covent Garden",
+      "Province": "Central London",
+      "City": "London",
+      "District": "WC2E 8HB"
+    },
+    {
+      "StoreNumber": "R329",
+      "CityStoreName": "London-Brompton Road",
+      "Province": "Central London",
+      "City": "London",
+      "District": "SW1X 9LF"
+    },
+    {
+      "StoreNumber": "R391",
+      "CityStoreName": "Norwich-Norwich",
+      "Province": "Norfolk",
+      "City": "Norwich",
+      "District": "NR2 1SU"
+    },
+    {
+      "StoreNumber": "R334",
+      "CityStoreName": "Cardiff-Cardiff",
+      "Province": "Cardiff",
+      "City": "Cardiff",
+      "District": "CF10 2EL"
+    },
+    {
+      "StoreNumber": "R269",
+      "CityStoreName": "Milton Keynes-Milton Keynes",
+      "Province": "Buckinghamshire",
+      "City": "Milton Keynes",
+      "District": "MK9 3GA"
+    },
+    {
+      "StoreNumber": "R341",
+      "CityStoreName": "Newcastle upon Tyne-Eldon Square",
+      "Province": "Tyne and Wear",
+      "City": "Newcastle upon Tyne",
+      "District": "NE1 7XD"
+    },
+    {
+      "StoreNumber": "R423",
+      "CityStoreName": "Gateshead-Metrocentre",
+      "Province": "Tyne and Wear",
+      "City": "Gateshead",
+      "District": "NE11 9YG"
+    },
+    {
+      "StoreNumber": "R313",
+      "CityStoreName": "Belfast-Belfast",
+      "Province": "Northern Ireland",
+      "City": "Belfast",
+      "District": "BT1 4DA"
+    },
+    {
+      "StoreNumber": "R244",
+      "CityStoreName": "Brighton-Churchill Square",
+      "Province": "East Sussex",
+      "City": "Brighton",
+      "District": "BN1 2TE"
+    },
+    {
+      "StoreNumber": "R496",
+      "CityStoreName": "Bromley-Bromley",
+      "Province": "Kent",
+      "City": "Bromley",
+      "District": "BR1 1DN"
+    },
+    {
+      "StoreNumber": "R113",
+      "CityStoreName": "Greenhithe-Bluewater",
+      "Province": "Kent",
+      "City": "Greenhithe",
+      "District": "DA9 9ST"
+    },
+    {
+      "StoreNumber": "R153",
+      "CityStoreName": "Sheffield-Meadowhall",
+      "Province": "South Yorkshire",
+      "City": "Sheffield",
+      "District": "S9 1EN"
+    },
+    {
+      "StoreNumber": "R255",
+      "CityStoreName": "Solihull-Touchwood Centre",
+      "Province": "West Midlands",
+      "City": "Solihull",
+      "District": "B91 3GJ"
+    },
+    {
+      "StoreNumber": "R118",
+      "CityStoreName": "Birmingham-Birmingham",
+      "Province": "West Midlands",
+      "City": "Birmingham",
+      "District": "B2 4JH"
+    },
+    {
+      "StoreNumber": "R527",
+      "CityStoreName": "Watford-Watford",
+      "Province": "Hertfordshire",
+      "City": "Watford",
+      "District": "WD17 2TN"
+    },
+    {
+      "StoreNumber": "R328",
+      "CityStoreName": "Edinburgh-Edinburgh",
+      "Province": "Edinburgh",
+      "City": "Edinburgh",
+      "District": "EH2 2AN"
+    },
+    {
+      "StoreNumber": "R135",
+      "CityStoreName": "Glasgow-Glasgow",
+      "Province": "Glasgow",
+      "City": "Glasgow",
+      "District": "G1 2JX"
+    },
+    {
+      "StoreNumber": "R340",
+      "CityStoreName": "Glasgow-Braehead",
+      "Province": "Glasgow",
+      "City": "Glasgow",
+      "District": "G51 4BP"
+    },
+    {
+      "StoreNumber": "R545",
+      "CityStoreName": "Plymouth-Plymouth",
+      "Province": "Devon",
+      "City": "Plymouth",
+      "District": "PL1 1EA"
+    },
+    {
+      "StoreNumber": "R279",
+      "CityStoreName": "Exeter-Princesshay",
+      "Province": "Devon",
+      "City": "Exeter",
+      "District": "EX1 1GE"
+    }
+  ]
+}

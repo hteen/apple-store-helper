@@ -1,0 +1,160 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "au",
+  "stores": [
+    {
+      "StoreNumber": "R440",
+      "CityStoreName": "Penrith-Penrith",
+      "Province": "New South Wales",
+      "City": "Penrith",
+      "District": "2750"
+    },
+    {
+      "StoreNumber": "R458",
+      "CityStoreName": "Hornsby-Hornsby",
+      "Province": "New South Wales",
+      "City": "Hornsby",
+      "District": "2077"
+    },
+    {
+      "StoreNumber": "R606",
+      "CityStoreName": "Miranda-Miranda",
+      "Province": "New South Wales",
+      "City": "Miranda",
+      "District": "2228"
+    },
+    {
+      "StoreNumber": "R254",
+      "CityStoreName": "Bondi Junction-Bondi",
+      "Province": "New South Wales",
+      "City": "Bondi Junction",
+      "District": "2022"
+    },
+    {
+      "StoreNumber": "R523",
+      "CityStoreName": "Broadway-Broadway",
+      "Province": "New South Wales",
+      "City": "Broadway",
+      "District": "2007"
+    },
+    {
+      "StoreNumber": "R238",
+      "CityStoreName": "Sydney-Sydney",
+      "Province": "New South Wales",
+      "City": "Sydney",
+      "District": "2000"
+    },
+    {
+      "StoreNumber": "R385",
+      "CityStoreName": "Charlestown-Charlestown",
+      "Province": "New South Wales",
+      "City": "Charlestown",
+      "District": "2290"
+    },
+    {
+      "StoreNumber": "R253",
+      "CityStoreName": "Chatswood-Chatswood Chase",
+      "Province": "New South Wales",
+      "City": "Chatswood",
+      "District": "2067"
+    },
+    {
+      "StoreNumber": "R344",
+      "CityStoreName": "Castle Hill-Castle Towers",
+      "Province": "New South Wales",
+      "City": "Castle Hill",
+      "District": "2154"
+    },
+    {
+      "StoreNumber": "R384",
+      "CityStoreName": "Chermside-Chermside",
+      "Province": "Queensland",
+      "City": "Chermside",
+      "District": "4032"
+    },
+    {
+      "StoreNumber": "R466",
+      "CityStoreName": "Brisbane City-Brisbane",
+      "Province": "Queensland",
+      "City": "Brisbane City",
+      "District": "4000"
+    },
+    {
+      "StoreNumber": "R351",
+      "CityStoreName": "Robina-Robina",
+      "Province": "Queensland",
+      "City": "Robina",
+      "District": "4226"
+    },
+    {
+      "StoreNumber": "R509",
+      "CityStoreName": "Carindale-Carindale",
+      "Province": "Queensland",
+      "City": "Carindale",
+      "District": "4152"
+    },
+    {
+      "StoreNumber": "R483",
+      "CityStoreName": "Canberra-Canberra",
+      "Province": "Australian Capital Territory",
+      "City": "Canberra",
+      "District": "2601"
+    },
+    {
+      "StoreNumber": "R508",
+      "CityStoreName": "Booragoon-Booragoon",
+      "Province": "Western Australia",
+      "City": "Booragoon",
+      "District": "6154"
+    },
+    {
+      "StoreNumber": "R386",
+      "CityStoreName": "Perth-Perth City",
+      "Province": "Western Australia",
+      "City": "Perth",
+      "District": "6000"
+    },
+    {
+      "StoreNumber": "R405",
+      "CityStoreName": "Adelaide-Rundle Place",
+      "Province": "South Australia",
+      "City": "Adelaide",
+      "District": "5000"
+    },
+    {
+      "StoreNumber": "R180",
+      "CityStoreName": "Chadstone-Chadstone",
+      "Province": "Victoria",
+      "City": "Chadstone",
+      "District": "3148"
+    },
+    {
+      "StoreNumber": "R342",
+      "CityStoreName": "Doncaster-Doncaster",
+      "Province": "Victoria",
+      "City": "Doncaster",
+      "District": "3108"
+    },
+    {
+      "StoreNumber": "R530",
+      "CityStoreName": "Fountain Gate-Fountain Gate",
+      "Province": "Victoria",
+      "City": "Fountain Gate",
+      "District": "3805"
+    },
+    {
+      "StoreNumber": "R504",
+      "CityStoreName": "Maribyrnong-Highpoint",
+      "Province": "Victoria",
+      "City": "Maribyrnong",
+      "District": "3032"
+    },
+    {
+      "StoreNumber": "R343",
+      "CityStoreName": "Cheltenham-Southland",
+      "Province": "Victoria",
+      "City": "Cheltenham",
+      "District": "3192"
+    }
+  ]
+}

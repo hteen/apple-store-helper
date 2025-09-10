@@ -1,0 +1,349 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "cn",
+  "stores": [
+    {
+      "StoreNumber": "R683",
+      "CityStoreName": "上海-环球港",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200062"
+    },
+    {
+      "StoreNumber": "R390",
+      "CityStoreName": "上海-香港广场",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200021"
+    },
+    {
+      "StoreNumber": "R581",
+      "CityStoreName": "上海-五角场",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200433"
+    },
+    {
+      "StoreNumber": "R401",
+      "CityStoreName": "上海-上海环贸 iapm ",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200031"
+    },
+    {
+      "StoreNumber": "R389",
+      "CityStoreName": "上海-浦东",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200120"
+    },
+    {
+      "StoreNumber": "R678",
+      "CityStoreName": "上海-静安",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200040"
+    },
+    {
+      "StoreNumber": "R359",
+      "CityStoreName": "上海-南京东路",
+      "Province": "上海",
+      "City": "上海",
+      "District": "200001"
+    },
+    {
+      "StoreNumber": "R705",
+      "CityStoreName": "上海-七宝",
+      "Province": "上海",
+      "City": "上海",
+      "District": "201101"
+    },
+    {
+      "StoreNumber": "R670",
+      "CityStoreName": "昆明-昆明",
+      "Province": "云南",
+      "City": "昆明",
+      "District": "650031"
+    },
+    {
+      "StoreNumber": "R388",
+      "CityStoreName": "北京-西单大悦城",
+      "Province": "北京",
+      "City": "北京",
+      "District": "100032"
+    },
+    {
+      "StoreNumber": "R645",
+      "CityStoreName": "北京-朝阳大悦城",
+      "Province": "北京",
+      "City": "北京",
+      "District": "100000"
+    },
+    {
+      "StoreNumber": "R448",
+      "CityStoreName": "北京-王府井",
+      "Province": "北京",
+      "City": "北京",
+      "District": "100006"
+    },
+    {
+      "StoreNumber": "R479",
+      "CityStoreName": "北京-华贸购物中心",
+      "Province": "北京",
+      "City": "北京",
+      "District": "100025"
+    },
+    {
+      "StoreNumber": "R320",
+      "CityStoreName": "北京-三里屯",
+      "Province": "北京",
+      "City": "北京",
+      "District": "100027"
+    },
+    {
+      "StoreNumber": "R502",
+      "CityStoreName": "成都-成都万象城",
+      "Province": "四川",
+      "City": "成都",
+      "District": "610000"
+    },
+    {
+      "StoreNumber": "R580",
+      "CityStoreName": "成都-成都太古里",
+      "Province": "四川",
+      "City": "成都",
+      "District": "610000"
+    },
+    {
+      "StoreNumber": "R637",
+      "CityStoreName": "天津-天津大悦城",
+      "Province": "天津",
+      "City": "天津",
+      "District": "300199"
+    },
+    {
+      "StoreNumber": "R638",
+      "CityStoreName": "天津-天津万象城",
+      "Province": "天津",
+      "City": "天津",
+      "District": "300201"
+    },
+    {
+      "StoreNumber": "R579",
+      "CityStoreName": "天津-天津恒隆广场",
+      "Province": "天津",
+      "City": "天津",
+      "District": "300041"
+    },
+    {
+      "StoreNumber": "R765",
+      "CityStoreName": "合肥-合肥万象城",
+      "Province": "安徽",
+      "City": "合肥",
+      "District": "230031"
+    },
+    {
+      "StoreNumber": "R648",
+      "CityStoreName": "济南-济南恒隆广场",
+      "Province": "山东",
+      "City": "济南",
+      "District": "250011"
+    },
+    {
+      "StoreNumber": "R557",
+      "CityStoreName": "青岛-青岛万象城",
+      "Province": "山东",
+      "City": "青岛",
+      "District": "266000"
+    },
+    {
+      "StoreNumber": "R639",
+      "CityStoreName": "广州-珠江新城",
+      "Province": "广东",
+      "City": "广州",
+      "District": "510623"
+    },
+    {
+      "StoreNumber": "R577",
+      "CityStoreName": "广州-天环广场 ",
+      "Province": "广东",
+      "City": "广州",
+      "District": "510000"
+    },
+    {
+      "StoreNumber": "R761",
+      "CityStoreName": "深圳-深圳万象城",
+      "Province": "广东",
+      "City": "深圳",
+      "District": "518001"
+    },
+    {
+      "StoreNumber": "R484",
+      "CityStoreName": "深圳-深圳益田假日广场",
+      "Province": "广东",
+      "City": "深圳",
+      "District": "518000"
+    },
+    {
+      "StoreNumber": "R793",
+      "CityStoreName": "深圳-前海壹方城",
+      "Province": "广东",
+      "City": "深圳",
+      "District": "518101"
+    },
+    {
+      "StoreNumber": "R571",
+      "CityStoreName": "南宁-南宁万象城",
+      "Province": "广西壮族自治区",
+      "City": "南宁",
+      "District": "530022"
+    },
+    {
+      "StoreNumber": "R643",
+      "CityStoreName": "南京-虹悦城",
+      "Province": "江苏",
+      "City": "南京",
+      "District": "210000"
+    },
+    {
+      "StoreNumber": "R493",
+      "CityStoreName": "南京-新街口",
+      "Province": "江苏",
+      "City": "南京",
+      "District": "210008"
+    },
+    {
+      "StoreNumber": "R703",
+      "CityStoreName": "南京-玄武湖",
+      "Province": "江苏",
+      "City": "南京",
+      "District": "210009"
+    },
+    {
+      "StoreNumber": "R574",
+      "CityStoreName": "无锡-无锡恒隆广场",
+      "Province": "江苏",
+      "City": "无锡",
+      "District": "214000"
+    },
+    {
+      "StoreNumber": "R688",
+      "CityStoreName": "苏州-苏州",
+      "Province": "江苏",
+      "City": "苏州",
+      "District": "215021"
+    },
+    {
+      "StoreNumber": "R572",
+      "CityStoreName": "郑州-郑州万象城",
+      "Province": "河南",
+      "City": "郑州",
+      "District": "450000"
+    },
+    {
+      "StoreNumber": "R531",
+      "CityStoreName": "宁波-天一广场",
+      "Province": "浙江",
+      "City": "宁波",
+      "District": "315000"
+    },
+    {
+      "StoreNumber": "R471",
+      "CityStoreName": "杭州-西湖",
+      "Province": "浙江",
+      "City": "杭州",
+      "District": "310006"
+    },
+    {
+      "StoreNumber": "R532",
+      "CityStoreName": "杭州-杭州万象城",
+      "Province": "浙江",
+      "City": "杭州",
+      "District": "310000"
+    },
+    {
+      "StoreNumber": "R766",
+      "CityStoreName": "温州市-温州万象城",
+      "Province": "浙江",
+      "City": "温州市",
+      "District": "325000"
+    },
+    {
+      "StoreNumber": "R575",
+      "CityStoreName": "武汉-武汉",
+      "Province": "湖北",
+      "City": "武汉",
+      "District": "430022"
+    },
+    {
+      "StoreNumber": "R617",
+      "CityStoreName": "长沙-长沙",
+      "Province": "湖南",
+      "City": "长沙",
+      "District": "410000"
+    },
+    {
+      "StoreNumber": "R644",
+      "CityStoreName": "厦门-厦门新生活广场",
+      "Province": "福建",
+      "City": "厦门",
+      "District": "361012"
+    },
+    {
+      "StoreNumber": "R646",
+      "CityStoreName": "福州-泰禾广场",
+      "Province": "福建",
+      "City": "福州",
+      "District": "350000"
+    },
+    {
+      "StoreNumber": "R478",
+      "CityStoreName": "大连-百年城",
+      "Province": "辽宁",
+      "City": "大连",
+      "District": "116000"
+    },
+    {
+      "StoreNumber": "R609",
+      "CityStoreName": "大连-大连恒隆广场",
+      "Province": "辽宁",
+      "City": "大连",
+      "District": "116000"
+    },
+    {
+      "StoreNumber": "R534",
+      "CityStoreName": "沈阳-中街大悦城",
+      "Province": "辽宁",
+      "City": "沈阳",
+      "District": "110042"
+    },
+    {
+      "StoreNumber": "R576",
+      "CityStoreName": "沈阳-沈阳万象城",
+      "Province": "辽宁",
+      "City": "沈阳",
+      "District": "110000"
+    },
+    {
+      "StoreNumber": "R480",
+      "CityStoreName": "重庆-解放碑",
+      "Province": "重庆",
+      "City": "重庆",
+      "District": "400010"
+    },
+    {
+      "StoreNumber": "R573",
+      "CityStoreName": "重庆-重庆万象城",
+      "Province": "重庆",
+      "City": "重庆",
+      "District": "400050"
+    },
+    {
+      "StoreNumber": "R476",
+      "CityStoreName": "重庆-重庆北城天街",
+      "Province": "重庆",
+      "City": "重庆",
+      "District": "400020"
+    }
+  ]
+}

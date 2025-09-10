@@ -1,0 +1,55 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "kr",
+  "stores": [
+    {
+      "StoreNumber": "R770",
+      "CityStoreName": "Gyeonggi-Hanam",
+      "Province": "Gyeonggi",
+      "City": "Gyeonggi",
+      "District": "12942"
+    },
+    {
+      "StoreNumber": "R751",
+      "CityStoreName": "Seoul-Jamsil",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "05551"
+    },
+    {
+      "StoreNumber": "R738",
+      "CityStoreName": "Seoul-Myeongdong",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "04534"
+    },
+    {
+      "StoreNumber": "R692",
+      "CityStoreName": "Seoul-Garosugil",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "06028"
+    },
+    {
+      "StoreNumber": "R747",
+      "CityStoreName": "Seoul-Yeouido",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "07326"
+    },
+    {
+      "StoreNumber": "R691",
+      "CityStoreName": "Seoul-Gangnam",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "06123"
+    },
+    {
+      "StoreNumber": "R764",
+      "CityStoreName": "Seoul-Hongdae",
+      "Province": "Seoul",
+      "City": "Seoul",
+      "District": "04050"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "update_time": "2025-01-27 12:00:00",
+  "area_code": "ch",
+  "stores": [
+    {
+      "StoreNumber": "R159",
+      "CityStoreName": "Zurich-Rennweg",
+      "Province": "Zurich",
+      "City": "Zurich",
+      "District": "8001"
+    },
+    {
+      "StoreNumber": "R309",
+      "CityStoreName": "Glattzentrum bei Wallisellen-Glattzentrum",
+      "Province": "Zurich",
+      "City": "Glattzentrum bei Wallisellen",
+      "District": "8301"
+    },
+    {
+      "StoreNumber": "R275",
+      "CityStoreName": "Geneva-Rue de Rive",
+      "Province": "Geneva",
+      "City": "Geneva",
+      "District": "1204"
+    },
+    {
+      "StoreNumber": "R439",
+      "CityStoreName": "Basel-Freie Strasse",
+      "Province": "Basel-Stadt",
+      "City": "Basel",
+      "District": "4001"
+    }
+  ]
+}
