@@ -1,8 +1,10 @@
 package services
 
 import (
+	"apple-store-helper/config"
 	"apple-store-helper/model"
 	"fmt"
+
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
 )
@@ -18,9 +20,9 @@ func (s *areaService) ProductsByCode(local string) []model.Product {
 	}).(model.Area)
 
 	var products []model.Product
+	productsJson := gjson.ParseBytes(config.MustReadConfigFile(fmt.Sprintf("products_%s.json", area.Locale)))
 
-	for _, pJson := range area.ProductsJson {
-		json := gjson.Parse(pJson)
+	for _, json := range productsJson.Array() {
 		for _, result := range json.Get("products").Array() {
 			color := json.Get(fmt.Sprintf("displayValues.dimensionColor.%s.value", result.Get("dimensionColor")))
 			products = append(products, model.Product{

@@ -1,60 +1,59 @@
 package services
 
 import (
+	"apple-store-helper/config"
 	"apple-store-helper/model"
-	"github.com/parnurzeal/gorequest"
+	"fmt"
+	"sort"
+
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
-	"sort"
 )
 
 var Store = storeService{
 	stores: map[string][]model.Store{},
-	storeListData: "",
 }
 
 type storeService struct {
 	stores map[string][]model.Store
-	storeListData string
 }
 
 func (s *storeService) ByArea(area model.Area) []model.Store {
-
-	if len(s.stores[area.Locale]) > 0 {
-		return s.stores[area.Locale]
-	}
-	
-	if s.storeListData == "" {
-		availability := "https://www.apple.com/rsp-web/store-list?locale=zh_CN"
-		_, bd, errs := gorequest.New().Get(availability).End()
-		
-		if len(errs) != 0 {
-			panic(errs[0])
-		}
-		
-		s.storeListData = bd
+	stores, err := config.ReadConfigFile("stores.json")
+	if err != nil {
+		panic(err)
 	}
 
-	for _, list := range gjson.Get(s.storeListData, "storeListData").Array() {
-		if list.Get("locale").String() == area.Locale {
-			if list.Get("state").Exists() {
-				for _, state := range list.Get("state").Array() {
-					for _, store := range state.Get("store").Array() {
-						s.stores[area.Locale] = append(s.stores[area.Locale], model.Store{
-							StoreNumber:   store.Get("id").String(),
-							CityStoreName: store.Get("address.stateName").String() + "-" + store.Get("name").String(),
-						})
-					}
-				}
-			} else {
-				for _, store := range list.Get("store").Array() {
-					s.stores[area.Locale] = append(s.stores[area.Locale], model.Store{
+	for _, v := range gjson.ParseBytes(stores).Array() {
+		locale := v.Get("locale").String()
+		hasStates := v.Get("hasStates").Bool()
+
+		localeStores := []model.Store{}
+
+		if hasStates {
+			for _, state := range v.Get("state").Array() {
+				for _, store := range state.Get("store").Array() {
+					localeStores = append(localeStores, model.Store{
 						StoreNumber:   store.Get("id").String(),
-						CityStoreName: store.Get("address.city").String() + "-" + store.Get("name").String(),
+						CityStoreName: fmt.Sprintf("%s-%s", store.Get("address.stateName").String(), store.Get("name").String()),
 					})
 				}
 			}
+		} else {
+			for _, store := range v.Get("store").Array() {
+				localeStores = append(localeStores, model.Store{
+					StoreNumber:   store.Get("id").String(),
+					CityStoreName: fmt.Sprintf("%s-%s", store.Get("address.city").String(), store.Get("name").String()),
+				})
+			}
 		}
+
+		// 去重
+		localeStores = funk.UniqBy(localeStores, func(x model.Store) string {
+			return x.StoreNumber
+		}).([]model.Store)
+
+		s.stores[locale] = localeStores
 	}
 
 	return s.stores[area.Locale]

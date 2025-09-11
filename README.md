@@ -1,6 +1,6 @@
 # Apple Store 预约助手
 
-## 支持 iPhone 16 系列
+## 支持 iPhone 17 系列
 
 ![UI](screenshot.png)
 

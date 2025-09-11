@@ -1,0 +1,3416 @@
+[
+  {
+    "locale": "zh_CN",
+    "calledLocale": "zh_CN",
+    "state": [
+      {
+        "__typename": "RgdsState",
+        "name": "上海",
+        "store": [
+          {
+            "id": "R683",
+            "name": "环球港",
+            "slug": "globalharbor",
+            "telephone": "400-617-1335",
+            "address": {
+              "address1": "上海市普陀区中山北路 3300 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200062",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R390",
+            "name": "香港广场",
+            "slug": "hongkongplaza",
+            "telephone": "400-617-1312",
+            "address": {
+              "address1": "上海市黄浦区淮海中路 282 号",
+              "address2": "香港广场北座",
+              "city": "上海",
+              "postalCode": "200021",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R581",
+            "name": "五角场",
+            "slug": "wujiaochang",
+            "telephone": "400-613-9771",
+            "address": {
+              "address1": "上海市杨浦区翔殷路 1099 号",
+              "address2": "上海合生汇",
+              "city": "上海",
+              "postalCode": "200433",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R401",
+            "name": "上海环贸 iapm ",
+            "slug": "shanghaiiapm",
+            "telephone": "400-617-1324",
+            "address": {
+              "address1": "上海市徐汇区淮海中路 999 号",
+              "address2": "环贸 iapm 商场",
+              "city": "上海",
+              "postalCode": "200031",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R389",
+            "name": "浦东",
+            "slug": "pudong",
+            "telephone": "400-617-1305",
+            "address": {
+              "address1": "上海市浦东新区陆家嘴世纪大道 8 号",
+              "address2": "上海国金中心 IFC 商场 LG2－27 号店铺",
+              "city": "上海",
+              "postalCode": "200120",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R678",
+            "name": "静安",
+            "slug": "jingan",
+            "telephone": "400-000-3235",
+            "address": {
+              "address1": "上海市静安区南京西路 1699 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200040",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R359",
+            "name": "南京东路",
+            "slug": "nanjingeast",
+            "telephone": "400-663-9988",
+            "address": {
+              "address1": "上海市黄浦区南京东路 300 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200001",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R705",
+            "name": "七宝",
+            "slug": "qibao",
+            "telephone": "400-613-9773",
+            "address": {
+              "address1": "上海市闵行区漕宝路 3366 号 ",
+              "address2": "七宝领展广场",
+              "city": "上海",
+              "postalCode": "201101",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "云南",
+        "store": [
+          {
+            "id": "R670",
+            "name": "昆明",
+            "slug": "kunming",
+            "telephone": "400-639-3602",
+            "address": {
+              "address1": "昆明市五华区东风西路 11 号 ",
+              "address2": "顺城购物中心",
+              "city": "昆明",
+              "postalCode": "650031",
+              "__typename": "PostalAddress",
+              "stateName": "云南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "北京",
+        "store": [
+          {
+            "id": "R388",
+            "name": "西单大悦城",
+            "slug": "xidanjoycity",
+            "telephone": "400-617-1204",
+            "address": {
+              "address1": "北京市西城区西单北大街 131 号大悦城",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100032",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R645",
+            "name": "朝阳大悦城",
+            "slug": "chaoyangjoycity",
+            "telephone": "400-617-1284",
+            "address": {
+              "address1": "北京市朝阳区朝阳北路 101 号",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100000",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R448",
+            "name": "王府井",
+            "slug": "wangfujing",
+            "telephone": "400-617-1205",
+            "address": {
+              "address1": "北京市东城区王府井大街 138 号北京 apm",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100006",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R479",
+            "name": "华贸购物中心",
+            "slug": "chinacentralmall",
+            "telephone": "400-617-1210",
+            "address": {
+              "address1": "北京市朝阳区建国路 81 号华贸购物中心",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100025",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R320",
+            "name": "三里屯",
+            "slug": "sanlitun",
+            "telephone": "400-617-1363",
+            "address": {
+              "address1": "北京市朝阳区三里屯路 19 号院",
+              "address2": "三里屯太古里南区 7 号楼",
+              "city": "北京",
+              "postalCode": "100027",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "四川",
+        "store": [
+          {
+            "id": "R502",
+            "name": "成都万象城",
+            "slug": "mixcchengdu",
+            "telephone": "400-617-1214",
+            "address": {
+              "address1": "成都市成华区双庆路 8 号万象城",
+              "address2": "",
+              "city": "成都",
+              "postalCode": "610000",
+              "__typename": "PostalAddress",
+              "stateName": "四川",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R580",
+            "name": "成都太古里",
+            "slug": "taikoolichengdu",
+            "telephone": "400-617-1275",
+            "address": {
+              "address1": "成都市锦江区中纱帽街 8 号",
+              "address2": "",
+              "city": "成都",
+              "postalCode": "610000",
+              "__typename": "PostalAddress",
+              "stateName": "四川",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "天津",
+        "store": [
+          {
+            "id": "R637",
+            "name": "天津大悦城",
+            "slug": "tianjinjoycity",
+            "telephone": "400-617-1262",
+            "address": {
+              "address1": "天津市南开区南门外大街 2 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300199",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R638",
+            "name": "天津万象城",
+            "slug": "mixctianjin",
+            "telephone": "400-613-9745",
+            "address": {
+              "address1": "天津市河西区乐园道 9 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300201",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R579",
+            "name": "天津恒隆广场",
+            "slug": "riverside66tianjin",
+            "telephone": "400-613-9744",
+            "address": {
+              "address1": "天津市和平区兴安路 166 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300041",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "安徽",
+        "store": [
+          {
+            "id": "R765",
+            "name": "合肥万象城",
+            "slug": "mixchefei",
+            "telephone": "400-000-5292",
+            "address": {
+              "address1": "合肥市蜀山区潜山路 111 号",
+              "address2": "合肥万象城商场一层",
+              "city": "合肥",
+              "postalCode": "230031",
+              "__typename": "PostalAddress",
+              "stateName": "安徽",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "山东",
+        "store": [
+          {
+            "id": "R648",
+            "name": "济南恒隆广场",
+            "slug": "parc66jinan",
+            "telephone": "400-613-9743",
+            "address": {
+              "address1": "济南市历下区泉城路 188 号",
+              "address2": "",
+              "city": "济南",
+              "postalCode": "250011",
+              "__typename": "PostalAddress",
+              "stateName": "山东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R557",
+            "name": "青岛万象城",
+            "slug": "mixcqingdao",
+            "telephone": "400-617-1285",
+            "address": {
+              "address1": "青岛市市南区山东路 6A 号",
+              "address2": "",
+              "city": "青岛",
+              "postalCode": "266000",
+              "__typename": "PostalAddress",
+              "stateName": "山东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "广东",
+        "store": [
+          {
+            "id": "R639",
+            "name": "珠江新城",
+            "slug": "zhujiangnewtown",
+            "telephone": "400-639-3601",
+            "address": {
+              "address1": "广州珠江新城兴民路 222 号",
+              "address2": "天汇广场 1 层",
+              "city": "广州",
+              "postalCode": "510623",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R577",
+            "name": "天环广场 ",
+            "slug": "parccentral",
+            "telephone": "400-613-9742",
+            "address": {
+              "address1": "广州市天河区天河路 218 号",
+              "address2": "",
+              "city": "广州",
+              "postalCode": "510000",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R761",
+            "name": "深圳万象城",
+            "slug": "mixcshenzhen",
+            "telephone": "400-050-1588",
+            "address": {
+              "address1": "深圳市罗湖区宝安南路 1881 号",
+              "address2": "深圳万象城（一期）B1 层",
+              "city": "深圳",
+              "postalCode": "518001",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R484",
+            "name": "深圳益田假日广场",
+            "slug": "holidayplazashenzhen",
+            "telephone": "400-617-1254",
+            "address": {
+              "address1": "深圳市南山区深南大道 9028 号益田假日广场",
+              "address2": "",
+              "city": "深圳",
+              "postalCode": "518000",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R793",
+            "name": "前海壹方城",
+            "slug": "uniwalkqianhai",
+            "telephone": "400-002-7805",
+            "address": {
+              "address1": "深圳市宝安区新湖路 99 号",
+              "address2": "前海壹方城 L1 层",
+              "city": "深圳",
+              "postalCode": "518101",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "广西壮族自治区",
+        "store": [
+          {
+            "id": "R571",
+            "name": "南宁万象城",
+            "slug": "mixcnanning",
+            "telephone": "400-617-1265",
+            "address": {
+              "address1": "南宁市青秀区民族大道 136 号",
+              "address2": "",
+              "city": "南宁",
+              "postalCode": "530022",
+              "__typename": "PostalAddress",
+              "stateName": "广西壮族自治区",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "江苏",
+        "store": [
+          {
+            "id": "R643",
+            "name": "虹悦城",
+            "slug": "wondercity",
+            "telephone": "400-617-1332",
+            "address": {
+              "address1": "南京市雨花台区应天大街 619 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210000",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R493",
+            "name": "新街口",
+            "slug": "xinjiekou",
+            "telephone": "400-617-1334",
+            "address": {
+              "address1": "南京市玄武区中山路 100 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210008",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R703",
+            "name": "玄武湖",
+            "slug": "xuanwulake",
+            "telephone": "400-613-9772",
+            "address": {
+              "address1": "南京市鼓楼区中央路 201 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210009",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R574",
+            "name": "无锡恒隆广场",
+            "slug": "center66wuxi",
+            "telephone": "400-617-1325",
+            "address": {
+              "address1": "无锡市梁溪区",
+              "address2": "人民中路 139 号",
+              "city": "无锡",
+              "postalCode": "214000",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R688",
+            "name": "苏州",
+            "slug": "suzhou",
+            "telephone": "400-613-9775",
+            "address": {
+              "address1": "苏州市苏州工业园区",
+              "address2": "苏州中心商场",
+              "city": "苏州",
+              "postalCode": "215021",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "河南",
+        "store": [
+          {
+            "id": "R572",
+            "name": "郑州万象城",
+            "slug": "mixczhengzhou",
+            "telephone": "400-617-1264",
+            "address": {
+              "address1": "郑州市二七区民主路 10 号",
+              "address2": "",
+              "city": "郑州",
+              "postalCode": "450000",
+              "__typename": "PostalAddress",
+              "stateName": "河南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "浙江",
+        "store": [
+          {
+            "id": "R531",
+            "name": "天一广场",
+            "slug": "tianyisquare",
+            "telephone": "400-613-9774",
+            "address": {
+              "address1": "宁波市海曙区碶闸街 155 号",
+              "address2": "天一广场",
+              "city": "宁波",
+              "postalCode": "315000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R471",
+            "name": "西湖",
+            "slug": "westlake",
+            "telephone": "400-617-1302",
+            "address": {
+              "address1": "杭州市上城区平海路 100 号",
+              "address2": "",
+              "city": "杭州",
+              "postalCode": "310006",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R532",
+            "name": "杭州万象城",
+            "slug": "mixchangzhou",
+            "telephone": "400-617-1304",
+            "address": {
+              "address1": "杭州市上城区富春路 701 号",
+              "address2": "",
+              "city": "杭州",
+              "postalCode": "310000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R766",
+            "name": "温州万象城",
+            "slug": "mixcwenzhou",
+            "telephone": "400-000-2385",
+            "address": {
+              "address1": "浙江省温州市瓯海区瓯越大道1999号",
+              "address2": "温州万象城 L1层",
+              "city": "温州市",
+              "postalCode": "325000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "湖北",
+        "store": [
+          {
+            "id": "R575",
+            "name": "武汉",
+            "slug": "wuhan",
+            "telephone": "400-638-3818",
+            "address": {
+              "address1": "武汉市江汉区解放大道 690 号",
+              "address2": "武商 MALL B 座 2F",
+              "city": "武汉",
+              "postalCode": "430022",
+              "__typename": "PostalAddress",
+              "stateName": "湖北",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "湖南",
+        "store": [
+          {
+            "id": "R617",
+            "name": "长沙",
+            "slug": "changsha",
+            "telephone": "400-604-3168",
+            "address": {
+              "address1": "长沙市芙蓉区解放西路 188 号",
+              "address2": "长沙国金中心一层",
+              "city": "长沙",
+              "postalCode": "410000",
+              "__typename": "PostalAddress",
+              "stateName": "湖南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "福建",
+        "store": [
+          {
+            "id": "R644",
+            "name": "厦门新生活广场",
+            "slug": "xiamenlifestylecenter",
+            "telephone": "400-617-1383",
+            "address": {
+              "address1": "厦门市思明区嘉禾路 399 号",
+              "address2": "SM 新生活广场",
+              "city": "厦门",
+              "postalCode": "361012",
+              "__typename": "PostalAddress",
+              "stateName": "福建",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R646",
+            "name": "泰禾广场",
+            "slug": "tahoeplaza",
+            "telephone": "400-617-1354",
+            "address": {
+              "address1": "福州市晋安区竹屿路 6 号",
+              "address2": "东二环泰禾广场",
+              "city": "福州",
+              "postalCode": "350000",
+              "__typename": "PostalAddress",
+              "stateName": "福建",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "辽宁",
+        "store": [
+          {
+            "id": "R478",
+            "name": "百年城",
+            "slug": "parkland",
+            "telephone": "400-056-0921",
+            "address": {
+              "address1": "大连市中山区解放路 19 号",
+              "address2": "",
+              "city": "大连",
+              "postalCode": "116000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R609",
+            "name": "大连恒隆广场",
+            "slug": "olympia66dalian",
+            "telephone": "400-613-9741",
+            "address": {
+              "address1": "大连市西岗区五四路 66 号",
+              "address2": "",
+              "city": "大连",
+              "postalCode": "116000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R534",
+            "name": "中街大悦城",
+            "slug": "zhongjiejoycity",
+            "telephone": "400-617-1252",
+            "address": {
+              "address1": "沈阳市大东区小东路 5 号",
+              "address2": "",
+              "city": "沈阳",
+              "postalCode": "110042",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R576",
+            "name": "沈阳万象城",
+            "slug": "mixcshenyang",
+            "telephone": "400-617-1274",
+            "address": {
+              "address1": "沈阳市和平区青年大街 288 号",
+              "address2": "",
+              "city": "沈阳",
+              "postalCode": "110000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "重庆",
+        "store": [
+          {
+            "id": "R480",
+            "name": "解放碑",
+            "slug": "jiefangbei",
+            "telephone": "400-617-1224",
+            "address": {
+              "address1": "重庆市渝中区邹容路 108 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400010",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R573",
+            "name": "重庆万象城",
+            "slug": "mixcchongqing",
+            "telephone": "400-617-1215",
+            "address": {
+              "address1": "重庆市九龙坡区谢家湾正街 55 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400050",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R476",
+            "name": "重庆北城天街",
+            "slug": "paradisewalkchongqing",
+            "telephone": "400-617-1240",
+            "address": {
+              "address1": "重庆市江北区北城天街 8 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400020",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ],
+    "__typename": "RmdLocale",
+    "hasStates": true,
+    "states": [
+      {
+        "__typename": "RgdsState",
+        "name": "江苏",
+        "store": [
+          {
+            "id": "R643",
+            "name": "虹悦城",
+            "slug": "wondercity",
+            "telephone": "400-617-1332",
+            "address": {
+              "address1": "南京市雨花台区应天大街 619 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210000",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R688",
+            "name": "苏州",
+            "slug": "suzhou",
+            "telephone": "400-613-9775",
+            "address": {
+              "address1": "苏州市苏州工业园区",
+              "address2": "苏州中心商场",
+              "city": "苏州",
+              "postalCode": "215021",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R493",
+            "name": "新街口",
+            "slug": "xinjiekou",
+            "telephone": "400-617-1334",
+            "address": {
+              "address1": "南京市玄武区中山路 100 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210008",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R703",
+            "name": "玄武湖",
+            "slug": "xuanwulake",
+            "telephone": "400-613-9772",
+            "address": {
+              "address1": "南京市鼓楼区中央路 201 号",
+              "address2": "",
+              "city": "南京",
+              "postalCode": "210009",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R574",
+            "name": "无锡恒隆广场",
+            "slug": "center66wuxi",
+            "telephone": "400-617-1325",
+            "address": {
+              "address1": "无锡市梁溪区",
+              "address2": "人民中路 139 号",
+              "city": "无锡",
+              "postalCode": "214000",
+              "__typename": "PostalAddress",
+              "stateName": "江苏",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "四川",
+        "store": [
+          {
+            "id": "R502",
+            "name": "成都万象城",
+            "slug": "mixcchengdu",
+            "telephone": "400-617-1214",
+            "address": {
+              "address1": "成都市成华区双庆路 8 号万象城",
+              "address2": "",
+              "city": "成都",
+              "postalCode": "610000",
+              "__typename": "PostalAddress",
+              "stateName": "四川",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R580",
+            "name": "成都太古里",
+            "slug": "taikoolichengdu",
+            "telephone": "400-617-1275",
+            "address": {
+              "address1": "成都市锦江区中纱帽街 8 号",
+              "address2": "",
+              "city": "成都",
+              "postalCode": "610000",
+              "__typename": "PostalAddress",
+              "stateName": "四川",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "山东",
+        "store": [
+          {
+            "id": "R557",
+            "name": "青岛万象城",
+            "slug": "mixcqingdao",
+            "telephone": "400-617-1285",
+            "address": {
+              "address1": "青岛市市南区山东路 6A 号",
+              "address2": "",
+              "city": "青岛",
+              "postalCode": "266000",
+              "__typename": "PostalAddress",
+              "stateName": "山东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R648",
+            "name": "济南恒隆广场",
+            "slug": "parc66jinan",
+            "telephone": "400-613-9743",
+            "address": {
+              "address1": "济南市历下区泉城路 188 号",
+              "address2": "",
+              "city": "济南",
+              "postalCode": "250011",
+              "__typename": "PostalAddress",
+              "stateName": "山东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "浙江",
+        "store": [
+          {
+            "id": "R531",
+            "name": "天一广场",
+            "slug": "tianyisquare",
+            "telephone": "400-613-9774",
+            "address": {
+              "address1": "宁波市海曙区碶闸街 155 号",
+              "address2": "天一广场",
+              "city": "宁波",
+              "postalCode": "315000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R766",
+            "name": "温州万象城",
+            "slug": "mixcwenzhou",
+            "telephone": "400-000-2385",
+            "address": {
+              "address1": "浙江省温州市瓯海区瓯越大道1999号",
+              "address2": "温州万象城 L1层",
+              "city": "温州市",
+              "postalCode": "325000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R471",
+            "name": "西湖",
+            "slug": "westlake",
+            "telephone": "400-617-1302",
+            "address": {
+              "address1": "杭州市上城区平海路 100 号",
+              "address2": "",
+              "city": "杭州",
+              "postalCode": "310006",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R532",
+            "name": "杭州万象城",
+            "slug": "mixchangzhou",
+            "telephone": "400-617-1304",
+            "address": {
+              "address1": "杭州市上城区富春路 701 号",
+              "address2": "",
+              "city": "杭州",
+              "postalCode": "310000",
+              "__typename": "PostalAddress",
+              "stateName": "浙江",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "广西壮族自治区",
+        "store": [
+          {
+            "id": "R571",
+            "name": "南宁万象城",
+            "slug": "mixcnanning",
+            "telephone": "400-617-1265",
+            "address": {
+              "address1": "南宁市青秀区民族大道 136 号",
+              "address2": "",
+              "city": "南宁",
+              "postalCode": "530022",
+              "__typename": "PostalAddress",
+              "stateName": "广西壮族自治区",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "湖南",
+        "store": [
+          {
+            "id": "R617",
+            "name": "长沙",
+            "slug": "changsha",
+            "telephone": "400-604-3168",
+            "address": {
+              "address1": "长沙市芙蓉区解放西路 188 号",
+              "address2": "长沙国金中心一层",
+              "city": "长沙",
+              "postalCode": "410000",
+              "__typename": "PostalAddress",
+              "stateName": "湖南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "辽宁",
+        "store": [
+          {
+            "id": "R534",
+            "name": "中街大悦城",
+            "slug": "zhongjiejoycity",
+            "telephone": "400-617-1252",
+            "address": {
+              "address1": "沈阳市大东区小东路 5 号",
+              "address2": "",
+              "city": "沈阳",
+              "postalCode": "110042",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R576",
+            "name": "沈阳万象城",
+            "slug": "mixcshenyang",
+            "telephone": "400-617-1274",
+            "address": {
+              "address1": "沈阳市和平区青年大街 288 号",
+              "address2": "",
+              "city": "沈阳",
+              "postalCode": "110000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R478",
+            "name": "百年城",
+            "slug": "parkland",
+            "telephone": "400-056-0921",
+            "address": {
+              "address1": "大连市中山区解放路 19 号",
+              "address2": "",
+              "city": "大连",
+              "postalCode": "116000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R609",
+            "name": "大连恒隆广场",
+            "slug": "olympia66dalian",
+            "telephone": "400-613-9741",
+            "address": {
+              "address1": "大连市西岗区五四路 66 号",
+              "address2": "",
+              "city": "大连",
+              "postalCode": "116000",
+              "__typename": "PostalAddress",
+              "stateName": "辽宁",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "湖北",
+        "store": [
+          {
+            "id": "R575",
+            "name": "武汉",
+            "slug": "wuhan",
+            "telephone": "400-638-3818",
+            "address": {
+              "address1": "武汉市江汉区解放大道 690 号",
+              "address2": "武商 MALL B 座 2F",
+              "city": "武汉",
+              "postalCode": "430022",
+              "__typename": "PostalAddress",
+              "stateName": "湖北",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "重庆",
+        "store": [
+          {
+            "id": "R480",
+            "name": "解放碑",
+            "slug": "jiefangbei",
+            "telephone": "400-617-1224",
+            "address": {
+              "address1": "重庆市渝中区邹容路 108 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400010",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R573",
+            "name": "重庆万象城",
+            "slug": "mixcchongqing",
+            "telephone": "400-617-1215",
+            "address": {
+              "address1": "重庆市九龙坡区谢家湾正街 55 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400050",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R476",
+            "name": "重庆北城天街",
+            "slug": "paradisewalkchongqing",
+            "telephone": "400-617-1240",
+            "address": {
+              "address1": "重庆市江北区北城天街 8 号",
+              "address2": "",
+              "city": "重庆",
+              "postalCode": "400020",
+              "__typename": "PostalAddress",
+              "stateName": "重庆",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "云南",
+        "store": [
+          {
+            "id": "R670",
+            "name": "昆明",
+            "slug": "kunming",
+            "telephone": "400-639-3602",
+            "address": {
+              "address1": "昆明市五华区东风西路 11 号 ",
+              "address2": "顺城购物中心",
+              "city": "昆明",
+              "postalCode": "650031",
+              "__typename": "PostalAddress",
+              "stateName": "云南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "福建",
+        "store": [
+          {
+            "id": "R646",
+            "name": "泰禾广场",
+            "slug": "tahoeplaza",
+            "telephone": "400-617-1354",
+            "address": {
+              "address1": "福州市晋安区竹屿路 6 号",
+              "address2": "东二环泰禾广场",
+              "city": "福州",
+              "postalCode": "350000",
+              "__typename": "PostalAddress",
+              "stateName": "福建",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R644",
+            "name": "厦门新生活广场",
+            "slug": "xiamenlifestylecenter",
+            "telephone": "400-617-1383",
+            "address": {
+              "address1": "厦门市思明区嘉禾路 399 号",
+              "address2": "SM 新生活广场",
+              "city": "厦门",
+              "postalCode": "361012",
+              "__typename": "PostalAddress",
+              "stateName": "福建",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "北京",
+        "store": [
+          {
+            "id": "R388",
+            "name": "西单大悦城",
+            "slug": "xidanjoycity",
+            "telephone": "400-617-1204",
+            "address": {
+              "address1": "北京市西城区西单北大街 131 号大悦城",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100032",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R645",
+            "name": "朝阳大悦城",
+            "slug": "chaoyangjoycity",
+            "telephone": "400-617-1284",
+            "address": {
+              "address1": "北京市朝阳区朝阳北路 101 号",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100000",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R448",
+            "name": "王府井",
+            "slug": "wangfujing",
+            "telephone": "400-617-1205",
+            "address": {
+              "address1": "北京市东城区王府井大街 138 号北京 apm",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100006",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R479",
+            "name": "华贸购物中心",
+            "slug": "chinacentralmall",
+            "telephone": "400-617-1210",
+            "address": {
+              "address1": "北京市朝阳区建国路 81 号华贸购物中心",
+              "address2": "",
+              "city": "北京",
+              "postalCode": "100025",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R320",
+            "name": "三里屯",
+            "slug": "sanlitun",
+            "telephone": "400-617-1363",
+            "address": {
+              "address1": "北京市朝阳区三里屯路 19 号院",
+              "address2": "三里屯太古里南区 7 号楼",
+              "city": "北京",
+              "postalCode": "100027",
+              "__typename": "PostalAddress",
+              "stateName": "北京",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "天津",
+        "store": [
+          {
+            "id": "R637",
+            "name": "天津大悦城",
+            "slug": "tianjinjoycity",
+            "telephone": "400-617-1262",
+            "address": {
+              "address1": "天津市南开区南门外大街 2 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300199",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R638",
+            "name": "天津万象城",
+            "slug": "mixctianjin",
+            "telephone": "400-613-9745",
+            "address": {
+              "address1": "天津市河西区乐园道 9 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300201",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R579",
+            "name": "天津恒隆广场",
+            "slug": "riverside66tianjin",
+            "telephone": "400-613-9744",
+            "address": {
+              "address1": "天津市和平区兴安路 166 号",
+              "address2": "",
+              "city": "天津",
+              "postalCode": "300041",
+              "__typename": "PostalAddress",
+              "stateName": "天津",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "安徽",
+        "store": [
+          {
+            "id": "R765",
+            "name": "合肥万象城",
+            "slug": "mixchefei",
+            "telephone": "400-000-5292",
+            "address": {
+              "address1": "合肥市蜀山区潜山路 111 号",
+              "address2": "合肥万象城商场一层",
+              "city": "合肥",
+              "postalCode": "230031",
+              "__typename": "PostalAddress",
+              "stateName": "安徽",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "河南",
+        "store": [
+          {
+            "id": "R572",
+            "name": "郑州万象城",
+            "slug": "mixczhengzhou",
+            "telephone": "400-617-1264",
+            "address": {
+              "address1": "郑州市二七区民主路 10 号",
+              "address2": "",
+              "city": "郑州",
+              "postalCode": "450000",
+              "__typename": "PostalAddress",
+              "stateName": "河南",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "上海",
+        "store": [
+          {
+            "id": "R683",
+            "name": "环球港",
+            "slug": "globalharbor",
+            "telephone": "400-617-1335",
+            "address": {
+              "address1": "上海市普陀区中山北路 3300 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200062",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R390",
+            "name": "香港广场",
+            "slug": "hongkongplaza",
+            "telephone": "400-617-1312",
+            "address": {
+              "address1": "上海市黄浦区淮海中路 282 号",
+              "address2": "香港广场北座",
+              "city": "上海",
+              "postalCode": "200021",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R581",
+            "name": "五角场",
+            "slug": "wujiaochang",
+            "telephone": "400-613-9771",
+            "address": {
+              "address1": "上海市杨浦区翔殷路 1099 号",
+              "address2": "上海合生汇",
+              "city": "上海",
+              "postalCode": "200433",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R401",
+            "name": "上海环贸 iapm ",
+            "slug": "shanghaiiapm",
+            "telephone": "400-617-1324",
+            "address": {
+              "address1": "上海市徐汇区淮海中路 999 号",
+              "address2": "环贸 iapm 商场",
+              "city": "上海",
+              "postalCode": "200031",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R389",
+            "name": "浦东",
+            "slug": "pudong",
+            "telephone": "400-617-1305",
+            "address": {
+              "address1": "上海市浦东新区陆家嘴世纪大道 8 号",
+              "address2": "上海国金中心 IFC 商场 LG2－27 号店铺",
+              "city": "上海",
+              "postalCode": "200120",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R678",
+            "name": "静安",
+            "slug": "jingan",
+            "telephone": "400-000-3235",
+            "address": {
+              "address1": "上海市静安区南京西路 1699 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200040",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R359",
+            "name": "南京东路",
+            "slug": "nanjingeast",
+            "telephone": "400-663-9988",
+            "address": {
+              "address1": "上海市黄浦区南京东路 300 号",
+              "address2": "",
+              "city": "上海",
+              "postalCode": "200001",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R705",
+            "name": "七宝",
+            "slug": "qibao",
+            "telephone": "400-613-9773",
+            "address": {
+              "address1": "上海市闵行区漕宝路 3366 号 ",
+              "address2": "七宝领展广场",
+              "city": "上海",
+              "postalCode": "201101",
+              "__typename": "PostalAddress",
+              "stateName": "上海",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "广东",
+        "store": [
+          {
+            "id": "R761",
+            "name": "深圳万象城",
+            "slug": "mixcshenzhen",
+            "telephone": "400-050-1588",
+            "address": {
+              "address1": "深圳市罗湖区宝安南路 1881 号",
+              "address2": "深圳万象城（一期）B1 层",
+              "city": "深圳",
+              "postalCode": "518001",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R639",
+            "name": "珠江新城",
+            "slug": "zhujiangnewtown",
+            "telephone": "400-639-3601",
+            "address": {
+              "address1": "广州珠江新城兴民路 222 号",
+              "address2": "天汇广场 1 层",
+              "city": "广州",
+              "postalCode": "510623",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R484",
+            "name": "深圳益田假日广场",
+            "slug": "holidayplazashenzhen",
+            "telephone": "400-617-1254",
+            "address": {
+              "address1": "深圳市南山区深南大道 9028 号益田假日广场",
+              "address2": "",
+              "city": "深圳",
+              "postalCode": "518000",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R577",
+            "name": "天环广场 ",
+            "slug": "parccentral",
+            "telephone": "400-613-9742",
+            "address": {
+              "address1": "广州市天河区天河路 218 号",
+              "address2": "",
+              "city": "广州",
+              "postalCode": "510000",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R793",
+            "name": "前海壹方城",
+            "slug": "uniwalkqianhai",
+            "telephone": "400-002-7805",
+            "address": {
+              "address1": "深圳市宝安区新湖路 99 号",
+              "address2": "前海壹方城 L1 层",
+              "city": "深圳",
+              "postalCode": "518101",
+              "__typename": "PostalAddress",
+              "stateName": "广东",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "locale": "zh_HK",
+    "calledLocale": "zh_HK",
+    "__typename": "RmdLocale",
+    "hasStates": false,
+    "states": [
+      {
+        "__typename": "RgdsStore",
+        "id": "R428",
+        "name": "ifc mall",
+        "slug": "ifcmall",
+        "telephone": "39721500",
+        "address": {
+          "address1": "國際金融中心商場",
+          "address2": "中環金融街 8 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R673",
+        "name": "apm Hong Kong",
+        "slug": "apmhongkong",
+        "telephone": "35728900",
+        "address": {
+          "address1": "觀塘觀塘道 418 號",
+          "address2": "",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R610",
+        "name": "New Town Plaza",
+        "slug": "newtownplaza",
+        "telephone": "38997800",
+        "address": {
+          "address1": "新城市廣場 1 期 L4",
+          "address2": "沙田沙田正街 18 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R409",
+        "name": "Causeway Bay",
+        "slug": "causewaybay",
+        "telephone": "39793100",
+        "address": {
+          "address1": "希慎廣場",
+          "address2": "銅鑼灣軒尼詩道 500 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R499",
+        "name": "Canton Road",
+        "slug": "cantonroad",
+        "telephone": "39798800",
+        "address": {
+          "address1": "尖沙咀廣東道 100 號",
+          "address2": "",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R485",
+        "name": "Festival Walk",
+        "slug": "festivalwalk",
+        "telephone": "39793600",
+        "address": {
+          "address1": "又一城",
+          "address2": "九龍塘達之路 80 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      }
+    ],
+    "store": [
+      {
+        "__typename": "RgdsStore",
+        "id": "R428",
+        "name": "ifc mall",
+        "slug": "ifcmall",
+        "telephone": "39721500",
+        "address": {
+          "address1": "國際金融中心商場",
+          "address2": "中環金融街 8 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R673",
+        "name": "apm Hong Kong",
+        "slug": "apmhongkong",
+        "telephone": "35728900",
+        "address": {
+          "address1": "觀塘觀塘道 418 號",
+          "address2": "",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R610",
+        "name": "New Town Plaza",
+        "slug": "newtownplaza",
+        "telephone": "38997800",
+        "address": {
+          "address1": "新城市廣場 1 期 L4",
+          "address2": "沙田沙田正街 18 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R409",
+        "name": "Causeway Bay",
+        "slug": "causewaybay",
+        "telephone": "39793100",
+        "address": {
+          "address1": "希慎廣場",
+          "address2": "銅鑼灣軒尼詩道 500 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R499",
+        "name": "Canton Road",
+        "slug": "cantonroad",
+        "telephone": "39798800",
+        "address": {
+          "address1": "尖沙咀廣東道 100 號",
+          "address2": "",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R485",
+        "name": "Festival Walk",
+        "slug": "festivalwalk",
+        "telephone": "39793600",
+        "address": {
+          "address1": "又一城",
+          "address2": "九龍塘達之路 80 號",
+          "city": "香港",
+          "postalCode": "",
+          "__typename": "PostalAddress"
+        }
+      }
+    ]
+  },
+  {
+    "locale": "zh_TW",
+    "calledLocale": "zh_TW",
+    "state": [
+      {
+        "__typename": "RgdsState",
+        "name": "台北市",
+        "store": [
+          {
+            "id": "R694",
+            "name": "信義 A13",
+            "slug": "xinyia13",
+            "telephone": "0800-020-010",
+            "address": {
+              "address1": "信義區松壽路 13 號",
+              "address2": "",
+              "city": "台北市",
+              "postalCode": "11051",
+              "__typename": "PostalAddress",
+              "stateName": "台北市",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R713",
+            "name": "台北 101",
+            "slug": "taipei101",
+            "telephone": "0800-020-005",
+            "address": {
+              "address1": "信義區市府路 45 號",
+              "address2": "台北 101 購物中心 1F",
+              "city": "台北市",
+              "postalCode": "110",
+              "__typename": "PostalAddress",
+              "stateName": "台北市",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ],
+    "__typename": "RmdLocale",
+    "hasStates": true,
+    "states": [
+      {
+        "__typename": "RgdsState",
+        "name": "台北市",
+        "store": [
+          {
+            "id": "R694",
+            "name": "信義 A13",
+            "slug": "xinyia13",
+            "telephone": "0800-020-010",
+            "address": {
+              "address1": "信義區松壽路 13 號",
+              "address2": "",
+              "city": "台北市",
+              "postalCode": "11051",
+              "__typename": "PostalAddress",
+              "stateName": "台北市",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R713",
+            "name": "台北 101",
+            "slug": "taipei101",
+            "telephone": "0800-020-005",
+            "address": {
+              "address1": "信義區市府路 45 號",
+              "address2": "台北 101 購物中心 1F",
+              "city": "台北市",
+              "postalCode": "110",
+              "__typename": "PostalAddress",
+              "stateName": "台北市",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "locale": "en_SG",
+    "calledLocale": "en_SG",
+    "__typename": "RmdLocale",
+    "hasStates": false,
+    "states": [
+      {
+        "__typename": "RgdsStore",
+        "id": "R736",
+        "name": "Jewel Changi Airport",
+        "slug": "jewelchangiairport",
+        "telephone": "1800 407 4948",
+        "address": {
+          "address1": "78 Airport Boulevard",
+          "address2": "#02-234",
+          "city": "Singapore",
+          "postalCode": "819666",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R669",
+        "name": "Orchard Road",
+        "slug": "orchardroad",
+        "telephone": "1800 699 2824",
+        "address": {
+          "address1": "270 Orchard Road",
+          "address2": "",
+          "city": "Singapore",
+          "postalCode": "238857",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R633",
+        "name": "Marina Bay Sands",
+        "slug": "marinabaysands",
+        "telephone": "1800 407 4949",
+        "address": {
+          "address1": "2 Bayfront Avenue, B2-06",
+          "address2": "",
+          "city": "Singapore",
+          "postalCode": "018972",
+          "__typename": "PostalAddress"
+        }
+      }
+    ],
+    "store": [
+      {
+        "__typename": "RgdsStore",
+        "id": "R736",
+        "name": "Jewel Changi Airport",
+        "slug": "jewelchangiairport",
+        "telephone": "1800 407 4948",
+        "address": {
+          "address1": "78 Airport Boulevard",
+          "address2": "#02-234",
+          "city": "Singapore",
+          "postalCode": "819666",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R669",
+        "name": "Orchard Road",
+        "slug": "orchardroad",
+        "telephone": "1800 699 2824",
+        "address": {
+          "address1": "270 Orchard Road",
+          "address2": "",
+          "city": "Singapore",
+          "postalCode": "238857",
+          "__typename": "PostalAddress"
+        }
+      },
+      {
+        "__typename": "RgdsStore",
+        "id": "R633",
+        "name": "Marina Bay Sands",
+        "slug": "marinabaysands",
+        "telephone": "1800 407 4949",
+        "address": {
+          "address1": "2 Bayfront Avenue, B2-06",
+          "address2": "",
+          "city": "Singapore",
+          "postalCode": "018972",
+          "__typename": "PostalAddress"
+        }
+      }
+    ]
+  },
+  {
+    "locale": "ja_JP",
+    "calledLocale": "en_JP",
+    "state": [
+      {
+        "__typename": "RgdsState",
+        "name": "Tokyo",
+        "store": [
+          {
+            "id": "R718",
+            "name": "Marunouchi",
+            "slug": "marunouchi",
+            "telephone": "(03) 4213-0500",
+            "address": {
+              "address1": "Mitsubishi Building",
+              "address2": "2-5-2 Marunouchi",
+              "city": "Chiyoda-ku",
+              "postalCode": "100-0005",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R119",
+            "name": "Shibuya",
+            "slug": "shibuya",
+            "telephone": "(03) 6670-1800",
+            "address": {
+              "address1": "Koendori Building",
+              "address2": "1-20-9 Jinnan",
+              "city": "Shibuya-ku",
+              "postalCode": "150-0041",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R224",
+            "name": "Omotesando",
+            "slug": "omotesando",
+            "telephone": "(03) 6757-4400",
+            "address": {
+              "address1": "4-2-13 Jingumae",
+              "address2": "",
+              "city": "Shibuya-ku",
+              "postalCode": "150-0001",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R128",
+            "name": "Shinjuku",
+            "slug": "shinjuku",
+            "telephone": "(03) 5656-1800",
+            "address": {
+              "address1": "Shinjuku Marui Honkan",
+              "address2": "3-30-13 Shinjuku",
+              "city": "Shinjuku-ku",
+              "postalCode": "160-0022",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R079",
+            "name": "Ginza",
+            "slug": "ginza",
+            "telephone": "(03) 4345-3600",
+            "address": {
+              "address1": "8-9-7 Ginza",
+              "address2": "",
+              "city": "Chuo-ku",
+              "postalCode": "104-0061",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Aichi",
+        "store": [
+          {
+            "id": "R005",
+            "name": "Nagoya Sakae",
+            "slug": "nagoyasakae",
+            "telephone": "(052) 238-2400",
+            "address": {
+              "address1": "FX Building",
+              "address2": "3-17-15 Sakae, Naka-ku",
+              "city": "Nagoya-shi",
+              "postalCode": "460-0008",
+              "__typename": "PostalAddress",
+              "stateName": "Aichi",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Kanagawa",
+        "store": [
+          {
+            "id": "R710",
+            "name": "Kawasaki",
+            "slug": "kawasaki",
+            "telephone": "(044) 577-5100",
+            "address": {
+              "address1": "Lazona Kawasaki Plaza",
+              "address2": "72-1 Horikawacho, Saiwai-ku",
+              "city": "Kawasaki-shi",
+              "postalCode": "212-8576",
+              "__typename": "PostalAddress",
+              "stateName": "Kanagawa",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Kyoto",
+        "store": [
+          {
+            "id": "R711",
+            "name": "Kyoto",
+            "slug": "kyoto",
+            "telephone": "(075) 757-8700",
+            "address": {
+              "address1": "83-1 Tachiurinakanocho",
+              "address2": "Shijo-dori Takakura Higashiiru",
+              "city": "Kyoto-shi",
+              "postalCode": "600-8006",
+              "__typename": "PostalAddress",
+              "stateName": "Kyoto",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Fukuoka",
+        "store": [
+          {
+            "id": "R048",
+            "name": "Fukuoka",
+            "slug": "fukuoka",
+            "telephone": "(092) 778-0200",
+            "address": {
+              "address1": "2-5-19 Tenjin, Chuo-ku",
+              "address2": "",
+              "city": "Fukuoka-shi",
+              "postalCode": "810-0001",
+              "__typename": "PostalAddress",
+              "stateName": "Fukuoka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Osaka",
+        "store": [
+          {
+            "id": "R768",
+            "name": "Umeda",
+            "slug": "umeda",
+            "telephone": "(06) 7526-6200",
+            "address": {
+              "address1": "Grand Front Osaka South Building",
+              "address2": "4-20 Ofukacho, Kita-ku",
+              "city": "Osaka-shi",
+              "postalCode": "530-0011",
+              "__typename": "PostalAddress",
+              "stateName": "Osaka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R091",
+            "name": "Shinsaibashi",
+            "slug": "shinsaibashi",
+            "telephone": "(06) 4965-2900",
+            "address": {
+              "address1": "UrbanBLD Shinsaibashi",
+              "address2": "1-5-5 Shinsaibashi, Chuo-ku",
+              "city": "Osaka-shi",
+              "postalCode": "542-0086",
+              "__typename": "PostalAddress",
+              "stateName": "Osaka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ],
+    "__typename": "RmdLocale",
+    "hasStates": true,
+    "states": [
+      {
+        "__typename": "RgdsState",
+        "name": "Tokyo",
+        "store": [
+          {
+            "id": "R718",
+            "name": "Marunouchi",
+            "slug": "marunouchi",
+            "telephone": "(03) 4213-0500",
+            "address": {
+              "address1": "Mitsubishi Building",
+              "address2": "2-5-2 Marunouchi",
+              "city": "Chiyoda-ku",
+              "postalCode": "100-0005",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R119",
+            "name": "Shibuya",
+            "slug": "shibuya",
+            "telephone": "(03) 6670-1800",
+            "address": {
+              "address1": "Koendori Building",
+              "address2": "1-20-9 Jinnan",
+              "city": "Shibuya-ku",
+              "postalCode": "150-0041",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R224",
+            "name": "Omotesando",
+            "slug": "omotesando",
+            "telephone": "(03) 6757-4400",
+            "address": {
+              "address1": "4-2-13 Jingumae",
+              "address2": "",
+              "city": "Shibuya-ku",
+              "postalCode": "150-0001",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R128",
+            "name": "Shinjuku",
+            "slug": "shinjuku",
+            "telephone": "(03) 5656-1800",
+            "address": {
+              "address1": "Shinjuku Marui Honkan",
+              "address2": "3-30-13 Shinjuku",
+              "city": "Shinjuku-ku",
+              "postalCode": "160-0022",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R079",
+            "name": "Ginza",
+            "slug": "ginza",
+            "telephone": "(03) 4345-3600",
+            "address": {
+              "address1": "8-9-7 Ginza",
+              "address2": "",
+              "city": "Chuo-ku",
+              "postalCode": "104-0061",
+              "__typename": "PostalAddress",
+              "stateName": "Tokyo",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Aichi",
+        "store": [
+          {
+            "id": "R005",
+            "name": "Nagoya Sakae",
+            "slug": "nagoyasakae",
+            "telephone": "(052) 238-2400",
+            "address": {
+              "address1": "FX Building",
+              "address2": "3-17-15 Sakae, Naka-ku",
+              "city": "Nagoya-shi",
+              "postalCode": "460-0008",
+              "__typename": "PostalAddress",
+              "stateName": "Aichi",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Kanagawa",
+        "store": [
+          {
+            "id": "R710",
+            "name": "Kawasaki",
+            "slug": "kawasaki",
+            "telephone": "(044) 577-5100",
+            "address": {
+              "address1": "Lazona Kawasaki Plaza",
+              "address2": "72-1 Horikawacho, Saiwai-ku",
+              "city": "Kawasaki-shi",
+              "postalCode": "212-8576",
+              "__typename": "PostalAddress",
+              "stateName": "Kanagawa",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Kyoto",
+        "store": [
+          {
+            "id": "R711",
+            "name": "Kyoto",
+            "slug": "kyoto",
+            "telephone": "(075) 757-8700",
+            "address": {
+              "address1": "83-1 Tachiurinakanocho",
+              "address2": "Shijo-dori Takakura Higashiiru",
+              "city": "Kyoto-shi",
+              "postalCode": "600-8006",
+              "__typename": "PostalAddress",
+              "stateName": "Kyoto",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Fukuoka",
+        "store": [
+          {
+            "id": "R048",
+            "name": "Fukuoka",
+            "slug": "fukuoka",
+            "telephone": "(092) 778-0200",
+            "address": {
+              "address1": "2-5-19 Tenjin, Chuo-ku",
+              "address2": "",
+              "city": "Fukuoka-shi",
+              "postalCode": "810-0001",
+              "__typename": "PostalAddress",
+              "stateName": "Fukuoka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Osaka",
+        "store": [
+          {
+            "id": "R768",
+            "name": "Umeda",
+            "slug": "umeda",
+            "telephone": "(06) 7526-6200",
+            "address": {
+              "address1": "Grand Front Osaka South Building",
+              "address2": "4-20 Ofukacho, Kita-ku",
+              "city": "Osaka-shi",
+              "postalCode": "530-0011",
+              "__typename": "PostalAddress",
+              "stateName": "Osaka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R091",
+            "name": "Shinsaibashi",
+            "slug": "shinsaibashi",
+            "telephone": "(06) 4965-2900",
+            "address": {
+              "address1": "UrbanBLD Shinsaibashi",
+              "address2": "1-5-5 Shinsaibashi, Chuo-ku",
+              "city": "Osaka-shi",
+              "postalCode": "542-0086",
+              "__typename": "PostalAddress",
+              "stateName": "Osaka",
+              "stateCode": null
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "locale": "en_AU",
+    "calledLocale": "en_AU",
+    "state": [
+      {
+        "__typename": "RgdsState",
+        "name": "New South Wales",
+        "store": [
+          {
+            "id": "R440",
+            "name": "Penrith",
+            "slug": "penrith",
+            "telephone": "(02) 4702 9400",
+            "address": {
+              "address1": "Westfield Penrith",
+              "address2": "585 High Street",
+              "city": "Penrith",
+              "postalCode": "2750",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R458",
+            "name": "Hornsby",
+            "slug": "hornsby",
+            "telephone": "(02) 8401 8800",
+            "address": {
+              "address1": "Westfield Hornsby",
+              "address2": "236 Pacific Highway",
+              "city": "Hornsby",
+              "postalCode": "2077",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R606",
+            "name": "Miranda",
+            "slug": "miranda",
+            "telephone": "(02) 8578 1700",
+            "address": {
+              "address1": "Westfield Miranda",
+              "address2": "600 Kingsway",
+              "city": "Miranda",
+              "postalCode": "2228",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R254",
+            "name": "Bondi",
+            "slug": "bondi",
+            "telephone": "(02) 9019 2400",
+            "address": {
+              "address1": "213 Oxford Street",
+              "address2": "",
+              "city": "Bondi Junction",
+              "postalCode": "2022",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R523",
+            "name": "Broadway",
+            "slug": "broadway",
+            "telephone": "(02) 8035 4000",
+            "address": {
+              "address1": "Broadway Shopping Centre",
+              "address2": "1 Bay Street",
+              "city": "Broadway",
+              "postalCode": "2007",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R238",
+            "name": "Sydney",
+            "slug": "sydney",
+            "telephone": "(02) 8083 9400",
+            "address": {
+              "address1": "367 George Street",
+              "address2": "",
+              "city": "Sydney",
+              "postalCode": "2000",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R385",
+            "name": "Charlestown",
+            "slug": "charlestown",
+            "telephone": "(02) 4032 5800",
+            "address": {
+              "address1": "Charlestown Square",
+              "address2": "30 Pearson Street",
+              "city": "Charlestown",
+              "postalCode": "2290",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R253",
+            "name": "Chatswood Chase",
+            "slug": "chatswoodchase",
+            "telephone": "(02) 8064 6300",
+            "address": {
+              "address1": "Chatswood Chase Sydney",
+              "address2": "345 Victoria Avenue",
+              "city": "Chatswood",
+              "postalCode": "2067",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R344",
+            "name": "Castle Towers",
+            "slug": "castletowers",
+            "telephone": "(02) 8864 0800",
+            "address": {
+              "address1": "Castle Towers Shopping Centre",
+              "address2": "6-14 Castle Street",
+              "city": "Castle Hill",
+              "postalCode": "2154",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Queensland",
+        "store": [
+          {
+            "id": "R384",
+            "name": "Chermside",
+            "slug": "chermside",
+            "telephone": "(07) 3115 0800",
+            "address": {
+              "address1": "Westfield Chermside",
+              "address2": "Cnr Gympie and Hamilton Roads",
+              "city": "Chermside",
+              "postalCode": "4032",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R466",
+            "name": "Brisbane",
+            "slug": "brisbane",
+            "telephone": "(07) 3182 9000",
+            "address": {
+              "address1": "MacArthur Chambers",
+              "address2": "233 Queen Street",
+              "city": "Brisbane City",
+              "postalCode": "4000",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R351",
+            "name": "Robina",
+            "slug": "robina",
+            "telephone": "(07) 5667 0400",
+            "address": {
+              "address1": "Robina Town Centre",
+              "address2": "",
+              "city": "Robina",
+              "postalCode": "4226",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R509",
+            "name": "Carindale",
+            "slug": "carindale",
+            "telephone": "(07) 3199 2200",
+            "address": {
+              "address1": "Westfield Carindale",
+              "address2": "1151 Creek Road",
+              "city": "Carindale",
+              "postalCode": "4152",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Australian Capital Territory",
+        "store": [
+          {
+            "id": "R483",
+            "name": "Canberra",
+            "slug": "canberra",
+            "telephone": "(02) 6224 9500",
+            "address": {
+              "address1": "Canberra Centre",
+              "address2": "148 Bunda Street",
+              "city": "Canberra",
+              "postalCode": "2601",
+              "__typename": "PostalAddress",
+              "stateName": "Australian Capital Territory",
+              "stateCode": "ACT"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Western Australia",
+        "store": [
+          {
+            "id": "R508",
+            "name": "Booragoon",
+            "slug": "booragoon",
+            "telephone": "(08) 6557 6000",
+            "address": {
+              "address1": "Westfield Booragoon",
+              "address2": "125 Riseley Street",
+              "city": "Booragoon",
+              "postalCode": "6154",
+              "__typename": "PostalAddress",
+              "stateName": "Western Australia",
+              "stateCode": "WA"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R386",
+            "name": "Perth City",
+            "slug": "perthcity",
+            "telephone": "(08) 6140 3800",
+            "address": {
+              "address1": "Commonwealth Bank Building, Ground Floor",
+              "address2": "242 Murray Street Mall",
+              "city": "Perth",
+              "postalCode": "6000",
+              "__typename": "PostalAddress",
+              "stateName": "Western Australia",
+              "stateCode": "WA"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "South Australia",
+        "store": [
+          {
+            "id": "R405",
+            "name": "Rundle Place",
+            "slug": "rundleplace",
+            "telephone": "(08) 7088 5300",
+            "address": {
+              "address1": "Rundle Place Centre",
+              "address2": "77-90 Rundle Mall",
+              "city": "Adelaide",
+              "postalCode": "5000",
+              "__typename": "PostalAddress",
+              "stateName": "South Australia",
+              "stateCode": "SA"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Victoria",
+        "store": [
+          {
+            "id": "R180",
+            "name": "Chadstone",
+            "slug": "chadstone",
+            "telephone": "(03) 9038 7500",
+            "address": {
+              "address1": "Chadstone Shopping Centre",
+              "address2": "1341 Dandenong Road",
+              "city": "Chadstone",
+              "postalCode": "3148",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R342",
+            "name": "Doncaster",
+            "slug": "doncaster",
+            "telephone": "(03) 9914 2800",
+            "address": {
+              "address1": "Westfield Doncaster",
+              "address2": "619 Doncaster Road",
+              "city": "Doncaster",
+              "postalCode": "3108",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R530",
+            "name": "Fountain Gate",
+            "slug": "fountaingate",
+            "telephone": "(03) 8765 4000",
+            "address": {
+              "address1": "Westfield Fountain Gate",
+              "address2": "352 Princes Highway",
+              "city": "Fountain Gate",
+              "postalCode": "3805",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R504",
+            "name": "Highpoint",
+            "slug": "highpoint",
+            "telephone": "(03) 9975 9700",
+            "address": {
+              "address1": "Highpoint Shopping Centre",
+              "address2": "120-200 Rosamond Road",
+              "city": "Maribyrnong",
+              "postalCode": "3032",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R343",
+            "name": "Southland",
+            "slug": "southland",
+            "telephone": "(03) 8523 1400",
+            "address": {
+              "address1": "Westfield Southland",
+              "address2": "1239 Nepean Highway",
+              "city": "Cheltenham",
+              "postalCode": "3192",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ],
+    "__typename": "RmdLocale",
+    "hasStates": true,
+    "states": [
+      {
+        "__typename": "RgdsState",
+        "name": "New South Wales",
+        "store": [
+          {
+            "id": "R440",
+            "name": "Penrith",
+            "slug": "penrith",
+            "telephone": "(02) 4702 9400",
+            "address": {
+              "address1": "Westfield Penrith",
+              "address2": "585 High Street",
+              "city": "Penrith",
+              "postalCode": "2750",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R458",
+            "name": "Hornsby",
+            "slug": "hornsby",
+            "telephone": "(02) 8401 8800",
+            "address": {
+              "address1": "Westfield Hornsby",
+              "address2": "236 Pacific Highway",
+              "city": "Hornsby",
+              "postalCode": "2077",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R606",
+            "name": "Miranda",
+            "slug": "miranda",
+            "telephone": "(02) 8578 1700",
+            "address": {
+              "address1": "Westfield Miranda",
+              "address2": "600 Kingsway",
+              "city": "Miranda",
+              "postalCode": "2228",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R254",
+            "name": "Bondi",
+            "slug": "bondi",
+            "telephone": "(02) 9019 2400",
+            "address": {
+              "address1": "213 Oxford Street",
+              "address2": "",
+              "city": "Bondi Junction",
+              "postalCode": "2022",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R523",
+            "name": "Broadway",
+            "slug": "broadway",
+            "telephone": "(02) 8035 4000",
+            "address": {
+              "address1": "Broadway Shopping Centre",
+              "address2": "1 Bay Street",
+              "city": "Broadway",
+              "postalCode": "2007",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R238",
+            "name": "Sydney",
+            "slug": "sydney",
+            "telephone": "(02) 8083 9400",
+            "address": {
+              "address1": "367 George Street",
+              "address2": "",
+              "city": "Sydney",
+              "postalCode": "2000",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R385",
+            "name": "Charlestown",
+            "slug": "charlestown",
+            "telephone": "(02) 4032 5800",
+            "address": {
+              "address1": "Charlestown Square",
+              "address2": "30 Pearson Street",
+              "city": "Charlestown",
+              "postalCode": "2290",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R253",
+            "name": "Chatswood Chase",
+            "slug": "chatswoodchase",
+            "telephone": "(02) 8064 6300",
+            "address": {
+              "address1": "Chatswood Chase Sydney",
+              "address2": "345 Victoria Avenue",
+              "city": "Chatswood",
+              "postalCode": "2067",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R344",
+            "name": "Castle Towers",
+            "slug": "castletowers",
+            "telephone": "(02) 8864 0800",
+            "address": {
+              "address1": "Castle Towers Shopping Centre",
+              "address2": "6-14 Castle Street",
+              "city": "Castle Hill",
+              "postalCode": "2154",
+              "__typename": "PostalAddress",
+              "stateName": "New South Wales",
+              "stateCode": "NSW"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Queensland",
+        "store": [
+          {
+            "id": "R384",
+            "name": "Chermside",
+            "slug": "chermside",
+            "telephone": "(07) 3115 0800",
+            "address": {
+              "address1": "Westfield Chermside",
+              "address2": "Cnr Gympie and Hamilton Roads",
+              "city": "Chermside",
+              "postalCode": "4032",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R466",
+            "name": "Brisbane",
+            "slug": "brisbane",
+            "telephone": "(07) 3182 9000",
+            "address": {
+              "address1": "MacArthur Chambers",
+              "address2": "233 Queen Street",
+              "city": "Brisbane City",
+              "postalCode": "4000",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R351",
+            "name": "Robina",
+            "slug": "robina",
+            "telephone": "(07) 5667 0400",
+            "address": {
+              "address1": "Robina Town Centre",
+              "address2": "",
+              "city": "Robina",
+              "postalCode": "4226",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R509",
+            "name": "Carindale",
+            "slug": "carindale",
+            "telephone": "(07) 3199 2200",
+            "address": {
+              "address1": "Westfield Carindale",
+              "address2": "1151 Creek Road",
+              "city": "Carindale",
+              "postalCode": "4152",
+              "__typename": "PostalAddress",
+              "stateName": "Queensland",
+              "stateCode": "QLD"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Australian Capital Territory",
+        "store": [
+          {
+            "id": "R483",
+            "name": "Canberra",
+            "slug": "canberra",
+            "telephone": "(02) 6224 9500",
+            "address": {
+              "address1": "Canberra Centre",
+              "address2": "148 Bunda Street",
+              "city": "Canberra",
+              "postalCode": "2601",
+              "__typename": "PostalAddress",
+              "stateName": "Australian Capital Territory",
+              "stateCode": "ACT"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Western Australia",
+        "store": [
+          {
+            "id": "R508",
+            "name": "Booragoon",
+            "slug": "booragoon",
+            "telephone": "(08) 6557 6000",
+            "address": {
+              "address1": "Westfield Booragoon",
+              "address2": "125 Riseley Street",
+              "city": "Booragoon",
+              "postalCode": "6154",
+              "__typename": "PostalAddress",
+              "stateName": "Western Australia",
+              "stateCode": "WA"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R386",
+            "name": "Perth City",
+            "slug": "perthcity",
+            "telephone": "(08) 6140 3800",
+            "address": {
+              "address1": "Commonwealth Bank Building, Ground Floor",
+              "address2": "242 Murray Street Mall",
+              "city": "Perth",
+              "postalCode": "6000",
+              "__typename": "PostalAddress",
+              "stateName": "Western Australia",
+              "stateCode": "WA"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "South Australia",
+        "store": [
+          {
+            "id": "R405",
+            "name": "Rundle Place",
+            "slug": "rundleplace",
+            "telephone": "(08) 7088 5300",
+            "address": {
+              "address1": "Rundle Place Centre",
+              "address2": "77-90 Rundle Mall",
+              "city": "Adelaide",
+              "postalCode": "5000",
+              "__typename": "PostalAddress",
+              "stateName": "South Australia",
+              "stateCode": "SA"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      },
+      {
+        "__typename": "RgdsState",
+        "name": "Victoria",
+        "store": [
+          {
+            "id": "R180",
+            "name": "Chadstone",
+            "slug": "chadstone",
+            "telephone": "(03) 9038 7500",
+            "address": {
+              "address1": "Chadstone Shopping Centre",
+              "address2": "1341 Dandenong Road",
+              "city": "Chadstone",
+              "postalCode": "3148",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R342",
+            "name": "Doncaster",
+            "slug": "doncaster",
+            "telephone": "(03) 9914 2800",
+            "address": {
+              "address1": "Westfield Doncaster",
+              "address2": "619 Doncaster Road",
+              "city": "Doncaster",
+              "postalCode": "3108",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R530",
+            "name": "Fountain Gate",
+            "slug": "fountaingate",
+            "telephone": "(03) 8765 4000",
+            "address": {
+              "address1": "Westfield Fountain Gate",
+              "address2": "352 Princes Highway",
+              "city": "Fountain Gate",
+              "postalCode": "3805",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R504",
+            "name": "Highpoint",
+            "slug": "highpoint",
+            "telephone": "(03) 9975 9700",
+            "address": {
+              "address1": "Highpoint Shopping Centre",
+              "address2": "120-200 Rosamond Road",
+              "city": "Maribyrnong",
+              "postalCode": "3032",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          },
+          {
+            "id": "R343",
+            "name": "Southland",
+            "slug": "southland",
+            "telephone": "(03) 8523 1400",
+            "address": {
+              "address1": "Westfield Southland",
+              "address2": "1239 Nepean Highway",
+              "city": "Cheltenham",
+              "postalCode": "3192",
+              "__typename": "PostalAddress",
+              "stateName": "Victoria",
+              "stateCode": "VIC"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "locale": "en_MY",
+    "calledLocale": "en_MY",
+    "state": [
+      {
+        "__typename": "RgdsState",
+        "name": "Kuala Lumpur",
+        "store": [
+          {
+            "id": "R742",
+            "name": "The Exchange TRX",
+            "slug": "exchangetrx",
+            "telephone": "1800 88 0384",
+            "address": {
+              "address1": "L1.40 The Exchange TRX",
+              "address2": "Persiaran TRX, Tun Razak Exchange",
+              "city": "Kuala Lumpur",
+              "postalCode": "55188",
+              "__typename": "PostalAddress",
+              "stateName": "Kuala Lumpur",
+              "stateCode": "KL"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ],
+    "__typename": "RmdLocale",
+    "hasStates": true,
+    "states": [
+      {
+        "__typename": "RgdsState",
+        "name": "Kuala Lumpur",
+        "store": [
+          {
+            "id": "R742",
+            "name": "The Exchange TRX",
+            "slug": "exchangetrx",
+            "telephone": "1800 88 0384",
+            "address": {
+              "address1": "L1.40 The Exchange TRX",
+              "address2": "Persiaran TRX, Tun Razak Exchange",
+              "city": "Kuala Lumpur",
+              "postalCode": "55188",
+              "__typename": "PostalAddress",
+              "stateName": "Kuala Lumpur",
+              "stateCode": "KL"
+            },
+            "__typename": "RgdsStore"
+          }
+        ]
+      }
+    ]
+  }
+]
