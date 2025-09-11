@@ -23,11 +23,7 @@
 - **独立运行**：无需外部数据文件，单文件即可运行
 
 ### 📱 支持的产品
-- **iPhone 系列**：iPhone 16、iPhone 16 Plus、iPhone 16 Pro、iPhone 16 Pro Max
-- **iPad 系列**：iPad Air、iPad Pro、iPad mini
-- **Apple Watch**：Apple Watch Series 10、Apple Watch Ultra 3
-- **Mac 系列**：MacBook Air、MacBook Pro、iMac、Mac Studio
-- **其他产品**：AirPods、Apple Vision Pro 等
+- **iPhone 系列**：iPhone 16、iPhone 16 Plus、iPhone 17/Air/17 Pro/17 Pro Max
 
 ### 🌍 支持的地区
 | 地区 | 产品数据 | 门店数据 | 状态 |
@@ -51,22 +47,15 @@
 ### 下载方式
 
 #### 方式一：直接下载（推荐）
-1. 访问 [Releases 页面](https://github.com/your-repo/apple-store-helper/releases)
-2. 下载最新版本的 `apple-store-helper-macOS.zip`
-3. 解压后双击 `apple-store-helper` 运行
+1. 访问 [Releases 页面]
+2. 下载最新版本的编译版本。
+3. 解压后双击运行
 
 #### 方式二：从源码编译
-```bash
+
 # 克隆仓库
-git clone https://github.com/your-repo/apple-store-helper.git
-cd apple-store-helper
-
 # 编译程序
-go build -o apple-store-helper .
-
 # 运行程序
-./apple-store-helper
-```
 
 ## 🚀 使用教程
 
@@ -105,7 +94,7 @@ go build -o apple-store-helper .
 - 每个监控任务独立运行
 
 #### 自定义扫描间隔
-- 默认扫描间隔：30 秒
+- 默认扫描间隔：500ms
 - 可根据网络情况调整
 - 建议不要设置过短，避免被限制
 
@@ -156,127 +145,6 @@ Bark 是一款优秀的 iOS 推送工具，让你第一时间收到库存提醒�
 2. 自动跳转到苹果官网购物车
 3. 完成下单购买
 
-## ⚙️ 配置说明
-
-### 程序设置
-
-| 设置项 | 说明 | 默认值 |
-|--------|------|--------|
-| 扫描间隔 | 库存检查频率 | 30 秒 |
-| 超时时间 | 网络请求超时 | 10 秒 |
-| 重试次数 | 失败后重试次数 | 3 次 |
-| 声音提醒 | 是否播放提醒音 | 开启 |
-
-### 推送设置
-
-| 设置项 | 说明 | 推荐值 |
-|--------|------|--------|
-| Bark 推送 | 推送服务地址 | 必填 |
-| 提醒方式 | 通知/响铃 | 根据环境选择 |
-| 推送频率 | 同一产品推送间隔 | 5 分钟 |
-
-## 🔧 故障排除
-
-### 常见问题
-
-#### 1. 程序无法启动
-**问题**：双击程序无反应或报错
-**解决方案**：
-- 检查系统版本是否满足要求
-- 尝试在终端中运行：`./apple-store-helper`
-- 检查文件权限：`chmod +x apple-store-helper`
-
-#### 2. 无法加载数据
-**问题**：程序启动后显示"数据加载失败"
-**解决方案**：
-- 检查网络连接
-- 重启程序
-- 检查防火墙设置
-
-#### 3. 推送不工作
-**问题**：设置了 Bark 推送但没有收到通知
-**解决方案**：
-- 检查 Bark 推送地址是否正确
-- 确认 iPhone 网络连接正常
-- 检查 Bark 应用是否正常运行
-
-#### 4. 监控无结果
-**问题**：程序运行但没有检测到库存
-**解决方案**：
-- 确认产品型号和规格选择正确
-- 检查门店选择是否正确
-- 尝试更换门店或地区
-
-### 日志查看
-
-程序运行时会在控制台输出日志信息：
-- `INFO`：正常信息
-- `WARN`：警告信息
-- `ERROR`：错误信息
-
-### 性能优化
-
-1. **减少监控任务**：同时监控的产品越少，扫描速度越快
-2. **选择合适的门店**：选择距离较近或库存较多的门店
-3. **调整扫描间隔**：网络较慢时可适当增加间隔时间
-
-## 📊 数据统计
-
-### 内置数据
-- **产品数据**：7 个地区，40+ 个产品系列
-- **门店数据**：6 个地区，400+ 个门店
-- **总数据量**：约 100KB
-- **更新频率**：随程序版本更新
-
-### 支持的产品系列
-- iPhone 16 系列（4 款）
-- iPhone 16 Plus 系列（4 款）
-- iPhone 16 Pro 系列（4 款）
-- iPhone 16 Pro Max 系列（4 款）
-- iPad Air 系列（2 款）
-- iPad Pro 系列（4 款）
-- Apple Watch Series 10（3 款）
-- Apple Watch Ultra 3（2 款）
-- MacBook Air（2 款）
-- MacBook Pro（4 款）
-- 更多产品持续更新中...
-
-## 🤝 贡献指南
-
-### 报告问题
-1. 在 [Issues](https://github.com/your-repo/apple-store-helper/issues) 中搜索是否已有相同问题
-2. 如果没有，请创建新的 Issue
-3. 详细描述问题现象和复现步骤
-
-### 功能建议
-1. 在 [Discussions](https://github.com/your-repo/apple-store-helper/discussions) 中提出建议
-2. 详细描述功能需求和预期效果
-3. 参与讨论和投票
-
-### 代码贡献
-1. Fork 本仓库
-2. 创建功能分支
-3. 提交代码并创建 Pull Request
-4. 等待代码审查
-
-## 📄 许可证
-
-本项目采用 [MIT 许可证](LICENSE)。
-
-## 🙏 致谢
-
-- 感谢所有贡献者的支持
-- 感谢 Bark 团队提供的推送服务
-- 感谢 Apple 提供的产品数据接口
-
-## 📞 联系我们
-
-- **GitHub**：https://github.com/your-repo/apple-store-helper
-- **邮箱**：your-email@example.com
-- **QQ 群**：123456789
-- **微信群**：扫描二维码加入
-
----
 
 <div align="center">
 
