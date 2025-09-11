@@ -40,6 +40,11 @@ func main() {
 
 	// 地区选择器 (Area Selector)
 	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
+		// 防止空值或无效值导致崩溃
+		if value == "" {
+			return
+		}
+
 		storeWidget.Options = services.Store.ByAreaTitleForOptions(value)
 		storeWidget.ClearSelected()
 

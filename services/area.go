@@ -15,9 +15,13 @@ type areaService struct{}
 
 func (s *areaService) ProductsByCode(local string) []model.Product {
 
-	area := funk.Find(model.Areas, func(x model.Area) bool {
+	areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
 		return x.Locale == local
-	}).(model.Area)
+	})
+	if areaInterface == nil {
+		return []model.Product{}
+	}
+	area := areaInterface.(model.Area)
 
 	var products []model.Product
 	productsJson := gjson.ParseBytes(config.MustReadConfigFile(fmt.Sprintf("products_%s.json", area.Locale)))
@@ -41,17 +45,29 @@ func (s *areaService) ForOptions() []string {
 }
 
 func (s *areaService) Title2Code(title string) string {
-	area := funk.Find(model.Areas, func(x model.Area) bool {
+	areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
 		return x.Title == title
-	}).(model.Area)
+	})
+	if areaInterface == nil {
+		return ""
+	}
+	area := areaInterface.(model.Area)
 
 	return area.Locale
 }
 
 func (s *areaService) GetArea(title string) model.Area {
-	area := funk.Find(model.Areas, func(x model.Area) bool {
+	areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
 		return x.Title == title
-	}).(model.Area)
+	})
+	if areaInterface == nil {
+		// 返回默认地区或空地区
+		if len(model.Areas) > 0 {
+			return model.Areas[0]
+		}
+		return model.Area{}
+	}
+	area := areaInterface.(model.Area)
 
 	return area
 }
