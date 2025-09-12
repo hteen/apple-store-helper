@@ -19,13 +19,26 @@ go run main.go
 ```
 
 ### 打包
+
+#### 快速打包（推荐）
+```shell script
+# 使用打包脚本（自动处理签名问题）
+./build.sh
 ```
+
+#### 手动打包
+```shell script
 # Mac OS 环境下打包
 go install fyne.io/fyne/v2/cmd/fyne 
 go install github.com/fyne-io/fyne-cross
 
-fyne-cross darwin -arch=amd64,arm64 -app-id=apple.store.helper
-fyne-cross windows -arch=amd64,386 -app-id=apple.store.helper
+# 基础打包命令
+fyne-cross darwin -arch=amd64,arm64 -app-id=apple.store.helper -name="Apple Store Helper"
+fyne-cross windows -arch=amd64,386 -app-id=apple.store.helper -name="Apple Store Helper"
+
+# macOS ARM64 版本需要额外处理签名
+xattr -cr "fyne-cross/dist/darwin-arm64/Apple Store Helper.app"
+codesign --force --deep --sign - "fyne-cross/dist/darwin-arm64/Apple Store Helper.app"
 ```
 
 如果提示 `fyne-cross: command not found`，请配置 GO 环境变量  
