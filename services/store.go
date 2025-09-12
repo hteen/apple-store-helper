@@ -19,6 +19,7 @@ type storeService struct {
 }
 
 func (s *storeService) ByArea(area model.Area) []model.Store {
+	// 从内置的stores.json读取
 	stores, err := config.ReadConfigFile("stores.json")
 	if err != nil {
 		panic(err)

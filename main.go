@@ -41,7 +41,7 @@ func main() {
 	barkWidget.SetPlaceHolder("https://api.day.app/你的BarkKey")
 
 	// 地区选择器 (Area Selector)
-	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
+	areaWidget := widget.NewSelect(services.Area.ForOptions(), func(value string) {
 		// 防止空值或无效值导致崩溃
 		if value == "" {
 			return
@@ -57,35 +57,19 @@ func main() {
 		services.Listen.Clean()
 	})
 
-	areaWidget.Horizontal = true
+	areaWidget.PlaceHolder = "请选择地区"
 
-    // 缓存优先选项（优先使用缓存的产品数据）
-    preferCacheCheck := widget.NewCheck("优先使用缓存", func(v bool) {
-        services.SetPreferCache(v)
-        // 切换优先级后刷新型号列表
-        productWidget.Options = services.Product.ByAreaTitleForOptions(services.Listen.Area.Title)
-        productWidget.ClearSelected()
-        // 持久化设置
-		services.SaveSettings(services.UserSettings{
-			SelectedArea:    areaWidget.Selected,
-			SelectedStore:   storeWidget.Selected,
-			SelectedProduct: productWidget.Selected,
-			BarkNotifyUrl:   barkWidget.Text,
-			ListenItems:     services.Listen.GetListenItems(),
-			PreferCache:     v,
-		})
-	})
+	help := `使用说明：
+1. 在 Apple 官网将需要购买的型号加入购物车
+2. 选择地区、门店和型号，点击"添加"按钮，将需要监听的型号添加到监听列表
+3. 点击"开始"按钮开始监听，检测到有货时会自动打开购物车页面`
 
-	help := `1. 在 Apple 官网将需要购买的型号加入购物车
-2. 选择地区、门店和型号，点击“添加”按钮，将需要监听的型号添加到监听列表
-3. 点击“开始”按钮开始监听，检测到有货时会自动打开购物车页面
-`
-
-	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget, preferCacheCheck)
+	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget)
 
 	// 产品链接输入（用于在线抓取并缓存产品数据，当内置 JSON 不包含该地区或需要临时更新时使用）
 	productUrls := widget.NewMultiLineEntry()
-	productUrls.SetPlaceHolder("可选：输入苹果购买页链接，每行一个；例如\nhttps://www.apple.com.cn/shop/buy-iphone/iphone-17-pro")
+	productUrls.SetPlaceHolder("输入Apple产品页链接，每行一个（仅支持：中国大陆、香港、台湾、Singapore、日本、Australia、Malaysia）\n示例：https://www.apple.com.cn/shop/buy-iphone/iphone-17-pro")
+	productUrls.SetMinRowsVisible(3)
 
 	// 初始化 GUI 窗口内容 (Initialize GUI)
 	view.Window.SetContent(container.NewVBox(
@@ -95,7 +79,6 @@ func main() {
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择型号:"), productWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("产品链接(可选)"), productUrls),
 		container.New(layout.NewFormLayout(), widget.NewLabel("操作"), container.NewHBox(
-			preferCacheCheck,
 			widget.NewButton("在线抓取并缓存产品", func() {
 				if areaWidget.Selected == "" {
 					dialog.ShowError(errors.New("请先选择地区"), view.Window)
@@ -115,7 +98,7 @@ func main() {
 					}
 				}
 				go func() {
-					err := services.FetchAndCacheProductsForLocale(area.Locale, lines)
+					actualLocale, err := services.FetchAndCacheProductsForLocale(area.Locale, lines)
 					if err != nil {
 						// 改进错误提示，区分预售和其他错误
 						if strings.Contains(err.Error(), "尚未开放预购") || strings.Contains(err.Error(), "均未开放预购") {
@@ -127,10 +110,14 @@ func main() {
 						}
 						return
 					}
-                    // 刷新型号下拉（若该地区没有内置 JSON，将立即生效）
+                    // 刷新型号下拉
                     productWidget.Options = services.Product.ByAreaTitleForOptions(areaWidget.Selected)
                     productWidget.ClearSelected()
-                    dialog.ShowInformation("完成", "产品数据已更新。如需立即生效，请勾选\"优先使用缓存\"，然后在\"选择型号\"中查看。", view.Window)
+                    // 显示地区 Title 而不是 Locale 代码
+                    savedAreaTitle := services.Area.TitleByCode(actualLocale)
+                    dialog.ShowInformation("完成", 
+                        fmt.Sprintf("产品数据已保存到地区：%s\n\n使用说明：\n• 产品数据已保存到URL对应的地区\n• 数据将与内置数据合并（自动去重）\n• 切换到该地区后即可看到新抓取的产品", savedAreaTitle), 
+                        view.Window)
                 }()
             }),
         )),
@@ -166,7 +153,7 @@ func initFyneApp() {
 }
 
 // 加载用户设置缓存 (Load user settings cache)
-func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry, preferCacheCheck *widget.Check) {
+func loadUserSettingsCache(areaWidget *widget.Select, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) {
     settings, err := services.LoadSettings()
     if err == nil {
         areaWidget.SetSelected(settings.SelectedArea)
@@ -174,15 +161,13 @@ func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Se
         productWidget.SetSelected(settings.SelectedProduct)
         services.Listen.SetListenItems(settings.ListenItems)
         barkNotifyWidget.SetText(settings.BarkNotifyUrl)
-        preferCacheCheck.SetChecked(settings.PreferCache)
-        services.SetPreferCache(settings.PreferCache)
     } else {
         areaWidget.SetSelected(services.Listen.Area.Title)
     }
 }
 
 // 创建动作按钮 (Create action buttons)
-func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) *fyne.Container {
+func createActionButtons(areaWidget *widget.Select, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) *fyne.Container {
     return container.NewHBox(
         widget.NewButton("添加", func() {
             if storeWidget.Selected == "" || productWidget.Selected == "" {
@@ -195,7 +180,6 @@ func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Sele
                     SelectedProduct: productWidget.Selected,
                     BarkNotifyUrl:   barkNotifyWidget.Text,
                     ListenItems:     services.Listen.GetListenItems(),
-                    PreferCache:     services.PreferCacheEnabled(),
                 })
             }
         }),
