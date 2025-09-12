@@ -1,12 +1,13 @@
 package services
 
 import (
-	"apple-store-helper/config"
-	"apple-store-helper/model"
-	"fmt"
+    "apple-store-helper/config"
+    "apple-store-helper/model"
+    "fmt"
+    "os"
 
-	"github.com/thoas/go-funk"
-	"github.com/tidwall/gjson"
+    "github.com/thoas/go-funk"
+    "github.com/tidwall/gjson"
 )
 
 var Area = areaService{}
@@ -15,16 +16,36 @@ type areaService struct{}
 
 func (s *areaService) ProductsByCode(local string) []model.Product {
 
-	areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
-		return x.Locale == local
-	})
-	if areaInterface == nil {
-		return []model.Product{}
-	}
-	area := areaInterface.(model.Area)
+    areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
+        return x.Locale == local
+    })
+    if areaInterface == nil {
+        return []model.Product{}
+    }
+    area := areaInterface.(model.Area)
 
-	var products []model.Product
-	productsJson := gjson.ParseBytes(config.MustReadConfigFile(fmt.Sprintf("products_%s.json", area.Locale)))
+    var products []model.Product
+    // Prefer cache or embedded based on runtime flag
+    filename := fmt.Sprintf("products_%s.json", area.Locale)
+    var data []byte
+    if PreferCacheEnabled() {
+        if b2, err2 := os.ReadFile("user_config/" + filename); err2 == nil {
+            data = b2
+        } else if b, err := config.ReadConfigFile(filename); err == nil {
+            data = b
+        } else {
+            return []model.Product{}
+        }
+    } else {
+        if b, err := config.ReadConfigFile(filename); err == nil {
+            data = b
+        } else if b2, err2 := os.ReadFile("user_config/" + filename); err2 == nil {
+            data = b2
+        } else {
+            return []model.Product{}
+        }
+    }
+    productsJson := gjson.ParseBytes(data)
 
 	for _, json := range productsJson.Array() {
 		for _, result := range json.Get("products").Array() {
@@ -37,7 +58,7 @@ func (s *areaService) ProductsByCode(local string) []model.Product {
 		}
 	}
 
-	return products
+    return products
 }
 
 func (s *areaService) ForOptions() []string {
