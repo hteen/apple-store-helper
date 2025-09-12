@@ -11,11 +11,12 @@ jobs:
         strategy:
             matrix:
                 include:
-                    - os: macos-latest
+                    # 使用 Ubuntu runner 运行 fyne-cross，因为它有 Docker 支持
+                    - os: ubuntu-latest
                       platform: darwin
                       arch: amd64,arm64
                       artifact_name: apple-store-helper-darwin
-                    - os: macos-latest
+                    - os: ubuntu-latest
                       platform: windows
                       arch: 386,amd64
                       artifact_name: apple-store-helper-windows
@@ -31,8 +32,12 @@ jobs:
 
             - name: Install system dependencies
               run: |
-                  # 安装音频开发库（beep 需要）
-                  brew install portaudio pkg-config
+                  # 安装音频开发库（beep 需要）和 Docker
+                  sudo apt-get update
+                  sudo apt-get install -y portaudio19-dev pkg-config
+
+                  # 检查 Docker 是否可用
+                  docker --version
 
             - name: Install Fyne tools
               run: |
@@ -40,62 +45,41 @@ jobs:
                   go install github.com/fyne-io/fyne-cross@latest
                   echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
-            - name: Verify Fyne tools
-              run: |
-                  export PATH="$(go env GOPATH)/bin:$PATH"
-                  fyne version
-                  echo "✅ Fyne 工具安装成功"
-
             - name: Cache fyne-cross engines
               uses: actions/cache@v4
               with:
                   path: ~/.fyne-cross
-                  key: ${{ runner.os }}-fyne-cross-${{ matrix.platform }}
+                  key: ubuntu-fyne-cross-${{ matrix.platform }}-${{ hashFiles('go.mod') }}
 
             - name: Get tag version
               id: vars
               run: echo "tag=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
 
-            - name: Verify fyne-cross installation
-              run: |
-                  export PATH="$(go env GOPATH)/bin:$PATH"
-                  fyne-cross version
-                  echo "✅ fyne-cross 安装成功"
-
             - name: Build with fyne-cross
               run: |
                   export PATH="$(go env GOPATH)/bin:$PATH"
-                  # 设置环境变量确保 fyne-cross 能找到必要的工具
-                  export FYNE_CROSS_CC="clang"
-                  export FYNE_CROSS_CXX="clang++"
 
-                  # 使用 fyne-cross 交叉编译，参考 README.md 中的命令
+                  # 使用 fyne-cross 构建
                   fyne-cross ${{ matrix.platform }} \
                     -arch=${{ matrix.arch }} \
                     -app-id=apple.store.helper \
                     -name="Apple Store Helper" \
                     -ldflags="-X 'github.com/hteen/apple-store-helper/common.VERSION=${{ steps.vars.outputs.tag }}'"
 
+                  # 检查构建结果
                   if [ ! -d "fyne-cross/dist" ]; then
                       echo "❌ fyne-cross 构建失败：dist 目录未生成"
                       exit 1
                   fi
                   echo "✅ fyne-cross 构建成功"
 
-            - name: Fix quarantine & codesign (Darwin)
+            - name: Prepare Darwin packages
               if: matrix.platform == 'darwin'
               run: |
-                  for arch in ${{ matrix.arch }}; do
-                      app_path="fyne-cross/dist/darwin-${arch}/Apple Store Helper.app"
-                      if [ -d "$app_path" ]; then
-                          echo "Fixing quarantine and signing $app_path"
-                          xattr -cr "$app_path"
-                          codesign --force --deep --sign - "$app_path"
-                          echo "✅ $arch 版本签名完成"
-                      else
-                          echo "⚠️ $arch 版本应用包未找到"
-                      fi
-                  done
+                  # 在 Ubuntu 上构建的 Darwin 包需要用户手动签名
+                  echo "ℹ️ Darwin 包已构建完成，需要用户手动签名"
+                  echo "📦 构建的包位置："
+                  find fyne-cross/dist -name "*.app" -type d
 
             - name: Upload Artifacts
               uses: actions/upload-artifact@v4
@@ -127,4 +111,8 @@ jobs:
                       - Auto build for ${{ github.ref_name }}
                       - Cross-platform build with fyne-cross
                       - Supports: darwin-amd64, darwin-arm64, windows-386, windows-amd64
+
+                      ## 注意事项
+                      - Darwin 包需要手动签名才能在 macOS 上运行
+                      - 签名命令：`xattr -cr "Apple Store Helper.app" && codesign --force --deep --sign - "Apple Store Helper.app"`
                   artifacts: "artifacts/*"
