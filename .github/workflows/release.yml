@@ -1,4 +1,4 @@
-name: Build & Release
+name: Build & Release (Native)
 
 on:
     push:
@@ -7,7 +7,18 @@ on:
 
 jobs:
     build:
-        runs-on: macos-latest # 必须用 macOS runner 才能 codesign
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                include:
+                    - os: macos-latest
+                      platform: darwin
+                      arch: amd64,arm64
+                      artifact_name: apple-store-helper-darwin
+                    - os: macos-latest
+                      platform: windows
+                      arch: 386,amd64
+                      artifact_name: apple-store-helper-windows
 
         steps:
             - name: Checkout
@@ -16,43 +27,69 @@ jobs:
             - name: Set up Go
               uses: actions/setup-go@v4
               with:
-                  go-version: "1.22" # 按项目 Go 版本来
+                  go-version: "1.22"
 
-            - name: Install fyne-cross
-              run: go install github.com/fyne-io/fyne-cross@latest
+            - name: Install system dependencies
+              run: |
+                  # 安装音频开发库（beep 需要）
+                  brew install portaudio pkg-config
+
+            - name: Install Fyne tools
+              run: |
+                  go install fyne.io/fyne/v2/cmd/fyne@latest
+                  go install github.com/fyne-io/fyne-cross@latest
+                  echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+            - name: Cache fyne-cross engines
+              uses: actions/cache@v4
+              with:
+                  path: ~/.fyne-cross
+                  key: ${{ runner.os }}-fyne-cross-${{ matrix.platform }}
 
             - name: Get tag version
               id: vars
               run: echo "tag=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
 
-            - name: Build Darwin (amd64+arm64)
+            - name: Setup fyne-cross engine
+              run: fyne-cross setup ${{ matrix.platform }}
+
+            - name: Build with fyne-cross
               run: |
-                  fyne-cross darwin \
-                    -arch=amd64,arm64 \
+                  export PATH="$(go env GOPATH)/bin:$PATH"
+                  fyne-cross ${{ matrix.platform }} \
+                    -arch=${{ matrix.arch }} \
                     -app-id=apple.store.helper \
                     -name="Apple Store Helper" \
                     -ldflags="-X 'github.com/hteen/apple-store-helper/common.VERSION=${{ steps.vars.outputs.tag }}'"
 
-            - name: Fix quarantine & codesign (darwin-arm64)
-              run: |
-                  app_path="fyne-cross/dist/darwin-arm64/Apple Store Helper.app"
-                  echo "Fixing quarantine and signing $app_path"
-                  xattr -cr "$app_path"
-                  codesign --force --deep --sign - "$app_path"
+                  if [ ! -d "fyne-cross/dist" ]; then
+                      echo "❌ fyne-cross 构建失败：dist 目录未生成"
+                      exit 1
+                  fi
+                  echo "✅ fyne-cross 构建成功"
 
-            - name: Build Windows (386+amd64)
+            - name: Fix quarantine & codesign (Darwin)
+              if: matrix.platform == 'darwin'
               run: |
-                  fyne-cross windows \
-                    -arch=386,amd64 \
-                    -app-id=apple.store.helper \
-                    -name="Apple Store Helper" \
-                    -ldflags="-X 'github.com/hteen/apple-store-helper/common.VERSION=${{ steps.vars.outputs.tag }}'"
+                  for arch in ${{ matrix.arch }}; do
+                      app_path="fyne-cross/dist/darwin-${arch}/Apple Store Helper.app"
+                      if [ -d "$app_path" ]; then
+                          echo "Fixing quarantine and signing $app_path"
+                          xattr -cr "$app_path"
+                          codesign --force --deep --sign - "$app_path"
+                          echo "✅ $arch 版本签名完成"
+                      else
+                          echo "⚠️ $arch 版本应用包未找到"
+                      fi
+                  done
 
             - name: Upload Artifacts
               uses: actions/upload-artifact@v4
               with:
-                  name: apple-store-helper-${{ steps.vars.outputs.tag }}
-                  path: fyne-cross/dist/*
+                  name: ${{ matrix.artifact_name }}-${{ steps.vars.outputs.tag }}
+                  path: fyne-cross/dist/
+                  if-no-files-found: error
+                  retention-days: 30
 
     release:
         needs: build
@@ -60,6 +97,11 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+
+            - name: Download all artifacts
+              uses: actions/download-artifact@v4
+              with:
+                  path: ./artifacts
 
             - name: Release
               uses: ncipollo/release-action@v1
@@ -69,4 +111,6 @@ jobs:
                   body: |
                       ## What's New
                       - Auto build for ${{ github.ref_name }}
-                  artifacts: "fyne-cross/dist/*"
+                      - Cross-platform build with fyne-cross
+                      - Supports: darwin-amd64, darwin-arm64, windows-386, windows-amd64
+                  artifacts: "artifacts/*"
