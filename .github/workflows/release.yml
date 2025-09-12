@@ -1,4 +1,4 @@
-name: Build & Release (Native)
+name: Build & Release
 
 on:
     push:
@@ -40,6 +40,12 @@ jobs:
                   go install github.com/fyne-io/fyne-cross@latest
                   echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
+            - name: Verify Fyne tools
+              run: |
+                  export PATH="$(go env GOPATH)/bin:$PATH"
+                  fyne version
+                  echo "✅ Fyne 工具安装成功"
+
             - name: Cache fyne-cross engines
               uses: actions/cache@v4
               with:
@@ -50,12 +56,20 @@ jobs:
               id: vars
               run: echo "tag=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
 
-            - name: Setup fyne-cross engine
-              run: fyne-cross setup ${{ matrix.platform }}
+            - name: Verify fyne-cross installation
+              run: |
+                  export PATH="$(go env GOPATH)/bin:$PATH"
+                  fyne-cross version
+                  echo "✅ fyne-cross 安装成功"
 
             - name: Build with fyne-cross
               run: |
                   export PATH="$(go env GOPATH)/bin:$PATH"
+                  # 设置环境变量确保 fyne-cross 能找到必要的工具
+                  export FYNE_CROSS_CC="clang"
+                  export FYNE_CROSS_CXX="clang++"
+
+                  # 使用 fyne-cross 交叉编译，参考 README.md 中的命令
                   fyne-cross ${{ matrix.platform }} \
                     -arch=${{ matrix.arch }} \
                     -app-id=apple.store.helper \
