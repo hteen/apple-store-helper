@@ -6,6 +6,8 @@ import (
 	"apple-store-helper/theme"
 	"apple-store-helper/view"
 	"errors"
+	"fmt"
+	"strconv"
 	"time"
 
 	"fyne.io/fyne/v2"
@@ -38,6 +40,16 @@ func main() {
 	barkWidget := widget.NewEntry()
 	barkWidget.SetPlaceHolder("https://api.day.app/你的BarkKey")
 
+	// 检测次数阈值设置
+	detectThresholdWidget := widget.NewEntry()
+	detectThresholdWidget.SetText("3")
+	detectThresholdWidget.SetPlaceHolder("检测次数阈值")
+
+	// 时间阈值设置（分钟）
+	timeThresholdWidget := widget.NewEntry()
+	timeThresholdWidget.SetText("1")
+	timeThresholdWidget.SetPlaceHolder("时间阈值（分钟）")
+
 	// 地区选择器 (Area Selector)
 	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
 		// 防止空值或无效值导致崩溃
@@ -58,11 +70,12 @@ func main() {
 	areaWidget.Horizontal = true
 
 	help := `1. 在 Apple 官网将需要购买的型号加入购物车
-2. 选择地区、门店和型号，点击“添加”按钮，将需要监听的型号添加到监听列表
-3. 点击“开始”按钮开始监听，检测到有货时会自动打开购物车页面
+2. 选择地区、门店和型号，点击"添加"按钮，将需要监听的型号添加到监听列表
+3. 设置检测阈值：检测次数阈值（默认3次）和时间阈值（默认1分钟）
+4. 点击"开始"按钮开始监听，在指定时间内检测到指定次数有货时会自动打开购物车页面
 `
 
-	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget)
+	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget)
 
 	// 初始化 GUI 窗口内容 (Initialize GUI)
 	view.Window.SetContent(container.NewVBox(
@@ -71,9 +84,11 @@ func main() {
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择门店:"), storeWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("选择型号:"), productWidget),
 		container.New(layout.NewFormLayout(), widget.NewLabel("Bark 通知地址"), barkWidget),
+		container.New(layout.NewFormLayout(), widget.NewLabel("检测次数阈值:"), detectThresholdWidget),
+		container.New(layout.NewFormLayout(), widget.NewLabel("时间阈值(分钟):"), timeThresholdWidget),
 
 		container.NewBorder(nil, nil,
-			createActionButtons(areaWidget, storeWidget, productWidget, barkWidget),
+			createActionButtons(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget),
 			createControlButtons(),
 		),
 
@@ -102,7 +117,7 @@ func initFyneApp() {
 }
 
 // 加载用户设置缓存 (Load user settings cache)
-func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) {
+func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry, detectThresholdWidget *widget.Entry, timeThresholdWidget *widget.Entry) {
 	settings, err := services.LoadSettings()
 	if err == nil {
 		areaWidget.SetSelected(settings.SelectedArea)
@@ -110,18 +125,44 @@ func loadUserSettingsCache(areaWidget *widget.RadioGroup, storeWidget *widget.Se
 		productWidget.SetSelected(settings.SelectedProduct)
 		services.Listen.SetListenItems(settings.ListenItems)
 		barkNotifyWidget.SetText(settings.BarkNotifyUrl)
+
+		// 加载阈值设置，如果为0则使用默认值
+		if settings.DetectThreshold > 0 {
+			detectThresholdWidget.SetText(fmt.Sprintf("%d", settings.DetectThreshold))
+			services.Listen.DetectThreshold = settings.DetectThreshold
+		}
+		if settings.TimeThreshold > 0 {
+			timeThresholdWidget.SetText(fmt.Sprintf("%d", settings.TimeThreshold))
+			services.Listen.TimeThreshold = settings.TimeThreshold
+		}
 	} else {
 		areaWidget.SetSelected(services.Listen.Area.Title)
 	}
 }
 
 // 创建动作按钮 (Create action buttons)
-func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry) *fyne.Container {
+func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Select, productWidget *widget.Select, barkNotifyWidget *widget.Entry, detectThresholdWidget *widget.Entry, timeThresholdWidget *widget.Entry) *fyne.Container {
 	return container.NewHBox(
 		widget.NewButton("添加", func() {
 			if storeWidget.Selected == "" || productWidget.Selected == "" {
 				dialog.ShowError(errors.New("请选择门店和型号"), view.Window)
 			} else {
+				// 解析阈值设置
+				detectThreshold, err1 := strconv.Atoi(detectThresholdWidget.Text)
+				timeThreshold, err2 := strconv.Atoi(timeThresholdWidget.Text)
+
+				if err1 != nil || detectThreshold <= 0 {
+					dialog.ShowError(errors.New("检测次数阈值必须是正整数"), view.Window)
+					return
+				}
+				if err2 != nil || timeThreshold <= 0 {
+					dialog.ShowError(errors.New("时间阈值必须是正整数"), view.Window)
+					return
+				}
+
+				// 设置阈值
+				services.Listen.SetThresholds(detectThreshold, timeThreshold)
+
 				services.Listen.Add(areaWidget.Selected, storeWidget.Selected, productWidget.Selected, barkNotifyWidget.Text)
 				services.SaveSettings(services.UserSettings{
 					SelectedArea:    areaWidget.Selected,
@@ -129,6 +170,8 @@ func createActionButtons(areaWidget *widget.RadioGroup, storeWidget *widget.Sele
 					SelectedProduct: productWidget.Selected,
 					BarkNotifyUrl:   barkNotifyWidget.Text,
 					ListenItems:     services.Listen.GetListenItems(),
+					DetectThreshold: detectThreshold,
+					TimeThreshold:   timeThreshold,
 				})
 			}
 		}),

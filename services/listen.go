@@ -37,18 +37,24 @@ const (
 )
 
 var Listen = listenService{
-	items:  map[string]ListenItem{},
-	Status: binding.NewString(),
-	Area:   model.Areas[0],
-	Logs:   widget.NewLabel(""),
+	items:           map[string]ListenItem{},
+	Status:          binding.NewString(),
+	Area:            model.Areas[0],
+	Logs:            widget.NewLabel(""),
+	DetectThreshold: 3, // 默认检测3次
+	TimeThreshold:   1, // 默认1分钟
 }
 
 type listenService struct {
-	items         map[string]ListenItem
-	Status        binding.String
-	Area          model.Area
-	Logs          *widget.Label
-	BarkNotifyUrl string
+	items           map[string]ListenItem
+	Status          binding.String
+	Area            model.Area
+	Logs            *widget.Label
+	BarkNotifyUrl   string
+	detectCounts    map[string]int             // 检测次数计数器
+	firstDetect     map[string]carbon.DateTime // 第一次检测时间
+	DetectThreshold int                        // 检测次数阈值（默认3次）
+	TimeThreshold   int                        // 时间阈值（默认1分钟）
 }
 
 type ListenItem struct {
@@ -79,6 +85,8 @@ func (s *listenService) Add(areaTitle string, storeTitle string, productTitle st
 
 func (s *listenService) Clean() {
 	s.items = map[string]ListenItem{}
+	s.detectCounts = map[string]int{}
+	s.firstDetect = map[string]carbon.DateTime{}
 	s.UpdateLogStr()
 }
 
@@ -91,17 +99,31 @@ func (s *listenService) GetListenItems() map[string]ListenItem {
 	return s.items
 }
 
+func (s *listenService) SetThresholds(detectThreshold, timeThreshold int) {
+	s.DetectThreshold = detectThreshold
+	s.TimeThreshold = timeThreshold
+}
+
+func (s *listenService) GetThresholds() (int, int) {
+	return s.DetectThreshold, s.TimeThreshold
+}
+
 func (s *listenService) UpdateLogStr() {
 	var str string
 
-	for _, item := range s.items {
+	for key, item := range s.items {
+		detectInfo := ""
+		if count, exists := s.detectCounts[key]; exists && count > 0 {
+			detectInfo = fmt.Sprintf(" (检测%d次)", count)
+		}
 
 		str += fmt.Sprintf(
-			"[%s] %s %s %s %s",
+			"[%s] %s %s %s%s %s",
 			item.Status,
 			item.Time,
 			item.Store.CityStoreName,
 			item.Product.Title,
+			detectInfo,
 			"\n",
 		)
 	}
@@ -128,21 +150,43 @@ func (s *listenService) Run() {
 					status := skus[item.Store.StoreNumber+"."+item.Product.Code]
 
 					if status {
-						s.UpdateStatus(key, StatusInStock)
-						s.Status.Set(Pause)
+						// 更新检测次数和时间
+						s.detectCounts[key]++
+						now := carbon.Now(carbon.Shanghai)
 
-						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
-						// 进入购物袋
-						s.openBrowser(bagUrl)
-						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
-						dialog.ShowInformation("匹配成功", msg, view.Window)
-						view.App.SendNotification(&fyne.Notification{
-							Title:   "有货提醒",
-							Content: msg,
-						})
-						go s.AlertMp3()
-						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
-						break
+						// 如果是第一次检测到有货，记录时间
+						if s.detectCounts[key] == 1 {
+							s.firstDetect[key] = carbon.DateTime{Carbon: now}
+						}
+
+						// 检查是否在指定时间内检测到指定次数
+						if s.detectCounts[key] >= s.DetectThreshold {
+							// 检查时间是否在指定阈值内
+							if s.firstDetect[key].Carbon.DiffInMinutes(now) <= int64(s.TimeThreshold) {
+								s.UpdateStatus(key, StatusInStock)
+								s.Status.Set(Pause)
+
+								var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
+								// 进入购物袋
+								s.openBrowser(bagUrl)
+								msg := fmt.Sprintf("%s %s 有货 (检测%d次)", item.Store.CityStoreName, item.Product.Title, s.detectCounts[key])
+								dialog.ShowInformation("匹配成功", msg, view.Window)
+								view.App.SendNotification(&fyne.Notification{
+									Title:   "有货提醒",
+									Content: msg,
+								})
+								go s.AlertMp3()
+								go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
+								break
+							} else {
+								// 超过一分钟，重置计数
+								s.detectCounts[key] = 1
+								s.firstDetect[key] = carbon.DateTime{Carbon: now}
+							}
+						}
+
+						// 更新状态为有货（但可能还没达到3次）
+						s.UpdateStatus(key, StatusInStock)
 					} else {
 						s.UpdateStatus(key, StatusOutStock)
 					}

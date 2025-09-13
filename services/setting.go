@@ -11,6 +11,8 @@ type UserSettings struct {
 	SelectedProduct string                `json:"selected_product"`
 	BarkNotifyUrl   string                `json:"bark_notify_url"`
 	ListenItems     map[string]ListenItem `json:"listen_items"`
+	DetectThreshold int                   `json:"detect_threshold"`
+	TimeThreshold   int                   `json:"time_threshold"`
 }
 
 // 保存配置到本地文件 SaveSettings saves settings to a file
