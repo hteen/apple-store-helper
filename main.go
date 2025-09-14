@@ -61,53 +61,52 @@ func main() {
 	batchIntervalWidget.SetPlaceHolder("批次间隔（毫秒）")
 
 	// 地区选择器 (Area Selector)
-	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), func(value string) {
+	areaWidget := widget.NewRadioGroup(services.Area.ForOptions(), nil)
+
+	areaWidget.Horizontal = true
+
+	// 为配置项添加变化监听
+	areaWidget.OnChanged = func(value string) {
 		// 防止空值或无效值导致崩溃
 		if value == "" {
 			return
 		}
 
+		// 更新商店列表
 		storeWidget.Options = services.Store.ByAreaTitleForOptions(value)
 		storeWidget.ClearSelected()
 
+		// 更新产品列表
 		productWidget.Options = services.Product.ByAreaTitleForOptions(value)
 		productWidget.ClearSelected()
 
+		// 更新监听服务
 		services.Listen.Area = services.Area.GetArea(value)
 		services.Listen.Clean()
-	})
 
-	areaWidget.Horizontal = true
-
-	// 创建配置变化处理函数
-	onConfigChange := func() {
+		// 保存配置
 		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
-
-	// 为配置项添加变化监听
-	areaWidget.OnChanged = func(value string) {
-		onConfigChange()
-	}
 	storeWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	productWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	barkWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	detectThresholdWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	timeThresholdWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	refreshIntervalWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 	batchIntervalWidget.OnChanged = func(value string) {
-		onConfigChange()
+		go saveCurrentSettings(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
 	}
 
 	help := `1. 在 Apple 官网将需要购买的型号加入购物车
