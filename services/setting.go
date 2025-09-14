@@ -13,6 +13,8 @@ type UserSettings struct {
 	ListenItems     map[string]ListenItem `json:"listen_items"`
 	DetectThreshold int                   `json:"detect_threshold"`
 	TimeThreshold   int                   `json:"time_threshold"`
+	RefreshInterval int                   `json:"refresh_interval"` // 刷新间隔（秒）
+	BatchInterval   int                   `json:"batch_interval"`   // 同一轮内门店请求间隔（毫秒）
 }
 
 // 保存配置到本地文件 SaveSettings saves settings to a file
@@ -38,4 +40,20 @@ func LoadSettings() (UserSettings, error) {
 // 清空缓存配置 ClearSettings removes the settings file
 func ClearSettings() error {
 	return os.Remove("user_settings.json")
+}
+
+// 保存所有当前配置 SaveAllCurrentSettings saves all current settings
+func SaveAllCurrentSettings(selectedArea, selectedStore, selectedProduct, barkNotifyUrl string, detectThreshold, timeThreshold, refreshInterval, batchInterval int) error {
+	settings := UserSettings{
+		SelectedArea:    selectedArea,
+		SelectedStore:   selectedStore,
+		SelectedProduct: selectedProduct,
+		BarkNotifyUrl:   barkNotifyUrl,
+		ListenItems:     Listen.GetListenItems(),
+		DetectThreshold: detectThreshold,
+		TimeThreshold:   timeThreshold,
+		RefreshInterval: refreshInterval,
+		BatchInterval:   batchInterval,
+	}
+	return SaveSettings(settings)
 }

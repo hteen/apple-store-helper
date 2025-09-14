@@ -41,8 +41,10 @@ var Listen = listenService{
 	Status:          binding.NewString(),
 	Area:            model.Areas[0],
 	Logs:            widget.NewLabel(""),
-	DetectThreshold: 3, // 默认检测3次
-	TimeThreshold:   1, // 默认1分钟
+	DetectThreshold: 3,   // 默认检测3次
+	TimeThreshold:   1,   // 默认1分钟
+	RefreshInterval: 3,   // 默认3秒刷新一次
+	BatchInterval:   500, // 默认500毫秒门店请求间隔
 }
 
 type listenService struct {
@@ -55,6 +57,8 @@ type listenService struct {
 	firstDetect     map[string]carbon.DateTime // 第一次检测时间
 	DetectThreshold int                        // 检测次数阈值（默认3次）
 	TimeThreshold   int                        // 时间阈值（默认1分钟）
+	RefreshInterval int                        // 刷新间隔（秒，默认3秒）
+	BatchInterval   int                        // 同一轮内门店请求间隔（毫秒，默认500毫秒）
 }
 
 type ListenItem struct {
@@ -106,6 +110,22 @@ func (s *listenService) SetThresholds(detectThreshold, timeThreshold int) {
 
 func (s *listenService) GetThresholds() (int, int) {
 	return s.DetectThreshold, s.TimeThreshold
+}
+
+func (s *listenService) SetRefreshInterval(interval int) {
+	s.RefreshInterval = interval
+}
+
+func (s *listenService) GetRefreshInterval() int {
+	return s.RefreshInterval
+}
+
+func (s *listenService) SetBatchInterval(interval int) {
+	s.BatchInterval = interval
+}
+
+func (s *listenService) GetBatchInterval() int {
+	return s.BatchInterval
 }
 
 func (s *listenService) UpdateLogStr() {
@@ -195,7 +215,7 @@ func (s *listenService) Run() {
 				s.UpdateLogStr()
 			}
 
-			time.Sleep(time.Millisecond * 500)
+			time.Sleep(time.Duration(s.RefreshInterval) * time.Second)
 		}
 	}()
 }
@@ -246,8 +266,15 @@ func (s *listenService) groupByStore() map[string]bool {
 
 	ch := make(chan map[string]bool, count)
 
+	// 按顺序发送请求，每个请求之间添加间隔
+	requestCount := 0
 	for _, link := range reqs {
 		go s.getSkuByLink(ch, link)
+		requestCount++
+		// 如果不是最后一个请求，添加间隔
+		if requestCount < len(reqs) {
+			time.Sleep(time.Duration(s.BatchInterval) * time.Millisecond)
+		}
 	}
 
 	for i := 0; i < count; i++ {
