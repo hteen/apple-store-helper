@@ -179,33 +179,35 @@ func (s *listenService) Run() {
 							s.firstDetect[key] = carbon.DateTime{Carbon: now}
 						}
 
-						// 检查是否在指定时间内检测到指定次数
+						// 每次检测到有货都发送 Bark 通知
+						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
+						msg := fmt.Sprintf("%s %s 有货 (检测%d次)", item.Store.CityStoreName, item.Product.Title, s.detectCounts[key])
+						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
+
+						// 检查是否在指定时间内检测到指定次数（用于控制打开浏览器和暂停监听）
 						if s.detectCounts[key] >= s.DetectThreshold {
 							// 检查时间是否在指定阈值内
 							if s.firstDetect[key].Carbon.DiffInMinutes(now) <= int64(s.TimeThreshold) {
 								s.UpdateStatus(key, StatusInStock)
 								s.Status.Set(Pause)
 
-								var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
 								// 进入购物袋
 								s.openBrowser(bagUrl)
-								msg := fmt.Sprintf("%s %s 有货 (检测%d次)", item.Store.CityStoreName, item.Product.Title, s.detectCounts[key])
 								dialog.ShowInformation("匹配成功", msg, view.Window)
 								view.App.SendNotification(&fyne.Notification{
 									Title:   "有货提醒",
 									Content: msg,
 								})
 								go s.AlertMp3()
-								go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
 								break
 							} else {
-								// 超过一分钟，重置计数
+								// 超过时间阈值，重置计数
 								s.detectCounts[key] = 1
 								s.firstDetect[key] = carbon.DateTime{Carbon: now}
 							}
 						}
 
-						// 更新状态为有货（但可能还没达到3次）
+						// 更新状态为有货
 						s.UpdateStatus(key, StatusInStock)
 					} else {
 						s.UpdateStatus(key, StatusOutStock)

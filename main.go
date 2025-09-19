@@ -111,10 +111,10 @@ func main() {
 
 	help := `1. 在 Apple 官网将需要购买的型号加入购物车
 2. 选择地区、门店和型号，点击"添加"按钮，将需要监听的型号添加到监听列表
-3. 设置检测阈值：检测次数阈值（默认3次）和时间阈值（默认1分钟）
+3. 设置检测阈值：检测次数阈值（默认3次）和时间阈值（默认1分钟），用于控制自动打开购物车的时机
 4. 设置刷新频率（默认3秒），可根据需要调整监听频率
 5. 设置批次间隔（默认500毫秒），控制同一轮内门店请求的间隔，避免API访问过于频繁
-6. 点击"开始"按钮开始监听，在指定时间内检测到指定次数有货时会自动打开购物车页面
+6. 点击"开始"按钮开始监听，每次检测到有货都会发送 Bark 通知，达到阈值后会自动打开购物车页面
 `
 
 	loadUserSettingsCache(areaWidget, storeWidget, productWidget, barkWidget, detectThresholdWidget, timeThresholdWidget, refreshIntervalWidget, batchIntervalWidget)
