@@ -292,9 +292,23 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	skus := map[string]bool{}
 
 	resp, body, errs := gorequest.New().
-		Set("referer", "https://www.apple.com/shop/buy-iphone").
-		Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36").
-		Timeout(time.Second * 3).Get(skUrl).End()
+		Set("Accept", "application/json, text/plain, */*").
+		Set("Accept-Encoding", "gzip, deflate, br").
+		Set("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8").
+		Set("Cache-Control", "no-cache").
+		Set("Connection", "keep-alive").
+		Set("DNT", "1").
+		Set("Pragma", "no-cache").
+		Set("Referer", "https://www.apple.com/shop/buy-iphone").
+		Set("Sec-Ch-Ua", `""Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"`).
+		Set("Sec-Ch-Ua-Mobile", "?0").
+		Set("Sec-Ch-Ua-Platform", `"macOS"`).
+		Set("Sec-Fetch-Dest", "empty").
+		Set("Sec-Fetch-Mode", "cors").
+		Set("Sec-Fetch-Site", "same-origin").
+		Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36").
+		Set("X-Requested-With", "XMLHttpRequest").
+		Timeout(time.Second * 5).Get(skUrl).End()
 	if len(errs) > 0 {
 		log.Println(errs)
 		ch <- skus
@@ -367,7 +381,7 @@ func (s *listenService) SendPushNotificationByBark(title string, content string,
 		return
 	}
 
-	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
+	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s&call=1&level=critical", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
 
 	response, err := http.Get(apiUrl)
 	if err != nil {
