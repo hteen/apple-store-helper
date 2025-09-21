@@ -37,18 +37,28 @@ const (
 )
 
 var Listen = listenService{
-	items:  map[string]ListenItem{},
-	Status: binding.NewString(),
-	Area:   model.Areas[0],
-	Logs:   widget.NewLabel(""),
+	items:           map[string]ListenItem{},
+	Status:          binding.NewString(),
+	Area:            model.Areas[0],
+	Logs:            widget.NewLabel(""),
+	DetectThreshold: 3,   // 默认检测3次
+	TimeThreshold:   1,   // 默认1分钟
+	RefreshInterval: 3,   // 默认3秒刷新一次
+	BatchInterval:   500, // 默认500毫秒门店请求间隔
 }
 
 type listenService struct {
-	items         map[string]ListenItem
-	Status        binding.String
-	Area          model.Area
-	Logs          *widget.Label
-	BarkNotifyUrl string
+	items           map[string]ListenItem
+	Status          binding.String
+	Area            model.Area
+	Logs            *widget.Label
+	BarkNotifyUrl   string
+	detectCounts    map[string]int             // 检测次数计数器
+	firstDetect     map[string]carbon.DateTime // 第一次检测时间
+	DetectThreshold int                        // 检测次数阈值（默认3次）
+	TimeThreshold   int                        // 时间阈值（默认1分钟）
+	RefreshInterval int                        // 刷新间隔（秒，默认3秒）
+	BatchInterval   int                        // 同一轮内门店请求间隔（毫秒，默认500毫秒）
 }
 
 type ListenItem struct {
@@ -79,6 +89,8 @@ func (s *listenService) Add(areaTitle string, storeTitle string, productTitle st
 
 func (s *listenService) Clean() {
 	s.items = map[string]ListenItem{}
+	s.detectCounts = map[string]int{}
+	s.firstDetect = map[string]carbon.DateTime{}
 	s.UpdateLogStr()
 }
 
@@ -91,17 +103,47 @@ func (s *listenService) GetListenItems() map[string]ListenItem {
 	return s.items
 }
 
+func (s *listenService) SetThresholds(detectThreshold, timeThreshold int) {
+	s.DetectThreshold = detectThreshold
+	s.TimeThreshold = timeThreshold
+}
+
+func (s *listenService) GetThresholds() (int, int) {
+	return s.DetectThreshold, s.TimeThreshold
+}
+
+func (s *listenService) SetRefreshInterval(interval int) {
+	s.RefreshInterval = interval
+}
+
+func (s *listenService) GetRefreshInterval() int {
+	return s.RefreshInterval
+}
+
+func (s *listenService) SetBatchInterval(interval int) {
+	s.BatchInterval = interval
+}
+
+func (s *listenService) GetBatchInterval() int {
+	return s.BatchInterval
+}
+
 func (s *listenService) UpdateLogStr() {
 	var str string
 
-	for _, item := range s.items {
+	for key, item := range s.items {
+		detectInfo := ""
+		if count, exists := s.detectCounts[key]; exists && count > 0 {
+			detectInfo = fmt.Sprintf(" (检测%d次)", count)
+		}
 
 		str += fmt.Sprintf(
-			"[%s] %s %s %s %s",
+			"[%s] %s %s %s%s %s",
 			item.Status,
 			item.Time,
 			item.Store.CityStoreName,
 			item.Product.Title,
+			detectInfo,
 			"\n",
 		)
 	}
@@ -128,21 +170,45 @@ func (s *listenService) Run() {
 					status := skus[item.Store.StoreNumber+"."+item.Product.Code]
 
 					if status {
-						s.UpdateStatus(key, StatusInStock)
-						s.Status.Set(Pause)
+						// 更新检测次数和时间
+						s.detectCounts[key]++
+						now := carbon.Now(carbon.Shanghai)
 
+						// 如果是第一次检测到有货，记录时间
+						if s.detectCounts[key] == 1 {
+							s.firstDetect[key] = carbon.DateTime{Carbon: now}
+						}
+
+						// 每次检测到有货都发送 Bark 通知
 						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
-						// 进入购物袋
-						s.openBrowser(bagUrl)
-						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
-						dialog.ShowInformation("匹配成功", msg, view.Window)
-						view.App.SendNotification(&fyne.Notification{
-							Title:   "有货提醒",
-							Content: msg,
-						})
-						go s.AlertMp3()
+						msg := fmt.Sprintf("%s %s 有货 (检测%d次)", item.Store.CityStoreName, item.Product.Title, s.detectCounts[key])
 						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
-						break
+
+						// 检查是否在指定时间内检测到指定次数（用于控制打开浏览器和暂停监听）
+						if s.detectCounts[key] >= s.DetectThreshold {
+							// 检查时间是否在指定阈值内
+							if s.firstDetect[key].Carbon.DiffInMinutes(now) <= int64(s.TimeThreshold) {
+								s.UpdateStatus(key, StatusInStock)
+								s.Status.Set(Pause)
+
+								// 进入购物袋
+								s.openBrowser(bagUrl)
+								dialog.ShowInformation("匹配成功", msg, view.Window)
+								view.App.SendNotification(&fyne.Notification{
+									Title:   "有货提醒",
+									Content: msg,
+								})
+								go s.AlertMp3()
+								break
+							} else {
+								// 超过时间阈值，重置计数
+								s.detectCounts[key] = 1
+								s.firstDetect[key] = carbon.DateTime{Carbon: now}
+							}
+						}
+
+						// 更新状态为有货
+						s.UpdateStatus(key, StatusInStock)
 					} else {
 						s.UpdateStatus(key, StatusOutStock)
 					}
@@ -151,7 +217,7 @@ func (s *listenService) Run() {
 				s.UpdateLogStr()
 			}
 
-			time.Sleep(time.Millisecond * 500)
+			time.Sleep(time.Duration(s.RefreshInterval) * time.Second)
 		}
 	}()
 }
@@ -202,8 +268,15 @@ func (s *listenService) groupByStore() map[string]bool {
 
 	ch := make(chan map[string]bool, count)
 
+	// 按顺序发送请求，每个请求之间添加间隔
+	requestCount := 0
 	for _, link := range reqs {
 		go s.getSkuByLink(ch, link)
+		requestCount++
+		// 如果不是最后一个请求，添加间隔
+		if requestCount < len(reqs) {
+			time.Sleep(time.Duration(s.BatchInterval) * time.Millisecond)
+		}
 	}
 
 	for i := 0; i < count; i++ {
@@ -219,9 +292,24 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	skus := map[string]bool{}
 
 	resp, body, errs := gorequest.New().
-		Set("referer", "https://www.apple.com/shop/buy-iphone").
-		Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36").
-		Timeout(time.Second * 3).Get(skUrl).End()
+		Get(skUrl).
+		Set("Accept", "application/json, text/plain, */*").
+		Set("Accept-Encoding", "gzip, deflate, br").
+		Set("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8").
+		Set("Cache-Control", "no-cache").
+		Set("Connection", "keep-alive").
+		Set("DNT", "1").
+		Set("Pragma", "no-cache").
+		Set("Referer", "https://www.apple.com/shop/buy-iphone").
+		Set("Sec-Ch-Ua", `""Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"`).
+		Set("Sec-Ch-Ua-Mobile", "?0").
+		Set("Sec-Ch-Ua-Platform", `"macOS"`).
+		Set("Sec-Fetch-Dest", "empty").
+		Set("Sec-Fetch-Mode", "cors").
+		Set("Sec-Fetch-Site", "same-origin").
+		Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36").
+		Set("X-Requested-With", "XMLHttpRequest").
+		Timeout(time.Second * 5).End()
 	if len(errs) > 0 {
 		log.Println(errs)
 		ch <- skus
@@ -294,7 +382,7 @@ func (s *listenService) SendPushNotificationByBark(title string, content string,
 		return
 	}
 
-	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
+	apiUrl := fmt.Sprintf("%s/%s/%s?url=%s&call=1&level=critical", strings.TrimRight(s.BarkNotifyUrl, "/"), title, content, bagUrl)
 
 	response, err := http.Get(apiUrl)
 	if err != nil {
