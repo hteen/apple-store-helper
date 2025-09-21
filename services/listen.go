@@ -292,6 +292,7 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	skus := map[string]bool{}
 
 	resp, body, errs := gorequest.New().
+		Get(skUrl).
 		Set("Accept", "application/json, text/plain, */*").
 		Set("Accept-Encoding", "gzip, deflate, br").
 		Set("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8").
@@ -308,7 +309,7 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 		Set("Sec-Fetch-Site", "same-origin").
 		Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36").
 		Set("X-Requested-With", "XMLHttpRequest").
-		Timeout(time.Second * 5).Get(skUrl).End()
+		Timeout(time.Second * 5).End()
 	if len(errs) > 0 {
 		log.Println(errs)
 		ch <- skus
