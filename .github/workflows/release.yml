@@ -1,0 +1,72 @@
+name: Build & Release
+
+on:
+    push:
+        tags:
+            - "v*" # 仅在推 tag 时触发，比如 v1.7.2
+
+jobs:
+    build:
+        runs-on: macos-latest # 必须用 macOS runner 才能 codesign
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Set up Go
+              uses: actions/setup-go@v4
+              with:
+                  go-version: "1.22" # 按项目 Go 版本来
+
+            - name: Install fyne-cross
+              run: go install github.com/fyne-io/fyne-cross@latest
+
+            - name: Get tag version
+              id: vars
+              run: echo "tag=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
+
+            - name: Build Darwin (amd64+arm64)
+              run: |
+                  fyne-cross darwin \
+                    -arch=amd64,arm64 \
+                    -app-id=apple.store.helper \
+                    -name="Apple Store Helper" \
+                    -ldflags="-X 'github.com/hteen/apple-store-helper/common.VERSION=${{ steps.vars.outputs.tag }}'"
+
+            - name: Fix quarantine & codesign (darwin-arm64)
+              run: |
+                  app_path="fyne-cross/dist/darwin-arm64/Apple Store Helper.app"
+                  echo "Fixing quarantine and signing $app_path"
+                  xattr -cr "$app_path"
+                  codesign --force --deep --sign - "$app_path"
+
+            - name: Build Windows (386+amd64)
+              run: |
+                  fyne-cross windows \
+                    -arch=386,amd64 \
+                    -app-id=apple.store.helper \
+                    -name="Apple Store Helper" \
+                    -ldflags="-X 'github.com/hteen/apple-store-helper/common.VERSION=${{ steps.vars.outputs.tag }}'"
+
+            - name: Upload Artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: apple-store-helper-${{ steps.vars.outputs.tag }}
+                  path: fyne-cross/dist/*
+
+    release:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Release
+              uses: ncipollo/release-action@v1
+              with:
+                  tag: ${{ github.ref_name }}
+                  name: Release ${{ github.ref_name }}
+                  body: |
+                      ## What's New
+                      - Auto build for ${{ github.ref_name }}
+                  artifacts: "fyne-cross/dist/*"

@@ -6,11 +6,11 @@ import (
 )
 
 type UserSettings struct {
-	SelectedArea    string                `json:"selected_area"`
-	SelectedStore   string                `json:"selected_store"`
-	SelectedProduct string                `json:"selected_product"`
-	BarkNotifyUrl   string                `json:"bark_notify_url"`
-	ListenItems     map[string]ListenItem `json:"listen_items"`
+    SelectedArea    string                `json:"selected_area"`
+    SelectedStore   string                `json:"selected_store"`
+    SelectedProduct string                `json:"selected_product"`
+    BarkNotifyUrl   string                `json:"bark_notify_url"`
+    ListenItems     map[string]ListenItem `json:"listen_items"`
 }
 
 // 保存配置到本地文件 SaveSettings saves settings to a file

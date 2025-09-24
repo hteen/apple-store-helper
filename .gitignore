@@ -2,3 +2,5 @@ fyne-cross
 .idea
 user_settings.json
 data
+user_config
+.DS_Store

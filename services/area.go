@@ -1,46 +1,17 @@
 package services
 
 import (
-	"apple-store-helper/config"
-	"apple-store-helper/model"
-	"fmt"
-
-	"github.com/thoas/go-funk"
-	"github.com/tidwall/gjson"
+    "apple-store-helper/model"
+    
+    "github.com/thoas/go-funk"
 )
 
 var Area = areaService{}
 
 type areaService struct{}
 
-func (s *areaService) ProductsByCode(local string) []model.Product {
-
-	areaInterface := funk.Find(model.Areas, func(x model.Area) bool {
-		return x.Locale == local
-	})
-	if areaInterface == nil {
-		return []model.Product{}
-	}
-	area := areaInterface.(model.Area)
-
-	var products []model.Product
-	productsJson := gjson.ParseBytes(config.MustReadConfigFile(fmt.Sprintf("products_%s.json", area.Locale)))
-
-	for _, json := range productsJson.Array() {
-		for _, result := range json.Get("products").Array() {
-			color := json.Get(fmt.Sprintf("displayValues.dimensionColor.%s.value", result.Get("dimensionColor")))
-			products = append(products, model.Product{
-				Title: fmt.Sprintf("%s - %s - %s", result.Get("familyType"), color, result.Get("dimensionCapacity")),
-				Type:  result.Get("familyType").String(),
-				Code:  result.Get("partNumber").String(),
-			})
-		}
-	}
-
-	return products
-}
-
 func (s *areaService) ForOptions() []string {
+	// 仅返回内置地区
 	return funk.Get(model.Areas, "Title").([]string)
 }
 
@@ -54,6 +25,16 @@ func (s *areaService) Title2Code(title string) string {
 	area := areaInterface.(model.Area)
 
 	return area.Locale
+}
+
+// TitleByCode 将 locale 转换为地区 Title（找不到则返回原 locale）
+func (s *areaService) TitleByCode(locale string) string {
+    for _, area := range model.Areas {
+        if area.Locale == locale {
+            return area.Title
+        }
+    }
+    return locale
 }
 
 func (s *areaService) GetArea(title string) model.Area {
