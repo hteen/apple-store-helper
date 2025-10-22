@@ -176,9 +176,8 @@ func (s *listenService) groupByStore() map[string]bool {
 
 		var uri url.URL
 		q := uri.Query()
-		q.Set("little", "true")
-		q.Set("mt", "regular")
-		q.Set("store", storeNumber)
+		q.Set("pl", "true")
+		q.Set("location", storeNumber)
 
 		for index, item := range items {
 			q.Set("parts."+strconv.FormatInt(int64(index), 10), item.Product.Code)
@@ -187,7 +186,7 @@ func (s *listenService) groupByStore() map[string]bool {
 		queryStr := q.Encode()
 
 		link := fmt.Sprintf(
-			"https://www.apple.com/%s/shop/fulfillment-messages?%s",
+			"https://www.apple.com/%s/shop/retail/pickup-message?%s",
 			s.Area.ShortCode,
 			queryStr,
 		)
@@ -230,10 +229,21 @@ func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	}
 
 	log.Println(resp.Status, skUrl)
-	for _, result := range gjson.Get(body, "body.content.pickupMessage.stores").Array() {
+	for _, result := range gjson.Get(body, "body.stores").Array() {
 		for productCode, availability := range result.Get("partsAvailability").Map() {
 			uniqKey := fmt.Sprintf("%s.%s", result.Get("storeNumber").String(), productCode)
-			skus[uniqKey] = availability.Get("messageTypes.compact.storeSelectionEnabled").Bool()
+
+			// 核心判斷：必須同時滿足 isBuyable 為 true 且 inventory 大於 0
+			buyability := availability.Get("buyability")
+			isBuyable := buyability.Get("isBuyable").Bool()
+			inventory := buyability.Get("inventory").Int()
+			isInStock := isBuyable && inventory > 0
+
+			// Debug 日誌
+			log.Printf("[庫存檢查] 門市: %s, 產品: %s, isBuyable: %v, inventory: %d, 結果: %v",
+				result.Get("storeNumber").String(), productCode, isBuyable, inventory, isInStock)
+
+			skus[uniqKey] = isInStock
 		}
 	}
 
