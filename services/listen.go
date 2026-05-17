@@ -3,6 +3,7 @@ package services
 import (
 	"bytes"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -19,13 +20,24 @@ import (
 	"github.com/faiface/beep/mp3"
 	"github.com/faiface/beep/speaker"
 	"github.com/golang-module/carbon"
-	"github.com/parnurzeal/gorequest"
 	"github.com/tidwall/gjson"
 
 	"apple-store-helper/model"
 	"apple-store-helper/theme"
 	"apple-store-helper/view"
 )
+
+// httpClient 复用单一 http.Client 跑所有 fulfillment 探测请求,避免每次
+// gorequest.New() 重新分配 http.Client/Transport/cookiejar 导致的资源累积
+// (issue #121: 长时间运行后内存占用异常增长)。
+var httpClient = &http.Client{
+	Timeout: 3 * time.Second,
+	Transport: &http.Transport{
+		MaxIdleConns:        32,
+		MaxIdleConnsPerHost: 8,
+		IdleConnTimeout:     90 * time.Second,
+	},
+}
 
 const (
 	StatusOutStock = "无货"
@@ -217,20 +229,40 @@ func (s *listenService) groupByStore() map[string]bool {
 
 func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
 	skus := map[string]bool{}
+	// 兜底: 任何 panic 都要 ch<- 一次,否则父 groupByStore 会永久 hang 在 <-ch 上。
+	defer func() {
+		if r := recover(); r != nil {
+			log.Println("getSkuByLink panic:", r)
+			ch <- skus
+		}
+	}()
 
-	resp, body, errs := gorequest.New().
-		Get(skUrl).
-		Set("referer", "https://www.apple.com/shop/buy-iphone").
-		Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36").
-		Timeout(time.Second * 3).End()
-	if len(errs) > 0 {
-		log.Println(errs)
+	req, err := http.NewRequest(http.MethodGet, skUrl, nil)
+	if err != nil {
+		log.Println(err)
+		ch <- skus
+		return
+	}
+	req.Header.Set("referer", "https://www.apple.com/shop/buy-iphone")
+	req.Header.Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36")
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		log.Println(err)
+		ch <- skus
+		return
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		log.Println(err)
 		ch <- skus
 		return
 	}
 
 	log.Println(resp.Status, skUrl)
-	for _, result := range gjson.Get(body, "body.content.pickupMessage.stores").Array() {
+	for _, result := range gjson.GetBytes(body, "body.content.pickupMessage.stores").Array() {
 		for productCode, availability := range result.Get("partsAvailability").Map() {
 			uniqKey := fmt.Sprintf("%s.%s", result.Get("storeNumber").String(), productCode)
 			skus[uniqKey] = availability.Get("messageTypes.compact.storeSelectionEnabled").Bool()
