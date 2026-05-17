@@ -34,21 +34,56 @@ const (
 
 	Pause   = "暂停"
 	Running = "监听中"
+
+	DefaultIntervalSeconds = 3
 )
 
+// IntervalOptions 用户可选的轮询间隔档位(秒)。
+// 1s 偏激进,容易触发 Apple 限流;>=3s 是常见安全档位;30/60s 适合长期挂机。
+var IntervalOptions = []int{1, 3, 5, 10, 30, 60}
+
+// IntervalLabel 把秒数转成下拉框显示文案。
+func IntervalLabel(seconds int) string {
+	if seconds == DefaultIntervalSeconds {
+		return fmt.Sprintf("%d 秒 (默认)", seconds)
+	}
+	return fmt.Sprintf("%d 秒", seconds)
+}
+
+// IntervalLabels 生成下拉框完整选项列表。
+func IntervalLabels() []string {
+	labels := make([]string, 0, len(IntervalOptions))
+	for _, s := range IntervalOptions {
+		labels = append(labels, IntervalLabel(s))
+	}
+	return labels
+}
+
+// ParseIntervalLabel 把下拉框选中的文案反解成秒数;无法识别时回退到默认值。
+func ParseIntervalLabel(label string) int {
+	for _, s := range IntervalOptions {
+		if IntervalLabel(s) == label {
+			return s
+		}
+	}
+	return DefaultIntervalSeconds
+}
+
 var Listen = listenService{
-	items:  map[string]ListenItem{},
-	Status: binding.NewString(),
-	Area:   model.Areas[0],
-	Logs:   widget.NewLabel(""),
+	items:           map[string]ListenItem{},
+	Status:          binding.NewString(),
+	Area:            model.Areas[0],
+	Logs:            widget.NewLabel(""),
+	IntervalSeconds: binding.NewInt(),
 }
 
 type listenService struct {
-	items         map[string]ListenItem
-	Status        binding.String
-	Area          model.Area
-	Logs          *widget.Label
-	BarkNotifyUrl string
+	items           map[string]ListenItem
+	Status          binding.String
+	Area            model.Area
+	Logs            *widget.Label
+	BarkNotifyUrl   string
+	IntervalSeconds binding.Int
 }
 
 type ListenItem struct {
@@ -116,42 +151,60 @@ func (s *listenService) UpdateStatus(uniqKey string, status string) {
 	s.items[uniqKey] = item
 }
 
+// IntervalDuration 返回当前生效的轮询间隔;未配置或异常值时回退到默认值。
+func (s *listenService) IntervalDuration() time.Duration {
+	seconds, err := s.IntervalSeconds.Get()
+	if err != nil || seconds <= 0 {
+		seconds = DefaultIntervalSeconds
+	}
+	return time.Duration(seconds) * time.Second
+}
+
 func (s *listenService) Run() {
 	s.Status.Set(Pause)
 
 	go func() {
+		// 空闲时用短间隔轮询状态变化,避免用户按下"开始"后还要等一整个监听周期才生效。
+		const idleSleep = 200 * time.Millisecond
+
 		for {
-			if stats, ok := s.Status.Get(); ok == nil && stats == Running && len(s.items) > 0 {
-				skus := s.groupByStore()
+			stats, ok := s.Status.Get()
+			running := ok == nil && stats == Running && len(s.items) > 0
 
-				for key, item := range s.items {
-					status := skus[item.Store.StoreNumber+"."+item.Product.Code]
-
-					if status {
-						s.UpdateStatus(key, StatusInStock)
-						s.Status.Set(Pause)
-
-						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
-						// 进入购物袋
-						s.openBrowser(bagUrl)
-						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
-						dialog.ShowInformation("匹配成功", msg, view.Window)
-						view.App.SendNotification(&fyne.Notification{
-							Title:   "有货提醒",
-							Content: msg,
-						})
-						go s.AlertMp3()
-						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
-						break
-					} else {
-						s.UpdateStatus(key, StatusOutStock)
-					}
-				}
-
-				s.UpdateLogStr()
+			if !running {
+				time.Sleep(idleSleep)
+				continue
 			}
 
-			time.Sleep(time.Millisecond * 500)
+			skus := s.groupByStore()
+
+			for key, item := range s.items {
+				status := skus[item.Store.StoreNumber+"."+item.Product.Code]
+
+				if status {
+					s.UpdateStatus(key, StatusInStock)
+					s.Status.Set(Pause)
+
+					var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
+					// 进入购物袋
+					s.openBrowser(bagUrl)
+					msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
+					dialog.ShowInformation("匹配成功", msg, view.Window)
+					view.App.SendNotification(&fyne.Notification{
+						Title:   "有货提醒",
+						Content: msg,
+					})
+					go s.AlertMp3()
+					go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
+					break
+				} else {
+					s.UpdateStatus(key, StatusOutStock)
+				}
+			}
+
+			s.UpdateLogStr()
+
+			time.Sleep(s.IntervalDuration())
 		}
 	}()
 }
