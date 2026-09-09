@@ -19,7 +19,6 @@ import (
 	"github.com/faiface/beep/mp3"
 	"github.com/faiface/beep/speaker"
 	"github.com/golang-module/carbon"
-	"github.com/parnurzeal/gorequest"
 	"github.com/tidwall/gjson"
 
 	"apple-store-helper/model"
@@ -34,6 +33,9 @@ const (
 
 	Pause   = "暂停"
 	Running = "监听中"
+
+	pollInterval   = 1500 * time.Millisecond
+	blockedBackoff = 5 * time.Second
 )
 
 var Listen = listenService{
@@ -122,17 +124,22 @@ func (s *listenService) Run() {
 	go func() {
 		for {
 			if stats, ok := s.Status.Get(); ok == nil && stats == Running && len(s.items) > 0 {
-				skus := s.groupByStore()
+				result := s.groupByStore()
 
 				for key, item := range s.items {
-					status := skus[item.Store.StoreNumber+"."+item.Product.Code]
+					status, ok := result.skus[item.Store.StoreNumber+"."+item.Product.Code]
+					if !ok {
+						if item.Status == "" {
+							s.UpdateStatus(key, StatusWait)
+						}
+						continue
+					}
 
 					if status {
 						s.UpdateStatus(key, StatusInStock)
 						s.Status.Set(Pause)
 
-						var bagUrl = fmt.Sprintf("https://www.apple.com/%s/shop/bag", s.Area.ShortCode)
-						// 进入购物袋
+						var bagUrl = fmt.Sprintf("%s/shop/bag", s.Area.ShopOrigin())
 						s.openBrowser(bagUrl)
 						msg := fmt.Sprintf("%s %s 有货", item.Store.CityStoreName, item.Product.Title)
 						dialog.ShowInformation("匹配成功", msg, view.Window)
@@ -143,21 +150,29 @@ func (s *listenService) Run() {
 						go s.AlertMp3()
 						go s.SendPushNotificationByBark("有货提醒", msg, bagUrl)
 						break
-					} else {
-						s.UpdateStatus(key, StatusOutStock)
 					}
+					s.UpdateStatus(key, StatusOutStock)
 				}
 
 				s.UpdateLogStr()
+				if result.blocked {
+					time.Sleep(blockedBackoff)
+					continue
+				}
 			}
 
-			time.Sleep(time.Millisecond * 500)
+			time.Sleep(pollInterval)
 		}
 	}()
 }
 
-func (s *listenService) groupByStore() map[string]bool {
-	skus := map[string]bool{}
+type skuFetch struct {
+	skus    map[string]bool
+	blocked bool
+}
+
+func (s *listenService) groupByStore() skuFetch {
+	result := skuFetch{skus: map[string]bool{}}
 
 	defer func() {
 		if r := recover(); r != nil {
@@ -166,78 +181,143 @@ func (s *listenService) groupByStore() map[string]bool {
 	}()
 
 	group := map[string][]ListenItem{}
-	reqs := map[string]string{}
-
 	for _, item := range s.items {
 		group[item.Store.StoreNumber] = append(group[item.Store.StoreNumber], item)
 	}
 
-	for storeNumber, items := range group {
-
-		var uri url.URL
-		q := uri.Query()
-		q.Set("little", "true")
-		q.Set("mt", "regular")
-		q.Set("store", storeNumber)
-
-		for index, item := range items {
-			q.Set("parts."+strconv.FormatInt(int64(index), 10), item.Product.Code)
-		}
-
-		queryStr := q.Encode()
-
-		link := fmt.Sprintf(
-			"https://www.apple.com/%s/shop/fulfillment-messages?%s",
-			s.Area.ShortCode,
-			queryStr,
-		)
-
-		reqs[storeNumber] = link
-	}
-
-	count := len(reqs)
+	count := len(group)
 	if count < 1 {
-		return skus
+		return result
 	}
 
-	ch := make(chan map[string]bool, count)
-
-	for _, link := range reqs {
-		go s.getSkuByLink(ch, link)
+	ch := make(chan skuFetch, count)
+	for storeNumber, items := range group {
+		link := s.fulfillmentURL(storeNumber, items)
+		referer := productBuyURL(s.Area, items[0].Product)
+		go s.getSkuByLink(ch, link, referer)
 	}
 
 	for i := 0; i < count; i++ {
-		for key, v := range <-ch {
-			skus[key] = v
+		part := <-ch
+		if part.blocked {
+			result.blocked = true
+		}
+		for key, v := range part.skus {
+			result.skus[key] = v
 		}
 	}
 
-	return skus
+	return result
 }
 
-func (s *listenService) getSkuByLink(ch chan map[string]bool, skUrl string) {
-	skus := map[string]bool{}
+func (s *listenService) fulfillmentURL(storeNumber string, items []ListenItem) string {
+	var b strings.Builder
+	b.WriteString(s.Area.ShopOrigin())
+	b.WriteString("/shop/retail/pickup-message?little=true&store=")
+	b.WriteString(storeNumber)
 
-	resp, body, errs := gorequest.New().
-		Get(skUrl).
-		Set("referer", "https://www.apple.com/shop/buy-iphone").
-		Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36").
-		Timeout(time.Second * 3).End()
-	if len(errs) > 0 {
-		log.Println(errs)
-		ch <- skus
+	for index, item := range items {
+		b.WriteString("&parts.")
+		b.WriteString(strconv.Itoa(index))
+		b.WriteByte('=')
+		b.WriteString(item.Product.Code)
+	}
+
+	return b.String()
+}
+
+func familyPath(familyType string) string {
+	switch familyType {
+	case "iphone18pro", "iphone18promax":
+		return "iphone-18-pro"
+	case "iphoneduo":
+		return "iphone-duo"
+	case "iphone17pro", "iphone17promax":
+		return "iphone-17-pro"
+	case "iphoneair":
+		return "iphone-air"
+	case "iphone17":
+		return "iphone-17"
+	default:
+		if strings.HasPrefix(familyType, "iphone") {
+			return "iphone-" + strings.TrimPrefix(familyType, "iphone")
+		}
+		return familyType
+	}
+}
+
+func productBuyURL(area model.Area, product model.Product) string {
+	return fmt.Sprintf("%s/shop/buy-iphone/%s/%s", area.ShopOrigin(), familyPath(product.Type), strings.ToLower(product.Code))
+}
+
+func fulfillmentAvailable(availability gjson.Result) bool {
+	if availability.Get("pickupDisplay").String() == "available" {
+		return true
+	}
+	if availability.Get("messageTypes.regular.storeSelectionEnabled").Bool() {
+		return true
+	}
+	return availability.Get("messageTypes.compact.storeSelectionEnabled").Bool()
+}
+
+func (s *listenService) getSkuByLink(ch chan skuFetch, skUrl string, referer string) {
+	result := skuFetch{skus: map[string]bool{}}
+
+	warmupShopPage(referer, s.Area.AcceptLanguage())
+
+	resp, err := shopHTTP().R().
+		SetHeader("accept", "*/*").
+		SetHeader("accept-language", s.Area.AcceptLanguage()).
+		SetHeader("cache-control", "no-cache").
+		SetHeader("pragma", "no-cache").
+		SetHeader("referer", referer).
+		SetHeader("sec-fetch-dest", "empty").
+		SetHeader("sec-fetch-mode", "cors").
+		SetHeader("sec-fetch-site", "same-origin").
+		Get(skUrl)
+	if err != nil {
+		log.Println(err)
+		ch <- result
 		return
 	}
 
-	log.Println(resp.Status, skUrl)
-	for _, result := range gjson.Get(body, "body.content.pickupMessage.stores").Array() {
-		for productCode, availability := range result.Get("partsAvailability").Map() {
-			uniqKey := fmt.Sprintf("%s.%s", result.Get("storeNumber").String(), productCode)
-			skus[uniqKey] = availability.Get("messageTypes.compact.storeSelectionEnabled").Bool()
+	body := resp.String()
+	log.Println(resp.GetStatusCode(), skUrl)
+
+	if resp.GetStatusCode() == 541 || resp.GetStatusCode() >= 400 {
+		result.blocked = true
+		resetShopSession()
+		preview := body
+		if len(preview) > 160 {
+			preview = preview[:160]
+		}
+		log.Println("fulfillment blocked", preview)
+		ch <- result
+		return
+	}
+
+	stores := gjson.Get(body, "body.stores")
+	if !stores.Exists() || stores.Get("#").Int() == 0 {
+		stores = gjson.Get(body, "body.content.pickupMessage.stores")
+	}
+	if !stores.Exists() || stores.Get("#").Int() == 0 {
+		preview := body
+		if len(preview) > 200 {
+			preview = preview[:200]
+		}
+		log.Println("fulfillment unexpected body", preview)
+		ch <- result
+		return
+	}
+
+	for _, store := range stores.Array() {
+		for productCode, availability := range store.Get("partsAvailability").Map() {
+			uniqKey := fmt.Sprintf("%s.%s", store.Get("storeNumber").String(), productCode)
+			result.skus[uniqKey] = fulfillmentAvailable(availability)
 		}
 	}
 
-	ch <- skus
+	ch <- result
 }
 
 // 型号对应预约地址

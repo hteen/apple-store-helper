@@ -5,6 +5,7 @@ import (
 	"apple-store-helper/model"
 	"fmt"
 	"sort"
+	"strings"
 
 	"github.com/thoas/go-funk"
 	"github.com/tidwall/gjson"
@@ -33,17 +34,22 @@ func (s *storeService) ByArea(area model.Area) []model.Store {
 		if hasStates {
 			for _, state := range v.Get("state").Array() {
 				for _, store := range state.Get("store").Array() {
+					stateName := store.Get("address.stateName").String()
+					city := store.Get("address.city").String()
 					localeStores = append(localeStores, model.Store{
 						StoreNumber:   store.Get("id").String(),
-						CityStoreName: fmt.Sprintf("%s-%s", store.Get("address.stateName").String(), store.Get("name").String()),
+						CityStoreName: fmt.Sprintf("%s-%s", stateName, store.Get("name").String()),
+						Location:      strings.TrimSpace(stateName + " " + city),
 					})
 				}
 			}
 		} else {
 			for _, store := range v.Get("store").Array() {
+				city := store.Get("address.city").String()
 				localeStores = append(localeStores, model.Store{
 					StoreNumber:   store.Get("id").String(),
-					CityStoreName: fmt.Sprintf("%s-%s", store.Get("address.city").String(), store.Get("name").String()),
+					CityStoreName: fmt.Sprintf("%s-%s", city, store.Get("name").String()),
+					Location:      city,
 				})
 			}
 		}
@@ -68,8 +74,32 @@ func (s *storeService) ByAreaTitleForOptions(areaTitle string) []string {
 
 func (s *storeService) GetStore(areaTitle string, storeTitle string) model.Store {
 	code := Area.Title2Code(areaTitle)
+	s.ensureLoaded(code)
 
 	return funk.Find(s.stores[code], func(x model.Store) bool {
 		return x.CityStoreName == storeTitle
 	}).(model.Store)
+}
+
+func (s *storeService) GetByNumber(locale string, storeNumber string) model.Store {
+	s.ensureLoaded(locale)
+	found := funk.Find(s.stores[locale], func(x model.Store) bool {
+		return x.StoreNumber == storeNumber
+	})
+	if found == nil {
+		return model.Store{StoreNumber: storeNumber}
+	}
+	return found.(model.Store)
+}
+
+func (s *storeService) ensureLoaded(locale string) {
+	if len(s.stores[locale]) > 0 {
+		return
+	}
+	for _, area := range model.Areas {
+		if area.Locale == locale {
+			s.ByArea(area)
+			return
+		}
+	}
 }
